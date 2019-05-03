@@ -8,21 +8,6 @@ namespace TD7_8
 {
     class tmp
     {
-        public class Personne
-        {
-            public string nom;
-            public string prenom;
-            public string adresse;
-            public string numeroTel;
-
-            public Personne(string nom, string prenom, string adresse, string numeroTel)
-            {
-                this.nom = nom;
-                this.prenom = prenom;
-                this.adresse = adresse;
-                this.numeroTel = numeroTel;
-            }
-        }
 
         public class Adherent : Personne
         {
