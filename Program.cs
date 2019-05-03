@@ -10,6 +10,8 @@ namespace TD7_8
     {
         static void Main(string[] args)
         {
+
+            Console.ReadKey();
         }
     }
 }
