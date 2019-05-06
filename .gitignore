@@ -341,3 +341,6 @@ healthchecksdb
 
 #Azure Pipelines YAML
 azure-pipelines.yml
+
+#DEvTime file
+*.dt
