@@ -43,13 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adherent.cs" />
+    <Compile Include="Beneficiaire.cs" />
+    <Compile Include="Donateur.cs" />
     <Compile Include="Personne.cs" />
+    <Compile Include="PersonneMorale.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="tmp.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="DiagrammeClasses.cd" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Adherents.txt">
