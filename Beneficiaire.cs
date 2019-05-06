@@ -16,6 +16,10 @@ namespace TD7_8
 
         public DateTime DateNaissance { get => dateNaissance; }
 
+        /// <summary>
+        /// Accesseur pour obtenir l'age selon l'année actuelle à l'execution. Ne calcule qu'avec les années sans se préoccuper du mois / jour
+        /// </summary>
+        public int Age { get => (DateTime.Now.Year - dateNaissance.Year); }
 
         /// <summary>
         /// Crée une instance de la classe Beneficiaire
