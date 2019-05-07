@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TD7_8
 {
-    class PersonneMorale : Personne
+    public class PersonneMorale : Personne
     {
 
         /// <summary>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TD7_8
 {
-    class Adherent : Personne
+    public class Adherent : Personne
     {
         /// <summary>
         /// Enum contenant les fonctions possibles des adhérents. Accédé avec

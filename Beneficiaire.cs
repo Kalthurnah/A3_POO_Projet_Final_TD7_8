@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TD7_8
 {
-    class Beneficiaire : Personne
+    public  class Beneficiaire : Personne
     {
         /// <summary>
         /// Identifiant du bénéficiaire, non modifiable

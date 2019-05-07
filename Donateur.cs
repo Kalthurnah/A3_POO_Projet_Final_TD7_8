@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TD7_8
 {
-    class Donateur : Adherent
+    public class Donateur : Adherent
     {
         /// <summary>
         /// Crée une instance de la classe Donateur, selon son statut
