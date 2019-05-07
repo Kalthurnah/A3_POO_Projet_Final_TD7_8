@@ -43,11 +43,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adherent.cs" />
+    <Compile Include="Beneficiaire.cs" />
+    <Compile Include="Donateur.cs" />
+    <Compile Include="Personne.cs" />
+    <Compile Include="PersonneMorale.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="DiagrammeClasses.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Adherents.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Beneficiaires.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

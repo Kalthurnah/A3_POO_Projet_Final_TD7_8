@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Comment CommentText="&quot;Les donateurs sont membres de l’association. &quot; -&gt; Les donateurs sont des adhérents.">
+    <Position X="6.322" Y="10.33" Height="0.75" Width="1.7" />
+  </Comment>
+  <Class Name="TD7_8.Personne">
+    <Position X="8" Y="1.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAACAAIABAACAAQAAAACA=</HashCode>
+      <FileName>Personne.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TD7_8.Adherent">
+    <Position X="4.5" Y="5.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="TD7_8.Adherent.Fonction">
+        <TypeIdentifier>
+          <NewMemberFileName>Adherent.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABEAAAAAAAAA=</HashCode>
+      <FileName>Adherent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TD7_8.Beneficiaire">
+    <Position X="8" Y="5.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAQAAAAEEAAAAAAAAA=</HashCode>
+      <FileName>Beneficiaire.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TD7_8.Donateur">
+    <Position X="4.5" Y="9.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Donateur.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TD7_8.PersonneMorale">
+    <Position X="11.25" Y="5.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="TD7_8.PersonneMorale.TypeActivite" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>PersonneMorale.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAEACAAAAAAA=</HashCode>
+      <FileName>PersonneMorale.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
