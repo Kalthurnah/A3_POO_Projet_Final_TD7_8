@@ -7,7 +7,7 @@ namespace TD7_8
 {
     public abstract class Dons
     {
-        private DateTIme date_reception;
+        private DateTime date_reception;
         private string description_complémentaire;
 
         public Dons()
