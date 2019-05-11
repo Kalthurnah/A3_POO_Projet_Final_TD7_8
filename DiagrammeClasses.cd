@@ -58,5 +58,12 @@
       <FileName>PersonneMorale.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="TD7_8.Objet">
+    <Position X="17.5" Y="1.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAgAAAAIAAAAAAAAAABAAAAAQAAAAMAAAA=</HashCode>
+      <FileName>Objet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

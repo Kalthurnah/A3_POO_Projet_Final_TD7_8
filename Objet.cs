@@ -19,7 +19,7 @@ namespace TD7_8
 
         public string Référence
         {
-            get => default(int);
+            get => default(string);
             set
             {
             }
@@ -27,7 +27,7 @@ namespace TD7_8
 
         public string Type
         {
-            get => default(int);
+            get => default(string);
             set
             {
             }
@@ -35,13 +35,13 @@ namespace TD7_8
 
         public string Description
         {
-            get => default(int);
+            get => default(string);
             set
             {
             }
         }
 
-        public int Prix
+        public double Prix
         {
             get => default(int);
             set
@@ -49,4 +49,6 @@ namespace TD7_8
             }
         }
     }
+
+
 }
