@@ -9,5 +9,10 @@ namespace TD7_8
     {
         private int forme;
         private int piece;
+
+        public Mobilier_salle_cuisine()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

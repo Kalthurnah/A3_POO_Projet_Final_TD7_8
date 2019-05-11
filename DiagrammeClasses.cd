@@ -3,6 +3,12 @@
   <Comment CommentText="&quot;Les donateurs sont membres de l’association. &quot; -&gt; Les donateurs sont des adhérents.">
     <Position X="6.322" Y="10.33" Height="0.75" Width="1.7" />
   </Comment>
+  <Comment CommentText="Il faut ajouter un type enum avec couvert, assiette&#xD;&#xA;&#xD;&#xA;Idem pour les trois petits en dessous !">
+    <Position X="24.233" Y="7.017" Height="0.883" Width="2.858" />
+  </Comment>
+  <Comment CommentText="Enum pour le statut aussi">
+    <Position X="16.117" Y="3.358" Height="0.75" Width="1.95" />
+  </Comment>
   <Class Name="TD7_8.Personne">
     <Position X="8" Y="1.25" Width="1.75" />
     <TypeIdentifier>
@@ -59,11 +65,81 @@
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.Objet">
-    <Position X="17.5" Y="1.25" Width="1.75" />
+    <Position X="22.5" Y="0.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AgAAAAAAAAAgAAAAIAAAAAAAAAABAAAAAQAAAAMAAAA=</HashCode>
       <FileName>Objet.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="TD7_8.Objet_volumineux">
+    <Position X="20.25" Y="4.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAQAGAAAAAAAAAABA=</HashCode>
+      <FileName>Objet_volumineux.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TD7_8.Vaisselle">
+    <Position X="25" Y="5.25" Width="1.5" />
+    <InheritanceLine Type="TD7_8.Objet" ManuallyRouted="true">
+      <Path>
+        <Point X="23.375" Y="3.661" />
+        <Point X="23.375" Y="4.375" />
+        <Point X="25.75" Y="4.375" />
+        <Point X="25.75" Y="5.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Vaisselle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TD7_8.Mobilier_chambre">
+    <Position X="18" Y="8.25" Width="1.5" />
+    <InheritanceLine Type="TD7_8.Objet_volumineux" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="21.125" Y="7.011" />
+        <Point X="21.125" Y="7.491" />
+        <Point X="18.75" Y="7.491" />
+        <Point X="18.75" Y="8.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mobilier_chambre.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TD7_8.Mobilier_salle_cuisine">
+    <Position X="20.25" Y="8.25" Width="1.75" />
+    <InheritanceLine Type="TD7_8.Objet_volumineux" ManuallyRouted="true">
+      <Path>
+        <Point X="21.125" Y="7.011" />
+        <Point X="21.125" Y="7.932" />
+        <Point X="21.125" Y="7.932" />
+        <Point X="21.125" Y="8.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Mobilier_salle_cuisine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TD7_8.Electro_menager">
+    <Position X="23" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Electro_menager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TD7_8.Dons">
+    <Position X="15.75" Y="1.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAABAAAAAAAACAACAAAAAAAA=</HashCode>
+      <FileName>Dons.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Beneficiaire" />
+      <Property Name="Objet" />
+    </ShowAsAssociation>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

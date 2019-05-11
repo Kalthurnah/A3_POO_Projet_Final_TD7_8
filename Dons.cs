@@ -9,7 +9,11 @@ namespace TD7_8
     {
         private DateTIme date_reception;
         private string description_complémentaire;
-        private int e;
+
+        public Dons()
+        {
+            throw new System.NotImplementedException();
+        }
 
         public Beneficiaire Beneficiaire
         {

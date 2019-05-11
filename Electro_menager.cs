@@ -9,5 +9,10 @@ namespace TD7_8
     {
         private int puissance;
         private int nombre;
+
+        public Electro_menager()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

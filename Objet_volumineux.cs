@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TD7_8
 {
-    public class Objet_volumineux : Objet
+    public abstract class Objet_volumineux : Objet
     {
         private double largeur;
         private double hauteur;
