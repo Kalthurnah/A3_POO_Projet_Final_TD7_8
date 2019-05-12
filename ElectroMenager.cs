@@ -7,14 +7,11 @@ namespace TD7_8
 {
     public class ElectroMenager : ObjetVolumineux
     {
-        private int puissance;
-        private int nombre;
 
-        public enum TypeMenager
+        public ElectroMenager(double longueur, double largeur, double hauteur) : base(longueur, largeur, hauteur)
         {
-            Cuisiniere,
-            Refrigerateur,
-            LaveLinge
         }
+
+
     }
 }
