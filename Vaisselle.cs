@@ -13,5 +13,11 @@ namespace TD7_8
         {
             throw new System.NotImplementedException();
         }
+
+        public enum TypeVaisselle
+        {
+            Couverts,
+            Assiettes
+        }
     }
 }

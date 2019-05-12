@@ -14,5 +14,12 @@ namespace TD7_8
         {
             throw new System.NotImplementedException();
         }
+
+        public enum TypeMenager
+        {
+            cuisinière,
+            réfrigérateur,
+            lavelinge
+        }
     }
 }

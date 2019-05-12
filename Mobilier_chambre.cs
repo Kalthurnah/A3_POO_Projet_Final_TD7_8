@@ -11,5 +11,12 @@ namespace TD7_8
         {
             throw new System.NotImplementedException();
         }
+
+        public enum TypeChambre
+        {
+            armoire,
+            chevet,
+            matelas
+        }
     }
 }

@@ -14,5 +14,11 @@ namespace TD7_8
         {
             throw new System.NotImplementedException();
         }
+
+        public enum TypeCuisine
+        {
+            table,
+            chaise
+        }
     }
 }
