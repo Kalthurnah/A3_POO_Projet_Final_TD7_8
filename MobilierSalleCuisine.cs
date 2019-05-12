@@ -5,12 +5,12 @@ using System.Text;
 
 namespace TD7_8
 {
-    public class Mobilier_salle_cuisine : Objet_volumineux
+    public class MobilierSalleCuisine : ObjetVolumineux
     {
         private int forme;
         private int piece;
 
-        public Mobilier_salle_cuisine()
+        public MobilierSalleCuisine()
         {
             throw new System.NotImplementedException();
         }

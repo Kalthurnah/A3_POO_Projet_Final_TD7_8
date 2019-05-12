@@ -47,11 +47,11 @@
     <Compile Include="Beneficiaire.cs" />
     <Compile Include="Donateur.cs" />
     <Compile Include="Don.cs" />
-    <Compile Include="Electro_menager.cs" />
-    <Compile Include="Mobilier_chambre.cs" />
-    <Compile Include="Mobilier_salle_cuisine.cs" />
+    <Compile Include="ElectroMenager.cs" />
+    <Compile Include="MobilierChambre.cs" />
+    <Compile Include="MobilierSalleCuisine.cs" />
     <Compile Include="Objet.cs" />
-    <Compile Include="Objet_volumineux.cs" />
+    <Compile Include="ObjetVolumineux.cs" />
     <Compile Include="Personne.cs" />
     <Compile Include="PersonneMorale.cs" />
     <Compile Include="Program.cs" />

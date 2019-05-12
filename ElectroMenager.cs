@@ -5,15 +5,10 @@ using System.Text;
 
 namespace TD7_8
 {
-    public class Electro_menager : Objet_volumineux
+    public class ElectroMenager : ObjetVolumineux
     {
         private int puissance;
         private int nombre;
-
-        public Electro_menager()
-        {
-            throw new System.NotImplementedException();
-        }
 
         public enum TypeMenager
         {

@@ -5,12 +5,8 @@ using System.Text;
 
 namespace TD7_8
 {
-    public class Mobilier_chambre : Objet_volumineux
+    public class MobilierChambre : ObjetVolumineux
     {
-        public Mobilier_chambre()
-        {
-            throw new System.NotImplementedException();
-        }
 
         public enum TypeChambre
         {
@@ -18,5 +14,6 @@ namespace TD7_8
             Chevet,
             Matelas
         }
+
     }
 }
