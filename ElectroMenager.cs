@@ -5,10 +5,10 @@ using System.Text;
 
 namespace TD7_8
 {
-    public class ElectroMenager : ObjetVolumineux
+    public abstract class ElectroMenager : ObjetVolumineux
     {
 
-        public ElectroMenager(double longueur, double largeur, double hauteur) : base(longueur, largeur, hauteur)
+        protected ElectroMenager(double longueur, double largeur, double hauteur) : base(longueur, largeur, hauteur)
         {
         }
 
