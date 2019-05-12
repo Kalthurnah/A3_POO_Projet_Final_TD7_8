@@ -7,5 +7,8 @@ namespace TD7_8
 {
     public class LaveLinge : ElectroMenager
     {
+        public LaveLinge(double longueur, double largeur, double hauteur) : base(longueur, largeur, hauteur)
+        {
+        }
     }
 }
