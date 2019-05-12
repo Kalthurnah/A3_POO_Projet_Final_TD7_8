@@ -14,9 +14,9 @@ namespace TD7_8
 
         public enum TypeChambre
         {
-            armoire,
-            chevet,
-            matelas
+            Armoire,
+            Chevet,
+            Matelas
         }
     }
 }

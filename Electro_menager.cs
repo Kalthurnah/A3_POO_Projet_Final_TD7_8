@@ -17,9 +17,9 @@ namespace TD7_8
 
         public enum TypeMenager
         {
-            cuisinière,
-            réfrigérateur,
-            lavelinge
+            Cuisinière,
+            Réfrigérateur,
+            Lavelinge
         }
     }
 }

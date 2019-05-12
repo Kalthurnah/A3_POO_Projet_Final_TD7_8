@@ -17,8 +17,8 @@ namespace TD7_8
 
         public enum TypeCuisine
         {
-            table,
-            chaise
+            Table,
+            Chaise
         }
     }
 }
