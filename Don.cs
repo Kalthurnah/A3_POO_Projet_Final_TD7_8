@@ -5,12 +5,12 @@ using System.Text;
 
 namespace TD7_8
 {
-    public abstract class Dons
+    public abstract class Don
     {
         private DateTime date_reception;
         private string description_complémentaire;
 
-        public Dons()
+        public Don()
         {
             throw new System.NotImplementedException();
         }
