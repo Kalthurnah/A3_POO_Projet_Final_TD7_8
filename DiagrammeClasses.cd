@@ -73,19 +73,12 @@
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.Vaisselle">
-    <Position X="35" Y="10.25" Width="1.5" />
+    <Position X="39.5" Y="10.25" Width="1.5" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
-    <NestedTypes>
-      <Enum Name="TD7_8.Vaisselle.TypeVaisselle">
-        <TypeIdentifier>
-          <NewMemberFileName>Vaisselle.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Enum>
-    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAAA=</HashCode>
       <FileName>Vaisselle.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -236,6 +229,20 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>LieuStockage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TD7_8.Couverts">
+    <Position X="40.75" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Couverts.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TD7_8.Assiettes">
+    <Position X="38.75" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assiettes.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
