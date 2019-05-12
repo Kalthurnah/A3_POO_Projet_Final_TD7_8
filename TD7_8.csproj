@@ -43,32 +43,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adherent.cs" />
-    <Compile Include="Armoire.cs" />
-    <Compile Include="Assiettes.cs" />
-    <Compile Include="Beneficiaire.cs" />
-    <Compile Include="Chaise.cs" />
-    <Compile Include="Chevet.cs" />
-    <Compile Include="Couverts.cs" />
-    <Compile Include="Cuisiniere.cs" />
-    <Compile Include="Donateur.cs" />
+    <Compile Include="Personnes\Adherent.cs" />
+    <Compile Include="Objets\Armoire.cs" />
+    <Compile Include="Objets\Assiettes.cs" />
+    <Compile Include="Personnes\Beneficiaire.cs" />
+    <Compile Include="Objets\Chaise.cs" />
+    <Compile Include="Objets\Chevet.cs" />
+    <Compile Include="Objets\Couverts.cs" />
+    <Compile Include="Objets\Cuisiniere.cs" />
+    <Compile Include="Personnes\Donateur.cs" />
     <Compile Include="Don.cs" />
-    <Compile Include="ElectroMenager.cs" />
-    <Compile Include="LaveLinge.cs" />
+    <Compile Include="Objets\ElectroMenager.cs" />
+    <Compile Include="Objets\LaveLinge.cs" />
     <Compile Include="LieuStockage.cs" />
-    <Compile Include="Matelas.cs" />
-    <Compile Include="MobilierChambre.cs" />
-    <Compile Include="MobilierSalleCuisine.cs" />
-    <Compile Include="Objet.cs" />
+    <Compile Include="Objets\Matelas.cs" />
+    <Compile Include="Objets\MobilierChambre.cs" />
+    <Compile Include="Objets\MobilierSalleCuisine.cs" />
+    <Compile Include="Objets\Objet.cs" />
     <Compile Include="ObjetLegue.cs" />
-    <Compile Include="ObjetVolumineux.cs" />
-    <Compile Include="Personne.cs" />
-    <Compile Include="PersonneMorale.cs" />
+    <Compile Include="Objets\ObjetVolumineux.cs" />
+    <Compile Include="Personnes\Personne.cs" />
+    <Compile Include="Personnes\PersonneMorale.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Refrigerateur.cs" />
-    <Compile Include="Table.cs" />
-    <Compile Include="Vaisselle.cs" />
+    <Compile Include="Objets\Refrigerateur.cs" />
+    <Compile Include="Objets\Table.cs" />
+    <Compile Include="Objets\Vaisselle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

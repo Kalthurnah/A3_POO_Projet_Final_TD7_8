@@ -4,7 +4,7 @@
     <Position X="8.25" Y="10.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAACAAIABAACAAQAAAACA=</HashCode>
-      <FileName>Personne.cs</FileName>
+      <FileName>Personnes\Personne.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.Adherent">
@@ -15,27 +15,27 @@
     <NestedTypes>
       <Enum Name="TD7_8.Adherent.Fonction">
         <TypeIdentifier>
-          <NewMemberFileName>Adherent.cs</NewMemberFileName>
+          <NewMemberFileName>Personnes\Adherent.cs</NewMemberFileName>
         </TypeIdentifier>
       </Enum>
     </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABEAAAAAAAAA=</HashCode>
-      <FileName>Adherent.cs</FileName>
+      <FileName>Personnes\Adherent.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.Beneficiaire">
     <Position X="8.5" Y="15.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAQAAAAEEAAAAAAAAA=</HashCode>
-      <FileName>Beneficiaire.cs</FileName>
+      <FileName>Personnes\Beneficiaire.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.Donateur">
     <Position X="6" Y="19.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Donateur.cs</FileName>
+      <FileName>Personnes\Donateur.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.PersonneMorale">
@@ -46,13 +46,13 @@
     <NestedTypes>
       <Enum Name="TD7_8.PersonneMorale.TypeActivite">
         <TypeIdentifier>
-          <NewMemberFileName>PersonneMorale.cs</NewMemberFileName>
+          <NewMemberFileName>Personnes\PersonneMorale.cs</NewMemberFileName>
         </TypeIdentifier>
       </Enum>
     </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAEACAAAAAAA=</HashCode>
-      <FileName>PersonneMorale.cs</FileName>
+      <FileName>Personnes\PersonneMorale.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.ObjetVolumineux">
@@ -69,7 +69,7 @@
     </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAABIAAIACAAA=</HashCode>
-      <FileName>ObjetVolumineux.cs</FileName>
+      <FileName>Objets\ObjetVolumineux.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.Vaisselle">
@@ -79,7 +79,7 @@
     </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAAA=</HashCode>
-      <FileName>Vaisselle.cs</FileName>
+      <FileName>Objets\Vaisselle.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.MobilierChambre">
@@ -89,7 +89,7 @@
     </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>MobilierChambre.cs</FileName>
+      <FileName>Objets\MobilierChambre.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.MobilierSalleCuisine">
@@ -99,7 +99,7 @@
     </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>MobilierSalleCuisine.cs</FileName>
+      <FileName>Objets\MobilierSalleCuisine.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.ElectroMenager">
@@ -109,7 +109,7 @@
     </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ElectroMenager.cs</FileName>
+      <FileName>Objets\ElectroMenager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.Don">
@@ -137,21 +137,21 @@
     <Position X="21" Y="16" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Armoire.cs</FileName>
+      <FileName>Objets\Armoire.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.Chevet">
     <Position X="23.25" Y="16" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Chevet.cs</FileName>
+      <FileName>Objets\Chevet.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.Matelas">
     <Position X="25.5" Y="16" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Matelas.cs</FileName>
+      <FileName>Objets\Matelas.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.Table">
@@ -174,42 +174,42 @@
     </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAI=</HashCode>
-      <FileName>Table.cs</FileName>
+      <FileName>Objets\Table.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.Chaise">
     <Position X="27.75" Y="18.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Chaise.cs</FileName>
+      <FileName>Objets\Chaise.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.Objet">
     <Position X="30.25" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Objet.cs</FileName>
+      <FileName>Objets\Objet.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.Cuisiniere">
     <Position X="33" Y="16.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAEAAAA=</HashCode>
-      <FileName>Cuisiniere.cs</FileName>
+      <FileName>Objets\Cuisiniere.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.Refrigerateur">
     <Position X="31.25" Y="16.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Refrigerateur.cs</FileName>
+      <FileName>Objets\Refrigerateur.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.LaveLinge">
     <Position X="34.75" Y="16.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>LaveLinge.cs</FileName>
+      <FileName>Objets\LaveLinge.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.ObjetLegue">
@@ -219,9 +219,9 @@
       <FileName>ObjetLegue.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
+      <Field Name="refObjet" />
       <Field Name="beneficiaireObjet" />
       <Field Name="lieuDeStockage" />
-      <Field Name="refObjet" />
     </ShowAsAssociation>
   </Class>
   <Class Name="TD7_8.LieuStockage">
@@ -235,14 +235,14 @@
     <Position X="40.75" Y="15" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Couverts.cs</FileName>
+      <FileName>Objets\Couverts.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.Assiettes">
     <Position X="38.75" Y="15" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Assiettes.cs</FileName>
+      <FileName>Objets\Assiettes.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
