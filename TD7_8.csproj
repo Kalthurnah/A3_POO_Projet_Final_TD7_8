@@ -45,9 +45,11 @@
   <ItemGroup>
     <Compile Include="Adherent.cs" />
     <Compile Include="Armoire.cs" />
+    <Compile Include="Assiettes.cs" />
     <Compile Include="Beneficiaire.cs" />
     <Compile Include="Chaise.cs" />
     <Compile Include="Chevet.cs" />
+    <Compile Include="Couverts.cs" />
     <Compile Include="Cuisiniere.cs" />
     <Compile Include="Donateur.cs" />
     <Compile Include="Don.cs" />

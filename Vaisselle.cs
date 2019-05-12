@@ -5,19 +5,16 @@ using System.Text;
 
 namespace TD7_8
 {
-    public class Vaisselle : Objet
+    public abstract class Vaisselle : Objet
     {
         private int nombreDePieces;
 
-        public Vaisselle()
+        public int NombreDePieces { get => nombreDePieces; }
+
+        protected Vaisselle(int nombreDePieces)
         {
-            throw new System.NotImplementedException();
+            this.nombreDePieces = nombreDePieces;
         }
 
-        public enum TypeVaisselle
-        {
-            Couverts,
-            Assiettes
-        }
     }
 }
