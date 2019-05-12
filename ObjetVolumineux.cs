@@ -46,7 +46,6 @@ namespace TD7_8
         }
 
 
-
         /// <summary>
         /// Méthode de classe calculant un volume depuis des dimensions
         /// </summary>

@@ -32,7 +32,7 @@ namespace TD7_8
         /// </summary>
         private Fonction fonctionAdherent;
 
-        public Fonction FonctionAdherent { get => fonctionAdherent; set => fonctionAdherent = value; }
+        public Fonction FonctionAdherent { get => fonctionAdherent; set => fonctionAdherent = value; }//J'ai mis un set car il peut éventuellement être promu le petit mossieur
 
         /// <summary>
         /// Crée une instance de la classe Adhérent, selon son statut

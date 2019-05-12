@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TD7_8
 {
-    public  class Beneficiaire : Personne
+    public class Beneficiaire : Personne
     {
         /// <summary>
         /// Identifiant du bénéficiaire, non modifiable
@@ -26,7 +26,7 @@ namespace TD7_8
         /// </summary>
         /// <param name="identifiant">Identifiant du bénéficiaire </param>
         /// <param name="dateNaissance">Objet DateTime correspondant à la date de naissance du bénéficiaire</param>
-        public Beneficiaire(int identifiant, DateTime dateNaissance,string nom, string prenom, string adresse, string numeroTel) : base(nom, prenom, adresse, numeroTel)
+        public Beneficiaire(int identifiant, DateTime dateNaissance, string nom, string prenom, string adresse, string numeroTel) : base(nom, prenom, adresse, numeroTel)
         {
             this.identifiant = identifiant;
             this.dateNaissance = dateNaissance;
