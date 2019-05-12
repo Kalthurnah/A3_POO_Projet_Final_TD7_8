@@ -7,7 +7,7 @@ namespace TD7_8
 {
     public class Vaisselle : Objet
     {
-        private int nb;
+        private int nombreDePieces;
 
         public Vaisselle()
         {
