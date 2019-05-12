@@ -7,35 +7,31 @@ namespace TD7_8
 {
     public abstract class Don
     {
-        private DateTime date_reception;
-        private string description_complémentaire;
+        private int idDon;
+        private Beneficiaire beneficiaireDon;
+        private string descriptionComplémentaire;
+        private DateTime dateReception;
+        private Type typeObjet;
+        private Objet refObjet;
+
+        public int IdDon { get => idDon; }
+        public Beneficiaire BeneficiaireDon { get => beneficiaireDon; }
+        public string DescriptionComplémentaire { get => descriptionComplémentaire; }
+        public DateTime DateReception { get => dateReception; }
+        public Type TypeObjet { get => typeObjet; }
+        public Objet RefObjet { get => refObjet; }
 
         public Don()
         {
             throw new System.NotImplementedException();
         }
 
-        public Beneficiaire Beneficiaire
-        {
-            get => default(Beneficiaire);
-            set
-            {
-            }
-        }
-
-        public Objet Objet
-        {
-            get => default(Objet);
-            set
-            {
-            }
-        }
 
         public enum Statut
         {
-            Accepté,
-            Refusé,
-            Stocké
+            Accepte,
+            Refuse,
+            Stocke
         }
     }
 }
