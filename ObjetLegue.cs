@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace TD7_8
 {
     /// <summary>
     /// Classe représentant un objet qui a été légué par l'association (donné ou vendu) à un bénéficiaire.
     /// </summary>
-    class ObjetLegue
+    public class ObjetLegue
     {
         private Objet refObjet;
         private Type typeObjet;
