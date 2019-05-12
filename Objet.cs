@@ -8,7 +8,7 @@ namespace TD7_8
     public abstract class Objet
     {
         private string référence;
-        private string type;
+        private Type type;
         private string description;
         private double prix;
 
