@@ -5,20 +5,10 @@ using System.Text;
 
 namespace TD7_8
 {
-    public class MobilierSalleCuisine : ObjetVolumineux
+    public abstract class MobilierSalleCuisine : ObjetVolumineux
     {
-        private int forme;
-        private int piece;
-
-        public MobilierSalleCuisine()
+        protected MobilierSalleCuisine(double longueur, double largeur, double hauteur) : base(longueur, largeur, hauteur)
         {
-            throw new System.NotImplementedException();
-        }
-
-        public enum TypeCuisine
-        {
-            Table,
-            Chaise
         }
     }
 }
