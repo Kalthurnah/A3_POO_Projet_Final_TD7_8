@@ -30,5 +30,12 @@ namespace TD7_8
             {
             }
         }
+
+        public enum Statut
+        {
+            accepté,
+            refusé,
+            stocké
+        }
     }
 }
