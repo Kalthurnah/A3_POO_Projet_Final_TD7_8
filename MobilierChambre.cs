@@ -5,15 +5,10 @@ using System.Text;
 
 namespace TD7_8
 {
-    public class MobilierChambre : ObjetVolumineux
+    public abstract class MobilierChambre : ObjetVolumineux
     {
-
-        public enum TypeChambre
+        protected MobilierChambre(double longueur, double largeur, double hauteur) : base(longueur, largeur, hauteur)
         {
-            Armoire,
-            Chevet,
-            Matelas
         }
-
     }
 }
