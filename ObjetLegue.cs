@@ -12,16 +12,17 @@ namespace TD7_8
     {
         private Materiel refObjet;
         private Type typeObjet;
+        private Don refDon;
         private string description;
-        private double prix;
         private Beneficiaire beneficiaireObjet;
         private LieuStockage lieuDeStockage;
 
         public LieuStockage LieuDeStockage { get => lieuDeStockage; }
         public string Description { get => description; }
-        public double Prix { get => prix; }
+        public double Prix { get => refObjet.Prix; }
         public Type Type { get => typeObjet; }
         public Materiel RefObjet { get => refObjet; }
         public Beneficiaire BeneficiaireObjet { get => beneficiaireObjet; }
+        public Don RefDon { get => refDon; }
     }
 }
