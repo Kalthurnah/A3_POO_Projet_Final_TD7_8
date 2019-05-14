@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GardeMeuble.cs" />
     <Compile Include="Personnes\Adherent.cs" />
     <Compile Include="Objets\Armoire.cs" />
     <Compile Include="Objets\Assiettes.cs" />
@@ -59,7 +60,7 @@
     <Compile Include="Objets\Matelas.cs" />
     <Compile Include="Objets\MobilierChambre.cs" />
     <Compile Include="Objets\MobilierSalleCuisine.cs" />
-    <Compile Include="Objets\Objet.cs" />
+    <Compile Include="Objets\Materiel.cs" />
     <Compile Include="ObjetLegue.cs" />
     <Compile Include="Objets\ObjetVolumineux.cs" />
     <Compile Include="Personnes\Personne.cs" />

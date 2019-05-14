@@ -56,7 +56,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.ObjetVolumineux">
-    <Position X="26.5" Y="10.25" Width="1.75" />
+    <Position X="26.25" Y="10.25" Width="2.25" />
     <Compartments>
       <Compartment Name="Properties" Collapsed="true" />
     </Compartments>
@@ -73,7 +73,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.Vaisselle">
-    <Position X="39.5" Y="10.25" Width="1.5" />
+    <Position X="39.25" Y="10.25" Width="2" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
@@ -155,9 +155,8 @@
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.Table">
-    <Position X="30" Y="18.25" Width="1.5" />
+    <Position X="30" Y="18.25" Width="1.75" />
     <Compartments>
-      <Compartment Name="Properties" Collapsed="true" />
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
     <NestedTypes>
@@ -184,11 +183,11 @@
       <FileName>Objets\Chaise.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TD7_8.Objet">
+  <Class Name="TD7_8.Materiel">
     <Position X="30.25" Y="7.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Objets\Objet.cs</FileName>
+      <HashCode>ACAAAAAAAAAAAAAAAIAAAACAAAAAAAAAAQAAAAEAAAA=</HashCode>
+      <FileName>Objets\Materiel.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.Cuisiniere">
@@ -213,7 +212,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.ObjetLegue">
-    <Position X="18.5" Y="9" Width="1.5" />
+    <Position X="17" Y="9" Width="3" />
+    <AssociationLine Name="lieuDeStockage" Type="TD7_8.LieuStockage" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="17" Y="9.328" />
+        <Point X="7.938" Y="9.328" />
+        <Point X="7.938" Y="6.046" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAACAIAAAgAAAAoAAAAgAAAAAAAAAAIQgQAAEAAAA=</HashCode>
       <FileName>ObjetLegue.cs</FileName>
@@ -225,9 +231,9 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="TD7_8.LieuStockage">
-    <Position X="8" Y="4.75" Width="1.5" />
+    <Position X="7.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAgAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>LieuStockage.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -243,6 +249,21 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Objets\Assiettes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TD7_8.GardeMeuble">
+    <Position X="9.25" Y="7" Width="1.5" />
+    <InheritanceLine Type="TD7_8.LieuStockage" ManuallyRouted="true">
+      <Path>
+        <Point X="8" Y="6.046" />
+        <Point X="8" Y="6.625" />
+        <Point X="10" Y="6.625" />
+        <Point X="10" Y="7" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GardeMeuble.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
