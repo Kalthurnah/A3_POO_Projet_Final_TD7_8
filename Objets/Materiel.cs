@@ -8,13 +8,13 @@ namespace TD7_8
     /// <summary>
     /// Materiel simple que l'association peut recevoir/donner/vendre. Ses propriétés dépendent du type d'objet et sont donc propres aux classes abstraites
     /// </summary>
-    public abstract class Materiel
+    public abstract class Materiel : IIdentifiable
     {
-        private static int nbObjets=0;//Compte le nombre d'objets instanciés
+        private static int dernierIdDonne = 0;
         private int idObjet;
         private double prix;
 
-        public int IdObjet { get => idObjet; }
+        public int Identifiant { get => idObjet; }
         public double Prix { get => prix; }
 
         /// <summary>
@@ -23,8 +23,8 @@ namespace TD7_8
         /// </summary>
         protected Materiel(double prix)
         {
-            nbObjets++;
-            this.idObjet = nbObjets;
+            dernierIdDonne++;
+            this.idObjet = dernierIdDonne;
             this.prix = prix;
         }
     }
