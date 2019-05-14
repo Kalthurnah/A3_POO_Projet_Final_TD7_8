@@ -56,7 +56,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.ObjetVolumineux">
-    <Position X="26.25" Y="10.25" Width="2.25" />
+    <Position X="26.25" Y="10.75" Width="2.25" />
     <Compartments>
       <Compartment Name="Properties" Collapsed="true" />
     </Compartments>
@@ -73,10 +73,18 @@
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.Vaisselle">
-    <Position X="39.25" Y="10.25" Width="2" />
+    <Position X="39.25" Y="10.75" Width="2" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
+    <InheritanceLine Type="TD7_8.Materiel" FixedToPoint="true">
+      <Path>
+        <Point X="31" Y="10.084" />
+        <Point X="31" Y="10.334" />
+        <Point X="40.312" Y="10.334" />
+        <Point X="40.312" Y="10.75" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAAA=</HashCode>
       <FileName>Objets\Vaisselle.cs</FileName>
