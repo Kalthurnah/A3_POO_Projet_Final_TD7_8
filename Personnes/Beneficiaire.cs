@@ -32,5 +32,20 @@ namespace TD7_8
             this.dateNaissance = dateNaissance;
         }
 
+        static public double MoyenneAge()
+        {
+            double moy = 0;
+            int nb = 0;
+            foreach (Beneficiaire beneficiaire in personnes)
+            {
+                nb++;
+                moy = moy + beneficiaire.Age;
+            }
+            if (nb != 0)
+            {
+                moy = moy / nb;
+            }
+            return moy;
+        }
     }
 }
