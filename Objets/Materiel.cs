@@ -12,8 +12,10 @@ namespace TD7_8
     {
         private static int nbObjets=0;//Compte le nombre d'objets instanciés
         private int idObjet;
+        private double prix;
 
         public int IdObjet { get => idObjet; }
+        public double Prix { get => prix; }
 
         /// <summary>
         /// Constructeur "automatique" de la classe objet. A chaque objet instancié, on lui donne un id correspondant à son "numéro" d'objets.
