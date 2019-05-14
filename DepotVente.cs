@@ -26,9 +26,9 @@ namespace TD7_8
         {
 
             double moy = 0;// On initialise la moyenne à zéro
-            int nb = materielStocke.Count();// On stocke la taille de notre liste de matériel
+            int nb = donsStockes.Count();// On stocke la taille de notre liste de matériel
             // Pour chaque don dans cette liste on ajoute la valeur de l'objet à la moyenne
-            foreach (Don don in materielStocke.Values)
+            foreach (Don don in donsStockes.Values)
             {
                 moy = moy + don.Objet.Prix;
             }

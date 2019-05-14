@@ -9,13 +9,13 @@ namespace TD7_8
 
 
 
-        protected SortedList<DateTime, Don> materielStocke;
-        protected SortedList<DateTime, DonLegue> materielLegue;
+        protected SortedList<DateTime, Don> donsStockes;
+        protected SortedList<DateTime, DonLegue> donsLegues;
 
         public LieuStockage(string nom, string prenom, string adresse, string numeroTel) : base(nom, prenom, adresse, numeroTel)
         {
-            materielStocke = new SortedList<DateTime, Don>();
-            materielLegue = new SortedList<DateTime, DonLegue>();
+            donsStockes = new SortedList<DateTime, Don>();
+            donsLegues = new SortedList<DateTime, DonLegue>();
             lieuxStockage.Add(this);
         }
 
