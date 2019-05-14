@@ -12,7 +12,7 @@ namespace TD7_8
         /// <summary>
         /// A la création du dépot vente, son solde est de 1000€
         /// </summary>
-        public DepotVente()
+        public DepotVente():base()
         {
             solde = 1000;
         }
