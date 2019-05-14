@@ -47,7 +47,6 @@ namespace TD7_8
             volume = CalculerVolume(dimensions);//On recalcule le volume de l'objet à partir de ses dimensions, et on met à jour l'attribut volume en conséquence.
         }
 
-
         /// <summary>
         /// Méthode de classe calculant un volume depuis des dimensions
         /// </summary>

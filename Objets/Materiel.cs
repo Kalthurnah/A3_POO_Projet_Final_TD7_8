@@ -18,10 +18,10 @@ namespace TD7_8
         public double Prix { get => prix; }
 
         /// <summary>
-        /// Constructeur "automatique" de la classe objet. A chaque objet instancié, on lui donne un id correspondant à son "numéro" d'objets, prix =0
+        /// Constructeur "automatique" de la classe. A chaque objet instancié, on lui donne un id correspondant à son "numéro" d'objets, prix =0
         /// <param name="prix">prix de l'objet</param>
         /// </summary>
-        protected Materiel(double prix)
+        protected Materiel(double prix=0)
         {
             dernierIdDonne++;
             this.idObjet = dernierIdDonne;
