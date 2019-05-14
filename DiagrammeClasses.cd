@@ -137,17 +137,17 @@
         </TypeIdentifier>
       </Enum>
     </NestedTypes>
-    <AssociationLine Name="refObjet" Type="TD7_8.Materiel">
+    <AssociationLine Name="objet" Type="TD7_8.Materiel">
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="0.122" Y="0.076" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAQAgAAMIIAQBAAAAASBAABAAAQAABEEgAwQAIBIAAA=</HashCode>
+      <HashCode>AAQAgAAEIIAgAABBAACBQAhAAAQARBEEgAQQAIBIAAA=</HashCode>
       <FileName>Don.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="refObjet" />
+      <Field Name="objet" />
     </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
@@ -230,19 +230,17 @@
       <FileName>Objets\LaveLinge.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TD7_8.ObjetLegue">
-    <Position X="17" Y="9" Width="3" />
+  <Class Name="TD7_8.DonLegue">
+    <Position X="18" Y="11" Width="3" />
     <Compartments>
       <Compartment Name="Properties" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>BAAAACAIAAAgAAAApAAAAgAAAAAAAAAAIQgQAAAAAAA=</HashCode>
-      <FileName>ObjetLegue.cs</FileName>
+      <HashCode>AAAAAgAUAAIgEAAAogAAAgLEAAAAQAAAAQAQAAAAAAA=</HashCode>
+      <FileName>DonLegue.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="refObjet" />
       <Field Name="beneficiaireObjet" />
-      <Field Name="lieuDeStockage" />
     </ShowAsAssociation>
   </Class>
   <Class Name="TD7_8.LieuStockage">
@@ -275,10 +273,17 @@
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.DepotVente">
-    <Position X="5" Y="7.5" Width="1.5" />
+    <Position X="4" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAAAgAAAA=</HashCode>
       <FileName>DepotVente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TD7_8.StockageAssociation">
+    <Position X="7.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>StockageAssociation.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="TD7_8.IIdentifiable">
