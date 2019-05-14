@@ -38,26 +38,20 @@
   <Class Name="TD7_8.Donateur">
     <Position X="6" Y="19.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Personnes\Donateur.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.PersonneMorale">
-    <Position X="11" Y="14.5" Width="2.25" />
+    <Position X="11.25" Y="0.5" Width="2.25" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
-    <NestedTypes>
-      <Enum Name="TD7_8.PersonneMorale.TypeActivite">
-        <TypeIdentifier>
-          <NewMemberFileName>Personnes\PersonneMorale.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Enum>
-    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAIAAAACAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAACAIAAAACAAAABAAEAAQABAACA=</HashCode>
       <FileName>Personnes\PersonneMorale.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="TD7_8.ObjetVolumineux">
     <Position X="26.25" Y="10.75" Width="2.25" />
@@ -244,12 +238,11 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="TD7_8.LieuStockage">
-    <Position X="6" Y="3.5" Width="3.5" />
+    <Position X="10.75" Y="4.25" Width="3.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAgIAAAAAAAACAACAAQAAAAAAAAAAAEAgAABAAAA=</HashCode>
+      <HashCode>AAAAAgIAAAAAAAACAAAAAQAAAAAAAAAAAAAgAAAAAAA=</HashCode>
       <FileName>LieuStockage.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="TD7_8.Couverts">
     <Position X="40.75" Y="15" Width="1.5" />
@@ -266,21 +259,21 @@
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.GardeMeuble">
-    <Position X="9.5" Y="7.75" Width="1.5" />
+    <Position X="14.5" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GardeMeuble.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.DepotVente">
-    <Position X="4" Y="7.5" Width="1.5" />
+    <Position X="10" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAAAgAAAA=</HashCode>
       <FileName>DepotVente.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.StockageAssociation">
-    <Position X="7.25" Y="8.25" Width="1.5" />
+    <Position X="11.75" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>StockageAssociation.cs</FileName>

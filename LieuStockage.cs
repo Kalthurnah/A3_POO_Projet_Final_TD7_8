@@ -3,25 +3,20 @@ using System.Collections.Generic;
 
 namespace TD7_8
 {
-    public abstract class LieuStockage : IIdentifiable
+    public abstract class LieuStockage : PersonneMorale
     {
-        static List<LieuStockage> lieuxStockage = new List<LieuStockage>();
-        static int dernierIdDonne = 0;
+        static List<LieuStockage> lieuxStockage = new List<LieuStockage>();//Liste statique stockant les lieux de stockage existants.
 
-        private int identifiant;
+
+
         protected SortedList<DateTime, Don> materielStocke;
         protected SortedList<DateTime, DonLegue> materielLegue;
 
-        public int Identifiant { get => identifiant; }
-
-        public LieuStockage()
+        public LieuStockage(string nom, string prenom, string adresse, string numeroTel) : base(nom, prenom, adresse, numeroTel)
         {
-            dernierIdDonne++;
-            identifiant = dernierIdDonne;
             materielStocke = new SortedList<DateTime, Don>();
             materielLegue = new SortedList<DateTime, DonLegue>();
             lieuxStockage.Add(this);
-
         }
 
         public void StockerDon(Don donAAjouter)
