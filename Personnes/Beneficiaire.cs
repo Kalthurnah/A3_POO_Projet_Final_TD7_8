@@ -25,7 +25,7 @@ namespace TD7_8
         /// Crée une instance de la classe Beneficiaire
         /// </summary>
         /// <param name="identifiant">Identifiant du bénéficiaire </param>
-        /// <param name="dateNaissance">Objet DateTime correspondant à la date de naissance du bénéficiaire</param>
+        /// <param name="dateNaissance">Materiel DateTime correspondant à la date de naissance du bénéficiaire</param>
         public Beneficiaire(int identifiant, DateTime dateNaissance, string nom, string prenom, string adresse, string numeroTel) : base(nom, prenom, adresse, numeroTel)
         {
             this.identifiant = identifiant;

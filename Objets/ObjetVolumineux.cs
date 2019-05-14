@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TD7_8
 {
-    public abstract class ObjetVolumineux : Objet
+    public abstract class ObjetVolumineux : Materiel
     {
         public struct Dimension
         {

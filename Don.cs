@@ -23,7 +23,7 @@ namespace TD7_8
         private string numeroTelDonateur;
         private string adresseDonateur;
         private Type typeObjet;
-        private Objet refObjet;
+        private Materiel refObjet;
         private StatutDon statut;
         private Adherent adherentTraitantDossier;
         private LieuStockage lieuStockageDon;
@@ -32,7 +32,7 @@ namespace TD7_8
         public string DescriptionComplémentaire { get => descriptionComplémentaire; }
         public DateTime DateReception { get => dateReception; }
         public Type TypeObjet { get => typeObjet; }
-        public Objet RefObjet { get => refObjet; }
+        public Materiel RefObjet { get => refObjet; }
         public string NomDonateur { get => nomDonateur; }
         public string NumeroTelDonateur { get => numeroTelDonateur; }
         public string AdresseDonateur { get => adresseDonateur; }

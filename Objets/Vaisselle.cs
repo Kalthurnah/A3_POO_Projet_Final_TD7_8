@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TD7_8
 {
-    public abstract class Vaisselle : Objet
+    public abstract class Vaisselle : Materiel
     {
         private int nombreDePieces;
 
