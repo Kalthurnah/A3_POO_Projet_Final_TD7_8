@@ -10,7 +10,7 @@ namespace TD7_8
     /// </summary>
     public class ObjetLegue
     {
-        private Objet refObjet;
+        private Materiel refObjet;
         private Type typeObjet;
         private string description;
         private double prix;
@@ -21,7 +21,7 @@ namespace TD7_8
         public string Description { get => description; }
         public double Prix { get => prix; }
         public Type Type { get => typeObjet; }
-        public Objet RefObjet { get => refObjet; }
+        public Materiel RefObjet { get => refObjet; }
         public Beneficiaire BeneficiaireObjet { get => beneficiaireObjet; }
     }
 }
