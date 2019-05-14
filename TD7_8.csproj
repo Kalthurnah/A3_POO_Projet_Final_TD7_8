@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GardeMeuble.cs" />
+    <Compile Include="DepotVente.cs" />
     <Compile Include="Personnes\Adherent.cs" />
     <Compile Include="Objets\Armoire.cs" />
     <Compile Include="Objets\Assiettes.cs" />
