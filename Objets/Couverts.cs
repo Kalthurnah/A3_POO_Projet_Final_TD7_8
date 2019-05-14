@@ -7,7 +7,7 @@ namespace TD7_8
 {
     public class Couverts : Vaisselle
     {
-        public Couverts(int nombreDePieces) : base(nombreDePieces)
+        public Couverts(int nombreDePieces,double prix=0) : base(nombreDePieces,prix)
         {
         }
     }

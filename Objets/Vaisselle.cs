@@ -11,7 +11,7 @@ namespace TD7_8
 
         public int NombreDePieces { get => nombreDePieces; }
 
-        protected Vaisselle(int nombreDePieces)
+        protected Vaisselle(int nombreDePieces, double prix = 0):base(prix)
         {
             this.nombreDePieces = nombreDePieces;
         }
