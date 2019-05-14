@@ -12,33 +12,37 @@ namespace TD7_8
     {
         public enum StatutDon
         {
+            EnAttente,
             Accepte,
             Refuse,
             Stocke
         }
 
-        static List<Don> dons = new List<Don>();
+        static List<Don> donsTraites = new List<Don>();
+        static List<Don> donsArchives = new List<Don>();
+        static Queue<Don> donsEnAttenteTraitement = new Queue<Don>();
+
         private static int dernierIdDonne = 0;
 
         //TODO constructeur, LIST DONS / OBJETS LEGUES DS OBJETS LEUGES , ETC PR TRACABILITE
         private int idDon;
-        private string descriptionComplémentaire;
+        private string descriptionComplementaire;
         private DateTime dateReception;
         private string nomDonateur;
         private string numeroTelDonateur;
         private string adresseDonateur;
         private Type typeObjet;
-        private Materiel refObjet;
+        private Materiel objet;
         private StatutDon statut;
         private Adherent adherentTraitantDossier;
         private LieuStockage lieuStockageDon;
 
 
         public int Identifiant { get => idDon; }
-        public string DescriptionComplémentaire { get => descriptionComplémentaire; }
+        public string DescriptionComplementaire { get => descriptionComplementaire; }
         public DateTime DateReception { get => dateReception; }
         public Type TypeObjet { get => typeObjet; }
-        public Materiel RefObjet { get => refObjet; }
+        public Materiel Objet { get => objet; }
         public string NomDonateur { get => nomDonateur; }
         public string NumeroTelDonateur { get => numeroTelDonateur; }
         public string AdresseDonateur { get => adresseDonateur; }
@@ -46,22 +50,30 @@ namespace TD7_8
         public Adherent AdherentTraitantDossier { get => adherentTraitantDossier; }
         public LieuStockage LieuStockageDon { get => lieuStockageDon; }
 
-        public Don(string descriptionComplémentaire, DateTime dateReception, string nomDonateur, string numeroTelDonateur, string adresseDonateur, Materiel refObjet, StatutDon statut, Adherent adherentTraitantDossier, LieuStockage lieuStockageDon)
+        public Don(Materiel materielDonne, Donateur donateur, DateTime dateReception, string descriptionComplémentaire = "")
         {
             dernierIdDonne++;
             idDon = dernierIdDonne;
-            this.descriptionComplémentaire = descriptionComplémentaire;
             this.dateReception = dateReception;
-            this.nomDonateur = nomDonateur;
-            this.numeroTelDonateur = numeroTelDonateur;
-            this.adresseDonateur = adresseDonateur;
-            this.refObjet = refObjet;
-            this.typeObjet = refObjet.GetType();
-            this.statut = statut;
-            this.adherentTraitantDossier = adherentTraitantDossier;
-            this.lieuStockageDon = lieuStockageDon;
-        }
+            this.descriptionComplementaire = descriptionComplémentaire;
 
+            this.objet = materielDonne;
+            this.typeObjet = Objet.GetType();
+
+            this.nomDonateur = donateur.Nom;
+            this.numeroTelDonateur = donateur.NumeroTel;
+            this.adresseDonateur = donateur.Adresse;
+
+            //Lorsqu'on ajoute un don, il est en attente jusqu'à ce qu'un adhérent l'accepte (ou pas)
+            this.statut = StatutDon.EnAttente;
+            this.adherentTraitantDossier = null;
+            this.lieuStockageDon = null;
+
+            //On l'ajoute à la file d'attente des dons non traités.
+            donsEnAttenteTraitement.Enqueue(this);
+        }
+        
+        //Pas encore commit les fonctions pr mettre en attente / traiter/ acrchiver - TODO !    
 
     }
 
