@@ -72,8 +72,50 @@ namespace TD7_8
             //On l'ajoute à la file d'attente des dons non traités.
             donsEnAttenteTraitement.Enqueue(this);
         }
-        
+
         //Pas encore commit les fonctions pr mettre en attente / traiter/ acrchiver - TODO !    
+
+
+
+        //TODO ARCHIVER DONS
+
+        private void TraiterDonEnAttente(Adherent adherentTraitantDossier, StatutDon nouveauStatut, LieuStockage lieuStockageDon = null)
+        {
+            if (statut != StatutDon.EnAttente) { throw new InvalidOperationException("Opération invalide : Le don n'est pas en attente"); }
+
+            this.adherentTraitantDossier = adherentTraitantDossier;
+            this.statut = nouveauStatut;
+
+            if (statut == StatutDon.Stocke)
+            {
+                if (lieuStockageDon == null) { throw new ArgumentNullException("lieuStockageDon", "le lieu de stockage du don est null"); }
+
+                //TODO AJOUTER LE DON AU LIEU DE STOCKAGE
+
+                this.lieuStockageDon = lieuStockageDon;
+            }
+
+            donsTraites.Add(this);
+        }
+
+        /// <summary>
+        /// Interface de traitement de dons, qui affiche le dernier traitement en attente dans la file,
+        /// demande les informations à l'utilisateur, puis traite le don en l'enlevant de la file d'attente des dons en attente
+        /// </summary>
+        public static void TraiterDons()
+        {
+            //TODO AFFICHER LE DERNIER ELEMENT DE LA QUEUE SI IL EXISTE
+            Don donEnTraitement = donsEnAttenteTraitement.Peek();//OBTENIR LES INFOS
+            //TODO DEMANDER INFOS A UTILISATEUR
+            Adherent adherentTraitantDossier = null;//Changer selon la valeur rentrée par l'utilisateur
+            StatutDon nouveauStatut = StatutDon.EnAttente;//Changer selon la valeur rentrée par l'utilisateur
+            LieuStockage lieuStockageDon = null;//Changer selon la valeur rentrée par l'utilisateur SI don stocké
+
+            //TODO SI LES INFOS SONT VALIDES :
+            donEnTraitement.TraiterDonEnAttente(adherentTraitantDossier, nouveauStatut, lieuStockageDon);
+            donsEnAttenteTraitement.Dequeue();//TODO SEULEMENT UNE FOIS QU'IL A ETE TRAITE, ON LE RETIRE DE LA FILE
+            //TODO ON CONFIRME A L'UTILISATEUR QUE DON TRAITE
+        }
 
     }
 
