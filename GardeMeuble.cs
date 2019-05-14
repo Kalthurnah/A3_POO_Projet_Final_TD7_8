@@ -7,5 +7,11 @@ namespace TD7_8
 {
     public class GardeMeuble : LieuStockage
     {
+        
+        public GardeMeuble() : base()
+        {
+
+        }
+
     }
 }
