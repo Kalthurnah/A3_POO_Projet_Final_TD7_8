@@ -7,7 +7,7 @@ namespace TD7_8
 {
     public class StockageAssociation : LieuStockage
     {
-        public StockageAssociation()
+        public StockageAssociation(string nom, string prenom, string adresse, string numeroTel) : base(nom, prenom, adresse, numeroTel)
         {
         }
     }
