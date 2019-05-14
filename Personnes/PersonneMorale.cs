@@ -8,6 +8,7 @@ namespace TD7_8
     public class PersonneMorale : Personne
     {
 
+        public new static int Count { get => CompterPersonnesTypees<PersonneMorale>(); }
         /// <summary>
         /// Enum contenant les types d'activités possibles pour une personne morale. Accédé avec
         /// <code> PersonneMorale.TypeActivite.X </code>
@@ -18,7 +19,6 @@ namespace TD7_8
             Transporteur
         }
 
-        private int identifiant;
 
         /// <summary>
         /// Type d'activité de la personne morale. Modifiable.
@@ -26,9 +26,8 @@ namespace TD7_8
         private TypeActivite typeActivitePersonne;
         private TypeActivite TypeActivitePersonne { get => typeActivitePersonne; set => typeActivitePersonne = value; }
 
-        public PersonneMorale(int identifiant, TypeActivite typeActivitePersonne, string nom, string prenom, string adresse, string numeroTel) : base(nom, prenom, adresse, numeroTel)
+        public PersonneMorale(TypeActivite typeActivitePersonne, string nom, string prenom, string adresse, string numeroTel) : base(nom, prenom, adresse, numeroTel)
         {
-            this.identifiant = identifiant;
             this.typeActivitePersonne = typeActivitePersonne;
         }
 

@@ -10,25 +10,26 @@ namespace TD7_8
         /// <summary>
         /// Identifiant du bénéficiaire, non modifiable
         /// </summary>
-        private int identifiant;
 
         private DateTime dateNaissance;
 
         public DateTime DateNaissance { get => dateNaissance; }
+
+        public new static int Count { get => CompterPersonnesTypees<Beneficiaire>(); }
 
         /// <summary>
         /// Accesseur pour obtenir l'age selon l'année actuelle à l'execution. Ne calcule qu'avec les années sans se préoccuper du mois / jour
         /// </summary>
         public int Age { get => (DateTime.Now.Year - dateNaissance.Year); }
 
+        
         /// <summary>
         /// Crée une instance de la classe Beneficiaire
         /// </summary>
         /// <param name="identifiant">Identifiant du bénéficiaire </param>
         /// <param name="dateNaissance">Materiel DateTime correspondant à la date de naissance du bénéficiaire</param>
-        public Beneficiaire(int identifiant, DateTime dateNaissance, string nom, string prenom, string adresse, string numeroTel) : base(nom, prenom, adresse, numeroTel)
+        public Beneficiaire(DateTime dateNaissance, string nom, string prenom, string adresse, string numeroTel) : base(nom, prenom, adresse, numeroTel)
         {
-            this.identifiant = identifiant;
             this.dateNaissance = dateNaissance;
         }
 
@@ -36,14 +37,14 @@ namespace TD7_8
         {
             double moy = 0;
             int nb = 0;
-            foreach (Beneficiaire beneficiaire in personnes)
-            {
+            foreach (Beneficiaire beneficiaire in personnes.OfType<Beneficiaire>())
+            {//On itère parmi uniquement les bénéficiaires de notre liste de personnes enregistrées.
                 nb++;
-                moy = moy + beneficiaire.Age;
+                moy += beneficiaire.Age;
             }
             if (nb != 0)
             {
-                moy = moy / nb;
+                moy = nb;
             }
             return moy;
         }
