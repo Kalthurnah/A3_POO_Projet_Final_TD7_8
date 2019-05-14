@@ -48,15 +48,5 @@ namespace TD7_8
             }
             return moy;
         }
-
-        static public int Nb()
-        {
-            int nb = 0;
-            foreach (Beneficiaire beneficiaire in personnes)
-            {
-                nb++;
-            }
-            return nb;
-        }
     }
 }

@@ -19,15 +19,5 @@ namespace TD7_8
         {
 
         }
-
-        static public int Nb()
-        {
-            int nb = 0;
-            foreach (Donateur donateur in personnes)
-            {
-                nb++;
-            }
-            return nb;
-        }
     }
 }
