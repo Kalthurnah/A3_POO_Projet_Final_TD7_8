@@ -10,7 +10,7 @@ namespace TD7_8
 
         private int identifiant;
         protected SortedList<DateTime, Don> materielStocke;
-        protected SortedList<DateTime, ObjetLegue> materielLegue;
+        protected SortedList<DateTime, DonLegue> materielLegue;
 
         public int Identifiant { get => identifiant; }
 
@@ -19,7 +19,7 @@ namespace TD7_8
             dernierIdDonne++;
             identifiant = dernierIdDonne;
             materielStocke = new SortedList<DateTime, Don>();
-            materielLegue = new SortedList<DateTime, ObjetLegue>();
+            materielLegue = new SortedList<DateTime, DonLegue>();
             lieuxStockage.Add(this);
 
         }
@@ -30,8 +30,9 @@ namespace TD7_8
             //TODO
         }
 
-        public ObjetLegue LeguerObjet()
+        public DonLegue LeguerObjet()
         {
+            //TODO
             throw new NotImplementedException();
         }
 

@@ -63,7 +63,7 @@
     <Compile Include="Objets\MobilierChambre.cs" />
     <Compile Include="Objets\MobilierSalleCuisine.cs" />
     <Compile Include="Objets\Materiel.cs" />
-    <Compile Include="ObjetLegue.cs" />
+    <Compile Include="DonLegue.cs" />
     <Compile Include="Objets\ObjetVolumineux.cs" />
     <Compile Include="Personnes\Personne.cs" />
     <Compile Include="Personnes\PersonneMorale.cs" />
@@ -72,6 +72,7 @@
     <Compile Include="Objets\Refrigerateur.cs" />
     <Compile Include="Objets\Table.cs" />
     <Compile Include="Objets\Vaisselle.cs" />
+    <Compile Include="StockageAssociation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
