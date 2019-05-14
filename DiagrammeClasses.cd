@@ -39,7 +39,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.PersonneMorale">
-    <Position X="11" Y="14.5" Width="1.5" />
+    <Position X="11" Y="14.5" Width="2.25" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
@@ -187,7 +187,7 @@
   <Class Name="TD7_8.Objet">
     <Position X="30.25" Y="7.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>ACAAAAAAAAAAAAAAAIAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Objets\Objet.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -243,6 +243,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Objets\Assiettes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TD7_8.DepotVente">
+    <Position X="7.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DepotVente.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
