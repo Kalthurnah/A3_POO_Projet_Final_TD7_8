@@ -262,8 +262,10 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB=</HashCode>
       <FileName>GardeMeuble.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="TD7_8.DepotVente">
     <Position X="7.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
