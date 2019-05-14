@@ -5,7 +5,7 @@ namespace TD7_8
 {
     public abstract class LieuStockage
     {
-        private SortedList<DateTime, Don> materielStocke;
-        private SortedList<DateTime, ObjetLegue> materielLegue;
+        protected SortedList<DateTime, Don> materielStocke;
+        protected SortedList<DateTime, ObjetLegue> materielLegue;
     }
 }
