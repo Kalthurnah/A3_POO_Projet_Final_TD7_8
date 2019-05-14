@@ -8,7 +8,6 @@ namespace TD7_8
     public class PersonneMorale : Personne
     {
 
-        public new static int Count { get => CompterPersonnesTypees<PersonneMorale>(); }
         /// <summary>
         /// Enum contenant les types d'activités possibles pour une personne morale. Accédé avec
         /// <code> PersonneMorale.TypeActivite.X </code>
@@ -19,6 +18,7 @@ namespace TD7_8
             Transporteur
         }
 
+        public new static int Count { get => CompterPersonnesTypees<PersonneMorale>(); }
 
         /// <summary>
         /// Type d'activité de la personne morale. Modifiable.
