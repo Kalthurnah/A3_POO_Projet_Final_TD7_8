@@ -9,7 +9,7 @@ namespace TD7_8
     public abstract class Personne
     {
 
-        static List<Personne> personnes = new List<Personne>();
+        static protected List<Personne> personnes = new List<Personne>();
 
         private string nom;
         private string prenom;
