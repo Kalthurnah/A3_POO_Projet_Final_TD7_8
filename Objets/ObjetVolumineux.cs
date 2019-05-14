@@ -28,7 +28,7 @@ namespace TD7_8
         /// <param name="longueur">longueur de l'objet</param>
         /// <param name="largeur">largeur de l'objet</param>
         /// <param name="hauteur">hauteur de l'objet</param>
-        protected ObjetVolumineux(double longueur, double largeur, double hauteur,double prix=0):base(prix)
+        protected ObjetVolumineux(double longueur, double largeur, double hauteur,double prix):base(prix)
         {
             dimensions.longueur = longueur;
             dimensions.largeur = largeur;

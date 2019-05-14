@@ -19,19 +19,12 @@ namespace TD7_8
 
         /// <summary>
         /// Constructeur "automatique" de la classe objet. A chaque objet instancié, on lui donne un id correspondant à son "numéro" d'objets, prix =0
+        /// <param name="prix">prix de l'objet</param>
         /// </summary>
-        protected Materiel()
+        protected Materiel(double prix)
         {
             nbObjets++;
             this.idObjet = nbObjets;
-            prix = 0;
-        }
-        /// <summary>
-        /// Constructeur permettant de spécifier le prix.
-        /// </summary>
-        /// <param name="prix"></param>
-        protected Materiel(double prix):this()
-        {
             this.prix = prix;
         }
     }
