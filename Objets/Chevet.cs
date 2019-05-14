@@ -7,7 +7,7 @@ namespace TD7_8
 {
     public class Chevet : MobilierChambre
     {
-        public Chevet(double longueur, double largeur, double hauteur) : base(longueur, largeur, hauteur)
+        public Chevet(double longueur, double largeur, double hauteur, double prix=0) : base(longueur, largeur, hauteur, prix)
         {
         }
     }
