@@ -5,30 +5,37 @@ using System.Text;
 
 namespace TD7_8
 {
-    public class PersonneMorale : Personne
+    public abstract class PersonneMorale : IIdentifiable
     {
+        static int dernierIdDonne = 0;// Le dernier id donné n'est pas forcément le nombre de personnes, dans le cas ou on en supprime par exemple.
+
+        private int identifiant;
+        protected string nom;
+        protected string adresse;
+        protected string numeroTel;
 
         /// <summary>
-        /// Enum contenant les types d'activités possibles pour une personne morale. Accédé avec
-        /// <code> PersonneMorale.TypeActivite.X </code>
+        /// "Les différentes informations peuvent être modifiables", selon l'énoncé. Ci dessous get et set permettant cela.
         /// </summary>
-        public enum TypeActivite
-        {
-            DepotVente,
-            Transporteur
-        }
-
-        public new static int Count { get => CompterPersonnesTypees<PersonneMorale>(); }
+        public string Nom { get => nom; set => nom = value; }
+        public string Adresse { get => adresse; set => adresse = value; }
+        public string NumeroTel { get => numeroTel; set => numeroTel = value; }
+        public int Identifiant { get => identifiant; }
 
         /// <summary>
-        /// Type d'activité de la personne morale. Modifiable.
+        /// Crée une instance de la classe Personne.
         /// </summary>
-        private TypeActivite typeActivitePersonne;
-        private TypeActivite TypeActivitePersonne { get => typeActivitePersonne; set => typeActivitePersonne = value; }
-
-        public PersonneMorale(TypeActivite typeActivitePersonne, string nom, string prenom, string adresse, string numeroTel) : base(nom, prenom, adresse, numeroTel)
+        /// <param name="nom">Nom de la personne</param>
+        /// <param name="prenom">Prenom de la personne</param>
+        /// <param name="adresse">Adresse de la personne</param>
+        /// <param name="numeroTel">Numéro de téléphone de la personne</param>
+        public PersonneMorale(string nom, string prenom, string adresse, string numeroTel)
         {
-            this.typeActivitePersonne = typeActivitePersonne;
+            dernierIdDonne++;
+            identifiant = dernierIdDonne;
+            this.nom = nom;
+            this.adresse = adresse;
+            this.numeroTel = numeroTel;
         }
 
     }
