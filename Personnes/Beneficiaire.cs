@@ -33,7 +33,7 @@ namespace TD7_8
             this.dateNaissance = dateNaissance;
         }
 
-        static public double MoyenneAge()
+        public static double MoyenneAge()
         {
             double moy = 0;
             int nb = 0;
