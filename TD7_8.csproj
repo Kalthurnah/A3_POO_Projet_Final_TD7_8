@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GardeMeuble.cs" />
+    <Compile Include="PersonnesMorales\GardeMeuble.cs" />
     <Compile Include="DepotVente.cs" />
     <Compile Include="IIdentifiable.cs" />
     <Compile Include="Personnes\Adherent.cs" />
@@ -58,7 +58,7 @@
     <Compile Include="Don.cs" />
     <Compile Include="Objets\ElectroMenager.cs" />
     <Compile Include="Objets\LaveLinge.cs" />
-    <Compile Include="LieuStockage.cs" />
+    <Compile Include="PersonnesMorales\LieuStockage.cs" />
     <Compile Include="Objets\Matelas.cs" />
     <Compile Include="Objets\MobilierChambre.cs" />
     <Compile Include="Objets\MobilierSalleCuisine.cs" />
@@ -66,13 +66,13 @@
     <Compile Include="DonLegue.cs" />
     <Compile Include="Objets\ObjetVolumineux.cs" />
     <Compile Include="Personnes\Personne.cs" />
-    <Compile Include="Personnes\PersonneMorale.cs" />
+    <Compile Include="PersonnesMorales\PersonneMorale.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Objets\Refrigerateur.cs" />
     <Compile Include="Objets\Table.cs" />
     <Compile Include="Objets\Vaisselle.cs" />
-    <Compile Include="StockageAssociation.cs" />
+    <Compile Include="PersonnesMorales\StockageAssociation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
