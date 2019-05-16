@@ -21,18 +21,13 @@ namespace TD7_8
             Membre
         };
 
-
-        /// <summary>
-        /// Identifiant de l'adhérent, non modifiable
-        /// </summary>
-        private int identifiant;
-
         /// <summary>
         /// Fonction de l'adhérent. Peut évoluer
         /// </summary>
-        private Fonction fonctionAdherent;
+        protected Fonction fonctionAdherent;
 
         public Fonction FonctionAdherent { get => fonctionAdherent; set => fonctionAdherent = value; }
+        public new static int Count { get => CompterPersonnesTypees<Adherent>(); }
 
         /// <summary>
         /// Crée une instance de la classe Adhérent, selon son statut
@@ -46,9 +41,8 @@ namespace TD7_8
         /// 
         /// <param name="identifiant">Identifiant de l'adhérent </param>
         /// <param name="fonction">Fonction de l'adhérent. Sous la forme <code>Adherent.Fonction.X</code> </param>
-        public Adherent(int identifiant,Fonction fonction, string nom, string prenom, string adresse, string numeroTel) : base(nom, prenom, adresse, numeroTel)
+        public Adherent(Fonction fonction, string nom, string prenom, string adresse, string numeroTel) : base(nom, prenom, adresse, numeroTel)
         {
-            this.identifiant = identifiant;
             this.fonctionAdherent = fonction;
         }
     }
