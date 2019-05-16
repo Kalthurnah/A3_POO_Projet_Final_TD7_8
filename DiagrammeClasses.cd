@@ -49,7 +49,7 @@
     </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAACAIAAAACAAAABAAEAAQABAACA=</HashCode>
-      <FileName>Personnes\PersonneMorale.cs</FileName>
+      <FileName>PersonnesMorales\PersonneMorale.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -123,43 +123,43 @@
         </TypeIdentifier>
       </Enum>
     </NestedTypes>
+    <AssociationLine Name="donsTraites" Type="TD7_8.Don" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="11.25" Y="17.52" />
+        <Point X="11" Y="17.52" />
+        <Point X="11" Y="18.451" />
+        <Point X="11.25" Y="18.451" />
+      </Path>
+    </AssociationLine>
     <AssociationLine Name="donsArchives" Type="TD7_8.Don" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="11.25" Y="19.313" />
-        <Point X="11" Y="19.313" />
-        <Point X="11" Y="20.125" />
-        <Point X="11.25" Y="20.125" />
+        <Point X="11.25" Y="19.033" />
+        <Point X="11" Y="19.033" />
+        <Point X="11" Y="19.789" />
+        <Point X="11.25" Y="19.789" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="donsEnAttenteTraitement" Type="TD7_8.Don" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="11.25" Y="15.75" />
-        <Point X="11" Y="15.75" />
-        <Point X="11" Y="16.875" />
-        <Point X="11.25" Y="16.875" />
-      </Path>
-    </AssociationLine>
-    <AssociationLine Name="donsTraites" Type="TD7_8.Don" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="11.25" Y="17.688" />
-        <Point X="11" Y="17.688" />
-        <Point X="11" Y="18.688" />
-        <Point X="11.25" Y="18.688" />
+        <Point X="11.25" Y="15.716" />
+        <Point X="11" Y="15.716" />
+        <Point X="11" Y="16.763" />
+        <Point X="11.25" Y="16.763" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAQAgAAEIIAgAABBAACBQAhAAAQARBEEgAQQAIBIAAA=</HashCode>
+      <HashCode>AAQAgAAEIIAgAABAAACBQABAAAQARBEEgAQQAIBIAAA=</HashCode>
       <FileName>Don.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="objet" />
-      <Field Name="lieuStockageDon" />
       <Field Name="adherentTraitantDossier" />
+      <Field Name="lieuStockageDon" />
     </ShowAsAssociation>
     <ShowAsCollectionAssociation>
+      <Field Name="donsTraites" />
       <Field Name="donsArchives" />
       <Field Name="donsEnAttenteTraitement" />
-      <Field Name="donsTraites" />
     </ShowAsCollectionAssociation>
     <Lollipop Position="0.2" />
   </Class>
@@ -252,10 +252,10 @@
       <FileName>DonLegue.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="beneficiaireObjet" />
-      <Field Name="lieuStockage" />
       <Field Name="objet" />
       <Field Name="DonInitial" />
+      <Field Name="beneficiaireObjet" />
+      <Field Name="lieuStockage" />
     </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
@@ -268,12 +268,12 @@
     </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAAAIAAAAAAAAAAAAACQAAAAgAAAAAAAAgAAAAAAA=</HashCode>
-      <FileName>LieuStockage.cs</FileName>
+      <FileName>PersonnesMorales\LieuStockage.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
-      <Field Name="donsLegues" />
-      <Field Name="donsStockes" />
       <Field Name="lieuxStockage" />
+      <Field Name="donsStockes" />
+      <Field Name="donsLegues" />
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="TD7_8.Couverts">
@@ -294,7 +294,7 @@
     <Position X="23" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>GardeMeuble.cs</FileName>
+      <FileName>PersonnesMorales\GardeMeuble.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.DepotVente">
@@ -308,7 +308,7 @@
     <Position X="20.75" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>StockageAssociation.cs</FileName>
+      <FileName>PersonnesMorales\StockageAssociation.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="TD7_8.IIdentifiable">
