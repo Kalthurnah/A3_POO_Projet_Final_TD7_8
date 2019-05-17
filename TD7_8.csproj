@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InteractionUtilisateur.cs" />
+    <Compile Include="Menu.cs" />
     <Compile Include="PersonnesMorales\GardeMeuble.cs" />
     <Compile Include="DepotVente.cs" />
     <Compile Include="IIdentifiable.cs" />
@@ -73,6 +75,7 @@
     <Compile Include="Objets\Table.cs" />
     <Compile Include="Objets\Vaisselle.cs" />
     <Compile Include="PersonnesMorales\StockageAssociation.cs" />
+    <Compile Include="Recherche.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

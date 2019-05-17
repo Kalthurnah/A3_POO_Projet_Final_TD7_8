@@ -35,8 +35,9 @@ namespace TD7_8
 
         public void StockerDon(Don donAAjouter)
         {
-            throw new NotImplementedException();
-            //TODO
+            donsStockes.Add(donAAjouter.Identifiant, donAAjouter);
+        }
+
         public static double MoyenneDureeStockageGenerale()
         {
             double moy = 0;
@@ -65,6 +66,36 @@ namespace TD7_8
             return moy;
         }
 
+        public DonLegue LeguerDon(Don donALeguer, Beneficiaire beneficiaire, DateTime dateLeguee)
+        {
+            DonLegue donLegue = new DonLegue(donALeguer, beneficiaire, dateLeguee);
+            donsStockes.Remove(donLegue.Identifiant);
+            return donLegue;
+        }
+
+        public static LieuStockage InterfaceCreationLieuStockage<T>() where T : LieuStockage
+        {
+            LieuStockage nouveauLieu;
+            Dictionary<string, string> parametres = InteractionUtilisateur.DemanderParametres(new string[] { "nom", "prenom", "adresse", "numeroTel" });
+            if (typeof(T) == typeof(DepotVente))
+            {
+                nouveauLieu = new DepotVente(parametres["nom"], parametres["prenom"], parametres["adresse"], parametres["numeroTel"]);
+            }
+            else
+            {
+                if (typeof(T) == typeof(GardeMeuble))
+                {
+                    nouveauLieu = new GardeMeuble(parametres["nom"], parametres["prenom"], parametres["adresse"], parametres["numeroTel"]);
+                }
+                else
+                {   //type association
+                    nouveauLieu = new StockageAssociation(parametres["nom"], parametres["prenom"], parametres["adresse"], parametres["numeroTel"]);
+                }
+
+            }
+            return nouveauLieu;
+
+        }
 
     }
 }
