@@ -45,7 +45,7 @@ namespace TD7_8
                      () => Console.WriteLine(Adherent.Count),
                      () => Console.WriteLine(Don.Count),
                      () => Console.WriteLine(Recherche.RechercheDonStatut("accepte").Count),
-                     () => Console.WriteLine(Recherche.RechercheDonStatutVolumineux("accepte").Count/ObjetVolumineux.Count),
+                     () => Console.WriteLine(Recherche.RechercheDonStatutVolumineux("accepte").Count/Don.TrouverDon<ObjetVolumineux>(x => true).Count),
                      Rien },
                      new string[] { "Obtenir la moyenne de temps entre la reception et le retrait des dons",
                          "Obtenir la moyenne de prix dans les dépot-ventes",
