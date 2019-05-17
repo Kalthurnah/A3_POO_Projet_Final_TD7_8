@@ -37,7 +37,7 @@ namespace TD7_8
         public static void MenuStatistiques()
         {
             sousMenu moyChoisie = InteractionUtilisateur.DemanderChoixObjet<sousMenu>("Menu :",
-                 new sousMenu[] { () => Console.WriteLine(LieuStockage.MoyenneTemps()), () => Console.WriteLine(DepotVente.MoyennePrixGenerale()),
+                 new sousMenu[] { () => Console.WriteLine(LieuStockage.MoyenneDureeStockage()), () => Console.WriteLine(DepotVente.MoyennePrixGenerale()),
                      () => Console.WriteLine(Beneficiaire.MoyenneAge()), Rien },
                      new string[] { "Obtenir la moyenne de temps entre la receptione et le retrait des dons",
                          "Obtenir la moyenne de prix dans les dépot-vente", 
