@@ -39,10 +39,10 @@ namespace TD7_8
             sousMenu moyChoisie = InteractionUtilisateur.DemanderChoixObjet<sousMenu>("Menu :",
                  new sousMenu[] { () => Console.WriteLine(LieuStockage.MoyenneDureeStockageGenerale()), () => Console.WriteLine(DepotVente.MoyennePrixGenerale()),
                      () => Console.WriteLine(Beneficiaire.MoyenneAge()), () => Console.WriteLine(Beneficiaire.Count), ()=>Console.WriteLine(Adherent.Count),
-                     Rien },
+                     () => Console.WriteLine(Don.Count), Rien },
                      new string[] { "Obtenir la moyenne de temps entre la receptione et le retrait des dons",
                          "Obtenir la moyenne de prix dans les dépot-vente", "Obetnir la moyenne d'âge des bénéficiaire",
-                         "Obtenir le nombre de bénéficiaires", "Obtenir le nombre d'adhérents", "Quitter" });
+                         "Obtenir le nombre de bénéficiaires", "Obtenir le nombre d'adhérents", "Obtenir le nombre de propositions de dons", "Quitter" });
             moyChoisie();
         }
 
