@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace TD7_8
 {
@@ -9,13 +10,13 @@ namespace TD7_8
 
 
 
-        protected SortedList<DateTime, Don> donsStockes;
-        protected SortedList<DateTime, DonLegue> donsLegues;
+        protected SortedList<int, Don> donsStockes;
+        protected SortedList<int, DonLegue> donsLegues;
 
         public LieuStockage(string nom, string prenom, string adresse, string numeroTel) : base(nom, prenom, adresse, numeroTel)
         {
-            donsStockes = new SortedList<DateTime, Don>();
-            donsLegues = new SortedList<DateTime, DonLegue>();
+            donsStockes = new SortedList<int, Don>();
+            donsLegues = new SortedList<int, DonLegue>();
             lieuxStockage.Add(this);
         }
 
@@ -23,12 +24,32 @@ namespace TD7_8
         {
             throw new NotImplementedException();
             //TODO
+        public static double MoyenneDureeStockageGenerale()
+        {
+            double moy = 0;
+            foreach (LieuStockage lieuStockage in lieuxStockage)
+            {
+                moy += lieuStockage.MoyenneDureeStockage();
+            }
+            if (lieuxStockage.Count != 0)
+            {
+                moy = moy / lieuxStockage.Count;
+            }
+            return moy;
         }
 
-        public DonLegue LeguerObjet()
+        public double MoyenneDureeStockage()
         {
-            //TODO
-            throw new NotImplementedException();
+            double moy = 0;
+            foreach (DonLegue donLegue in donsLegues.Values)
+            {
+                moy += (donLegue.DateLegue - donLegue.RefDonInitial.DateReception).Days;
+            }
+            if (donsLegues.Count != 0)
+            {
+                moy = moy / lieuxStockage.Count;
+            }
+            return moy;
         }
 
 
