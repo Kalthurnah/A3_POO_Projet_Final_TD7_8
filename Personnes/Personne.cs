@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.IO;
-using System.Text;
-using System.Threading.Tasks;
+using System.Linq;
 
 namespace TD7_8
 {
@@ -50,7 +48,7 @@ namespace TD7_8
             personnes.Add(this);
         }
 
-            public static void ImporterCSV<T>(string nomFichier) where T : Personne
+        public static void ImporterCSV<T>(string nomFichier) where T : Personne
         {
             StreamReader fichLect = new StreamReader(nomFichier);
             char[] sep = new char[1] { ';' };
@@ -73,7 +71,7 @@ namespace TD7_8
                     prenom = datas[4];
                     adresse = datas[2];
                     tel = datas[3];
-                    if(typeof(T)==typeof(Beneficiaire))
+                    if (typeof(T) == typeof(Beneficiaire))
                     {
                         date = DateTime.ParseExact(datas[5], "dd/MM/yyyy", null);
                         Beneficiaire beneficiaire = new Beneficiaire(date, nom, prenom, adresse, tel);
@@ -83,7 +81,7 @@ namespace TD7_8
                         switch (datas[5])
                         {
                             case "membre":
-                                statut = Adherent.Fonction.Membre ;
+                                statut = Adherent.Fonction.Membre;
                                 break;
                             case "tresorier":
                                 statut = Adherent.Fonction.Tresorier;
@@ -101,12 +99,28 @@ namespace TD7_8
             }
             Console.WriteLine("Importation terminée.");
         }
-        
+
         public static List<T> TrouverInstance<T>(Predicate<T> predicate) where T : Personne
         {
             List<T> personnesTypees = personnes.OfType<T>().ToList();
             return personnesTypees.FindAll(predicate);
         }
-        
+
+        delegate Personne CreateurPersonne();
+        public static Personne InterfaceCreation()
+        {
+            CreateurPersonne createurChoisi = InteractionUtilisateur.DemanderChoixObjet<CreateurPersonne>("Quel est le type de personnes à créer ?",
+                new CreateurPersonne[] { Adherent.InterfaceCreation,
+                    Donateur.InterfaceCreation,
+                    Beneficiaire.InterfaceCreation},
+             new string[] { "Adhérent",
+                 "Donateur",
+                 "Bénéficiaire"             }
+             );
+            //TODO AJOUTER & creer LES CREATEURS
+            Personne personneCree = createurChoisi();//Lance l'interface de création pour l'objet choisi.
+            return personneCree;
+        }
+
     }
 }
