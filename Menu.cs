@@ -47,7 +47,7 @@ namespace TD7_8
                      Rien },
                      new string[] { "Obtenir la moyenne de temps entre la receptione et le retrait des dons",
                          "Obtenir la moyenne de prix dans les dépot-vente",
-                         "Obetnir la moyenne d'âge des bénéficiaire",
+                         "Obtenir la moyenne d'âge des bénéficiaire",
                          "Obtenir le nombre de bénéficiaires",
                          "Obtenir le nombre d'adhérents",
                          "Obtenir le nombre de propositions de dons",
