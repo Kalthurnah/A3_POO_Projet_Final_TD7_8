@@ -10,6 +10,7 @@ namespace TD7_8
         public Couvert(int nombreDePieces,double prix=0) : base(nombreDePieces,prix)
         {
         }
+
         static public new Materiel InterfaceCreation()
         {
             bool valide = false;
