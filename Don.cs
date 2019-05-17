@@ -50,7 +50,7 @@ namespace TD7_8
             listeTrouverDon.AddRange(donsArchives.FindAll(predicate));
             return listeTrouverDon;
         }
-        public static List<Don> TrouverDon<T>(Predicate<Materiel> predicate) where T:Materiel
+        public static List<Don> TrouverDon<T>(Predicate<Materiel> predicate) where T : Materiel
         {
             List<Don> listeTrouverDon = new List<Don>(donsDisponibles);
             listeTrouverDon.AddRange(donsArchives);
@@ -69,7 +69,7 @@ namespace TD7_8
         public Adherent AdherentTraitantDossier { get => adherentTraitantDossier; }
         public LieuStockage LieuStockageDon { get => lieuStockageDon; }
 
-        public Don(Materiel materielDonne, Donateur donateur, DateTime dateReception string descriptionComplementaire = "")
+        public Don(Materiel materielDonne, Donateur donateur, DateTime dateReception, string descriptionComplementaire = "")
         {
             dernierIdDonne++;
             idDon = dernierIdDonne;
@@ -86,10 +86,9 @@ namespace TD7_8
             this.statut = StatutDon.EnAttente;
             this.adherentTraitantDossier = null;
             this.lieuStockageDon = null;
-
+            this.dateReception = dateReception;
             //On l'ajoute à la file d'attente des dons non traités.
             donsEnAttenteTraitement.Enqueue(this);
-            this.dateReception = dateReception;
         }
 
 
@@ -168,7 +167,6 @@ namespace TD7_8
         {
             Materiel materiel = Materiel.InterfaceCreation();//TODO
             Donateur donateur = InteractionUtilisateur.RechercherUnElement<Donateur>(Recherche.RechercheParNomPersonneTypee<Donateur>, demanderChoix: true, "nom");
-            LieuStockage nouveauLieu;
             Dictionary<string, string> parametres = InteractionUtilisateur.DemanderParametres(new string[] { "nom", "prenom", "adresse", "numeroTel" });
             DateTime dateReception = InteractionUtilisateur.DemanderDateTime();
             Console.WriteLine("Entrez une description. (Ou laissez la vide)");
