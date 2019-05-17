@@ -17,7 +17,7 @@ namespace TD7_8
             Personne.ImporterCSV<Beneficiaire>("Beneficiaires.txt");
             Personne.ImporterCSV<Adherent>("Adherents.txt");
 
-            Menu.sousMenu quitter = delegate () { return; };
+            Menu.sousMenu quitter = delegate () { Environment.Exit(0); };
             do
             {
                 Menu.sousMenu menuChoisi = InteractionUtilisateur.DemanderChoixObjet<Menu.sousMenu>("Menu :",
