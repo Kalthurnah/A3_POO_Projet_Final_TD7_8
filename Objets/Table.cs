@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TD7_8
 {
-    public class Table : MobilierSalleCuisine, ICreableInterface<Materiel>
+    public class Table : MobilierSalleCuisine
     {
         /// <summary>
         /// Enum contenant les types de table existants
