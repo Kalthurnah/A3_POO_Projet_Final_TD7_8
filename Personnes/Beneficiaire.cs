@@ -37,15 +37,13 @@ namespace TD7_8
         public static double MoyenneAge()
         {
             double moy = 0;
-            int nb = 0;
             foreach (Beneficiaire beneficiaire in personnes.OfType<Beneficiaire>())
             {//On itère parmi uniquement les bénéficiaires de notre liste de personnes enregistrées.
-                nb++;
                 moy += beneficiaire.Age;
             }
-            if (nb != 0)
+            if (Count != 0)
             {
-                moy = moy/nb;
+                moy = moy/Count;
             }
             return moy;
         }

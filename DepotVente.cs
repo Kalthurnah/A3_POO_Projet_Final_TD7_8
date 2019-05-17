@@ -24,15 +24,13 @@ namespace TD7_8
         public static double MoyennePrixGenerale()
         {
             double moyenne = 0;
-            int cmpt = 0;
             foreach (DepotVente depotVente in lieuxStockage.OfType<DepotVente>())
             {
                 moyenne = moyenne + depotVente.MoyennePrix();
-                cmpt++;
             }
-            if (cmpt != 0)
+            if (Count != 0)
             {
-                moyenne = moyenne / cmpt;
+                moyenne = moyenne / Count;
             }
             return moyenne;
         }
