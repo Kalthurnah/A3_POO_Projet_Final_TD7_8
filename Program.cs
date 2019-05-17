@@ -22,10 +22,15 @@ namespace TD7_8
             {
                 Menu.sousMenu menuChoisi = InteractionUtilisateur.DemanderChoixObjet<Menu.sousMenu>("Menu :",
                      new Menu.sousMenu[] { Menu.MenuImporter, Menu.MenuRecherchePersonne, Menu.MenuStatistiques, quitter },
-                     new string[] { "Importation d'autres bénéficiaires ou adhérents","Recherche de personnes", "Statistiques", "Quitter" });
+                     new string[] { "Importation d'autres bénéficiaires ou adhérents", "Recherche de personnes", "Statistiques", "Quitter" });
                 menuChoisi();
             } while (true);
-            
+
+        }
+
+        private void InitialisationValeurs()
+        {
+            //TODO Ajouter des lieux de stockage, dons, etc
         }
     }
 }
