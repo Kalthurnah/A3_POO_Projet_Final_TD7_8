@@ -64,6 +64,29 @@ namespace TD7_8
             return donLegue;
         }
 
+        public static LieuStockage InterfaceCreationLieuStockage<T>() where T : LieuStockage
+        {
+            LieuStockage nouveauLieu;
+            Dictionary<string, string> parametres = InteractionUtilisateur.DemanderParametres(new string[] { "nom", "prenom", "adresse", "numeroTel" });
+            if (typeof(T) == typeof(DepotVente))
+            {
+                nouveauLieu = new DepotVente(parametres["nom"], parametres["prenom"], parametres["adresse"], parametres["numeroTel"]);
+            }
+            else
+            {
+                if (typeof(T) == typeof(GardeMeuble))
+                {
+                    nouveauLieu = new GardeMeuble(parametres["nom"], parametres["prenom"], parametres["adresse"], parametres["numeroTel"]);
+                }
+                else
+                {   //type association
+                    nouveauLieu = new StockageAssociation(parametres["nom"], parametres["prenom"], parametres["adresse"], parametres["numeroTel"]);
+                }
+
+            }
+            return nouveauLieu;
+
+        }
 
     }
 }
