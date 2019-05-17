@@ -19,16 +19,16 @@ namespace TD7_8
 
             switch (typeChoisi)
             {
-                case 1:
+                case 0:
                     MenuRecherchePersonneMode<Adherent>();
                     break;
-                case 2:
+                case 1:
                     MenuRecherchePersonneMode<Beneficiaire>();
                     break;
-                case 3:
+                case 2:
                     MenuRecherchePersonneMode<Donateur>();
                     break;
-                case 4:
+                case 3:
                     MenuRecherchePersonneMode<Personne>();
                     break;
             }

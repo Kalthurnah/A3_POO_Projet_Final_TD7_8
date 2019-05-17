@@ -37,7 +37,7 @@ namespace TD7_8
             this.objet = DonALeguer.Objet;
             this.typeObjet = DonALeguer.TypeObjet;
             this.montant = DonALeguer.Objet.Prix;
-
+            this.dateLegue = dateLegue;
             this.description = DonALeguer.DescriptionComplementaire;
             this.beneficiaireObjet = beneficiaireObjet;
             this.lieuStockage = DonALeguer.LieuStockageDon;
