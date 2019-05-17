@@ -48,12 +48,11 @@ namespace TD7_8
         public Adherent AdherentTraitantDossier { get => adherentTraitantDossier; }
         public LieuStockage LieuStockageDon { get => lieuStockageDon; }
 
-        public Don(Materiel materielDonne, Donateur donateur, DateTime dateReception, string descriptionComplémentaire = "")
+        public Don(Materiel materielDonne, Donateur donateur, string descriptionComplementaire = "")
         {
             dernierIdDonne++;
             idDon = dernierIdDonne;
-            this.dateReception = dateReception;
-            this.descriptionComplementaire = descriptionComplémentaire;
+            this.descriptionComplementaire = descriptionComplementaire;
 
             this.objet = materielDonne;
             this.typeObjet = Objet.GetType();
@@ -69,9 +68,12 @@ namespace TD7_8
 
             //On l'ajoute à la file d'attente des dons non traités.
             donsEnAttenteTraitement.Enqueue(this);
+            dateReception = DateTime.Now;
         }
-
-
+        public Don(Materiel materielDonne, Donateur donateur, DateTime dateReception, string descriptionComplémentaire = "") : this(materielDonne, donateur, descriptionComplémentaire)
+        {
+            this.dateReception = dateReception;
+        }
 
 
         //TODO ARCHIVER DONS
