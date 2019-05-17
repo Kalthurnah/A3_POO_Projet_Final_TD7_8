@@ -15,7 +15,9 @@ namespace TD7_8
         {
             //TODO Ajouter import menu
             Personne.ImporterCSV<Beneficiaire>("Beneficiaires.txt");
+            Console.WriteLine();
             Personne.ImporterCSV<Adherent>("Adherents.txt");
+            Console.WriteLine();
 
             Menu.sousMenu quitter = delegate () { Environment.Exit(0); };
             do
