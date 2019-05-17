@@ -38,10 +38,18 @@ namespace TD7_8
             return moy;
         }
 
-        public DonLegue LeguerObjet()
+        public double MoyenneDureeStockage()
         {
-            //TODO
-            throw new NotImplementedException();
+            double moy = 0;
+            foreach (DonLegue donLegue in donsLegues.Values)
+            {
+                moy += (donLegue.DateLegue - donLegue.RefDonInitial.DateReception).Days;
+            }
+            if (donsLegues.Count != 0)
+            {
+                moy = moy / lieuxStockage.Count;
+            }
+            return moy;
         }
 
 
