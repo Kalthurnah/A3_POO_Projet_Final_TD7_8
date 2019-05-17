@@ -39,6 +39,12 @@ namespace TD7_8
 
 
         public int Identifiant { get => idDon; }
+
+        public static List<Don> TrouverDon(Predicate<Don> predicate)
+        {
+            return donsDisponibles.FindAll(predicate);
+        }
+
         public string DescriptionComplementaire { get => descriptionComplementaire; }
         public DateTime DateReception { get => dateReception; }
         public Type TypeObjet { get => typeObjet; }
