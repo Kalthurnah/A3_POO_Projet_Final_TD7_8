@@ -14,7 +14,7 @@ namespace TD7_8
         static void Main(string[] args)
         {
             //TODO Ajouter import menu
-Personne.ImporterCSV<Beneficiaire>("Beneficiaires.txt");
+            Personne.ImporterCSV<Beneficiaire>("Beneficiaires.txt");
             Personne.ImporterCSV<Adherent>("Adherents.txt");
 
             Menu.sousMenu quitter = delegate () { return; };
