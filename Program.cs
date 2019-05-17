@@ -17,7 +17,10 @@ namespace TD7_8
             Personne.ImporterCSV<Beneficiaire>("Beneficiaires.txt");
             Console.WriteLine();
             Personne.ImporterCSV<Adherent>("Adherents.txt");
-            Console.WriteLine();
+            Console.WriteLine("\nAppuyer sur une touche pour continuer;");
+
+            Console.ReadKey();
+            Console.Clear();
 
             Menu.sousMenu quitter = delegate () { Environment.Exit(0); };
             do
