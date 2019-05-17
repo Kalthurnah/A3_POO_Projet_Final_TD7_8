@@ -19,5 +19,13 @@ namespace TD7_8
         {
 
         }
+
+
+        static public new Personne InterfaceCreation()
+        {
+            Personne personneCree;
+            //TODO demander details et creer 
+            return personneCree = new Donateur();
+        }
     }
 }
