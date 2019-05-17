@@ -18,7 +18,7 @@ namespace TD7_8
             Stocke
         }
 
-        static List<Don> donsTraites = new List<Don>();
+        static List<Don> donsDisponibles = new List<Don>();
         static List<Don> donsArchives = new List<Don>();
         static Queue<Don> donsEnAttenteTraitement = new Queue<Don>();
 
