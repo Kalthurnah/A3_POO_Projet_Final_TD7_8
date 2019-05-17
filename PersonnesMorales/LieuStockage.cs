@@ -5,7 +5,7 @@ namespace TD7_8
 {
     public abstract class LieuStockage : PersonneMorale
     {
-        static List<LieuStockage> lieuxStockage = new List<LieuStockage>();//Liste statique stockant les lieux de stockage existants.
+        static protected List<LieuStockage> lieuxStockage = new List<LieuStockage>();//Liste statique stockant les lieux de stockage existants.
 
 
 
