@@ -10,6 +10,7 @@ namespace TD7_8
     {
 
         public delegate void sousMenu();
+        public delegate double fonctionMoyenne();
         public static sousMenu Rien = () => { };
         public static void MenuRecherchePersonne()
         {
@@ -32,6 +33,18 @@ namespace TD7_8
                     break;
             }
         }
+
+        public static void MenuStatistiques()
+        {
+            sousMenu moyChoisie = InteractionUtilisateur.DemanderChoixObjet<sousMenu>("Menu :",
+                 new sousMenu[] { () => Console.WriteLine(LieuStockage.MoyenneTemps()), () => Console.WriteLine(DepotVente.MoyennePrixGenerale()),
+                     () => Console.WriteLine(Beneficiaire.MoyenneAge()), Rien },
+                     new string[] { "Obtenir la moyenne de temps entre la receptione et le retrait des dons",
+                         "Obtenir la moyenne de prix dans les dépot-vente", 
+                         "Obetnir la moyenne d'âge des bénéficiaire", "Quitter" });
+            moyChoisie();
+        }
+
         public static T MenuRecherchePersonneMode<T>(bool demanderChoix = false) where T : Personne
         {
             Recherche.FonctionRecherche<T> modeDeRechercheChoisi = InteractionUtilisateur.DemanderChoixObjet<Recherche.FonctionRecherche<T>>("Choisir le mode de recherche :",
