@@ -34,6 +34,30 @@ namespace TD7_8
 
              return Don.TrouverDon(don => don.DateReception.Month == mois);
          };
+
+
+        public static FonctionRecherche<Don> RechercheDonStatut = delegate (string statut)
+        {
+            Don.StatutDon statutCherche;
+            switch (statut.ToLower())
+            {
+                case "accepte":
+                    statutCherche = Don.StatutDon.Accepte;
+                    break;
+                case "refuse":
+                    statutCherche = Don.StatutDon.Refuse;
+                    break;
+                case "stocke":
+                    statutCherche = Don.StatutDon.Stocke;
+                    break;
+                default:
+                    statutCherche = Don.StatutDon.EnAttente;
+                    break;
+            }
+
+            return Don.TrouverDon(don => don.Statut == statutCherche);
+        };
+
         #endregion
 
         //Delegate définies anonymement, lambda à l'intérieur, delegate définies pas anonymement ci dessous... On a fait le tour :P !!
