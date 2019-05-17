@@ -10,7 +10,8 @@ namespace TD7_8
     {
         static void Main(string[] args)
         {
-
+            Personne.ImporterCSV<Beneficiaire>("Beneficiaires.txt");
+            Personne.ImporterCSV<Adherent>("Adherents.txt");
             Console.ReadKey();
         }
     }
