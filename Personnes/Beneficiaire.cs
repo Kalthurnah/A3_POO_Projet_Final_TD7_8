@@ -45,7 +45,7 @@ namespace TD7_8
             }
             if (nb != 0)
             {
-                moy = nb;
+                moy = moy/nb;
             }
             return moy;
         }
