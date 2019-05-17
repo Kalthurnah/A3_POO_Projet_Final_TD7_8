@@ -42,7 +42,9 @@ namespace TD7_8
 
         public static List<Don> TrouverDon(Predicate<Don> predicate)
         {
-            return donsDisponibles.FindAll(predicate);
+            List<Don> listeTrouverDon = donsDisponibles.FindAll(predicate);
+            listeTrouverDon.AddRange(donsArchives.FindAll(predicate));
+            return listeTrouverDon;
         }
 
         public string DescriptionComplementaire { get => descriptionComplementaire; }
