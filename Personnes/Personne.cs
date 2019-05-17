@@ -9,7 +9,7 @@ namespace TD7_8
     public abstract class Personne : IIdentifiable
     {
         static protected List<Personne> personnes = new List<Personne>();//Stocke les personne créees de facon statique dans la classe Personne.
-        static int dernierIdDonne=0;// Le dernier id donné n'est pas forcément le nombre de personnes, dans le cas ou on en supprime par exemple.
+        static int dernierIdDonne = 0;// Le dernier id donné n'est pas forcément le nombre de personnes, dans le cas ou on en supprime par exemple.
         public static int Count { get => CompterPersonnesTypees<Personne>(); }//Compteur de personne, qu'on remplace dans les classes filles avec new
 
         //Attributs d'instance v .
@@ -67,6 +67,11 @@ namespace TD7_8
             return compte;
         }
 
+        public static List<T> TrouverInstance<T>(Predicate<T> predicate) where T : Personne
+        {
+            List<T> personnesTypees = personnes.OfType<T>().ToList();
+            return personnesTypees.FindAll(predicate);
+        }
 
     }
 }
