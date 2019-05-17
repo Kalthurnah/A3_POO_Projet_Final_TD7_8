@@ -50,7 +50,7 @@ namespace TD7_8
             listeTrouverDon.AddRange(donsArchives.FindAll(predicate));
             return listeTrouverDon;
         }
-        public List<Don> TrouverDon<T>(Predicate<Don> predicate) where T:Don
+        public static List<Don> TrouverDon<T>(Predicate<Materiel> predicate) where T:Materiel
         {
             List<Don> listeTrouverDon = new List<Don>(donsDisponibles);
             listeTrouverDon.AddRange(donsArchives);
