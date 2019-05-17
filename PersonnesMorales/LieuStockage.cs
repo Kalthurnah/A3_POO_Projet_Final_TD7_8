@@ -34,14 +34,34 @@ namespace TD7_8
 
         public void StockerDon(Don donAAjouter)
         {
-            throw new NotImplementedException();
-            //TODO
+            donsStockes.Add(donAAjouter.Identifiant, donAAjouter);
+        }
+
+        public static double MoyenneDureeStockageGenerale()
+        {
+            double moy = 0;
+            foreach (LieuStockage lieuStockage in lieuxStockage)
+            {
+                moy += lieuStockage.MoyenneDureeStockage();
+            }
+            if (lieuxStockage.Count != 0)
+            {
+                moy = moy / lieuxStockage.Count;
+            }
+            return moy;
         }
 
         public DonLegue LeguerObjet()
         {
             //TODO
             throw new NotImplementedException();
+        }
+
+        public DonLegue LeguerDon(Don donALeguer, Beneficiaire beneficiaire, DateTime dateLeguee)
+        {
+            DonLegue donLegue = new DonLegue(donALeguer, beneficiaire, dateLeguee);
+            donsStockes.Remove(donLegue.Identifiant);
+            return donLegue;
         }
 
 
