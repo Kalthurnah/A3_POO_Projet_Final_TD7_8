@@ -12,7 +12,7 @@ namespace TD7_8
         }
 
         //TODO CHECK LES TYPES (Materiel)
-        static public new Materiel InterfaceCreationMateriel()
+        static public new Materiel InterfaceCreation()
         {
             bool valid = false;
             double longueur = 0;
