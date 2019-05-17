@@ -41,7 +41,8 @@ namespace TD7_8
                     Matelas.InterfaceCreation,
                     Couvert.InterfaceCreation,
                     Assiette.InterfaceCreation,
-                    Cuisiniere.InterfaceCreation},
+                    Cuisiniere.InterfaceCreation,
+                Table.InterfaceCreation},
              new string[] { "Réfrigérateur",
                  "Lave-Linge",
                  "Table de chevet",
@@ -50,7 +51,8 @@ namespace TD7_8
                  "Matelas",
                  "Couvert",
                  "Assiette",
-                 "Cuisinière"}
+                 "Cuisinière",
+                 "Table"}
              );
             //TODO AJOUTER & creer LES CREATEURS
             Materiel materielCree = createurChoisi();//Lance l'interface de création pour l'objet choisi.
