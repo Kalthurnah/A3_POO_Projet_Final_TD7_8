@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TD7_8
 {
-    public class Refrigerateur : ElectroMenager
+    public class Refrigerateur : ElectroMenager, ICreableInterface<Materiel>
     {
         public Refrigerateur(double longueur, double largeur, double hauteur, double prix) : base(longueur, largeur, hauteur, prix)
         {

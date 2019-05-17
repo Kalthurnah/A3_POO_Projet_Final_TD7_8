@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TD7_8
 {
-    public class Table : MobilierSalleCuisine
+    public class Table : MobilierSalleCuisine, ICreableInterface<Materiel>
     {
         /// <summary>
         /// Enum contenant les types de table existants
@@ -31,7 +31,7 @@ namespace TD7_8
         private FormeTable Forme { get => forme; }
         private TypeTable Type { get => type; }
 
-        public Table(TypeTable type, FormeTable forme, double longueur, double largeur, double hauteur, double prix=0) : base(longueur, largeur, hauteur, prix)
+        public Table(TypeTable type, FormeTable forme, double longueur, double largeur, double hauteur, double prix = 0) : base(longueur, largeur, hauteur, prix)
         {
             this.type = type;
             this.forme = forme;

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TD7_8
 {
-    public class Cuisiniere : ElectroMenager, ICreableInterface<object>
+    public class Cuisiniere : ElectroMenager, ICreableInterface<Materiel>
     {
         private int puissance;
         private int nombrePlaques;

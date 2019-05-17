@@ -30,7 +30,7 @@ namespace TD7_8
 
         //delegate qui retourne 
         public delegate Materiel CreateurMateriel();
-        public static Materiel InterfaceCreationMateriel()
+        public static Materiel InterfaceCreation()
         {
             CreateurMateriel createurChoisi = InteractionUtilisateur.DemanderChoixObjet<CreateurMateriel>("Quel est le type de matériel à créer ?",
                 new CreateurMateriel[] { Refrigerateur.InterfaceCreationMateriel, LaveLinge.InterfaceCreationMateriel },
