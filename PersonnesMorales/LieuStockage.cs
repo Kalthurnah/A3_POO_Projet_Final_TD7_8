@@ -19,6 +19,19 @@ namespace TD7_8
             lieuxStockage.Add(this);
         }
 
+        /// <summary>
+        /// Trouve les instances de lieu de stockage correspondant à la condition donnée
+        /// </summary>
+        /// <typeparam name="T">Type de Lieux de stockages qu'on veut obtenir</typeparam>
+        /// <param name="predicat"></param>
+        /// <returns></returns>
+        public static List<T> TrouverInstance<T>(Predicate<T> predicat) where T : LieuStockage
+        {
+            List<T> lieuxStockageTypes = lieuxStockage.OfType<T>().ToList();
+            return lieuxStockageTypes.FindAll(predicat);
+        }
+
+
         public void StockerDon(Don donAAjouter)
         {
             throw new NotImplementedException();
