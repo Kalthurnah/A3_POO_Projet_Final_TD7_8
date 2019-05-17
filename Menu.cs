@@ -33,7 +33,7 @@ namespace TD7_8
                     break;
             }
         }
-        public Don void MenuRechercheDon()
+        public static Don MenuRechercheDon()
         {
             int typeChoisi = InteractionUtilisateur.DemanderChoixInt("Choisir le type d'objet du don à chercher :",
                 new string[] { "Matériel (Recherche globale)", "Objet volumineux", "Vaisselle", "Assiette", "Couvert" });
@@ -68,22 +68,24 @@ namespace TD7_8
                 case 8:
                     return MenuRechercheDonMode<>();
                     break;
+                default:
+                    return MenuRechercheDonMode<Materiel>();
             }
         }
         public static Don MenuRechercheDonMode<T>() where T : Materiel
         {
-
-            Recherche.FonctionRecherche<T> modeDeRechercheChoisi = InteractionUtilisateur.DemanderChoixObjet<Recherche.FonctionRecherche<T>>("Choisir le mode de recherche :",
-                new Recherche.FonctionRecherche<T>[] {
-                    Recherche.RechercheDonStatut,
+            //Todo fonction qui fait une recherge par ype/mois d'un type donné.
+            Recherche.FonctionRecherche<Don> modeDeRechercheChoisi = InteractionUtilisateur.DemanderChoixObjet<Recherche.FonctionRecherche<Don>>("Choisir le mode de recherche :",
+                new Recherche.FonctionRecherche<Don>[] {
+                    Recherche.RechercheParStatutType<T>,
                     Recherche.RechercheParMoisDon,
                 },
-                new string[] { "Recherche par statut (en ", "Recherche par numéro de téléphone" }
+                new string[] { "Recherche par  ", "Recherche par " }
                 );
             //on obtient la fonction de recherche correspondant au choix utilisateur
 
 
-            return InteractionUtilisateur.RechercherUnElement<T>(modeDeRechercheChoisi);
+            return InteractionUtilisateur.RechercherUnElement<Don>(modeDeRechercheChoisi);
         }
 
         public static void MenuStatistiques()

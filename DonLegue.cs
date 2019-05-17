@@ -58,8 +58,8 @@ namespace TD7_8
         public static DonLegue InterfaceCreation()
         {
             Don donALeguer = Menu.MenuRechercheDon();
-
-            return DonLegue donLegue = donALeguer.Leguer();
+            //TODO DEMANDER BENEFICIAIRE
+            return donALeguer.Leguer();
         }
 
     }
