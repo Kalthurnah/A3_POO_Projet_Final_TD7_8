@@ -61,7 +61,7 @@ namespace TD7_8
         public Adherent AdherentTraitantDossier { get => adherentTraitantDossier; }
         public LieuStockage LieuStockageDon { get => lieuStockageDon; }
 
-        public Don(Materiel materielDonne, Donateur donateur, string descriptionComplementaire = "")
+        public Don(Materiel materielDonne, Donateur donateur, DateTime dateReception string descriptionComplementaire = "")
         {
             dernierIdDonne++;
             idDon = dernierIdDonne;
@@ -81,13 +81,8 @@ namespace TD7_8
 
             //On l'ajoute à la file d'attente des dons non traités.
             donsEnAttenteTraitement.Enqueue(this);
-            dateReception = DateTime.Now;
-        }
-        public Don(Materiel materielDonne, Donateur donateur, DateTime dateReception, string descriptionComplémentaire = "") : this(materielDonne, donateur, descriptionComplémentaire)
-        {
             this.dateReception = dateReception;
         }
-        //TODO ARCHIVER DONS
 
 
 
