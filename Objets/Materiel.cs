@@ -32,15 +32,13 @@ namespace TD7_8
         public delegate Materiel CreateurMateriel();
         public static Materiel InterfaceCreationMateriel()
         {
-            InteractionUtilisateur.DemanderChoixObjet<CreateurMateriel>("Quel est le type de matériel à créer ?",
+            CreateurMateriel createurChoisi = InteractionUtilisateur.DemanderChoixObjet<CreateurMateriel>("Quel est le type de matériel à créer ?",
                 new CreateurMateriel[] { Refrigerateur.InterfaceCreationMateriel, LaveLinge.InterfaceCreationMateriel },
              new string[] { "Réfrigérateur", "Lave-Linge" }
-                );
-            //AJOUTER LES CREATEURS
-
-
-            //TODO sous menu avec un choix de quel materiel creer, qui redirige à des delegues de créations de materiels dans les sous classes.
-            throw new NotImplementedException();
+             );
+            //TODO AJOUTER & creer LES CREATEURS
+            Materiel materielCree = createurChoisi();//Lance l'interface de création pour l'objet choisi.
+            return materielCree;
         }
 
     }
