@@ -71,5 +71,15 @@ namespace TD7_8
                      new string[] { "Valider les dons en attente", "Quitter" });
             menuChoisi();
         }
+
+        public static void MenuImporter()
+        {
+            Console.WriteLine("Donnez le nom du fichier à importer : ");
+            string nomFichier = Console.ReadLine();
+            sousMenu menuChoisi = InteractionUtilisateur.DemanderChoixObjet<sousMenu>("Qu'allez-vous importer ?",
+                 new sousMenu[] {()=> Personne.ImporterCSV<Beneficiaire>(nomFichier), () => Personne.ImporterCSV<Adherent>(nomFichier), Rien },
+                     new string[] { "Des bénéficiaires","Des adhérents", "Quitter" });
+            menuChoisi();
+        }
     }
 }
