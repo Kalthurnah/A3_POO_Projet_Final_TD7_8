@@ -163,10 +163,17 @@ namespace TD7_8
 
 
 
+        //Todo com
         public static Don InterfaceCreationDon()
         {
-            Don don=null;//todo rem
-            Materiel materiel = Materiel.InterfaceCreationMateriel();//TODO
+            Materiel materiel = Materiel.InterfaceCreation();//TODO
+            Donateur donateur = InteractionUtilisateur.RechercherUnElement<Donateur>(Recherche.RechercheParNomPersonneTypee<Donateur>, demanderChoix: true, "nom");
+            LieuStockage nouveauLieu;
+            Dictionary<string, string> parametres = InteractionUtilisateur.DemanderParametres(new string[] { "nom", "prenom", "adresse", "numeroTel" });
+            DateTime dateReception = InteractionUtilisateur.DemanderDateTime();
+            Console.WriteLine("Entrez une description. (Ou laissez la vide)");
+            string description = Console.ReadLine();
+            Don don = new Don(materiel, donateur, dateReception, description);
             //don = new Don(TODO);
 
             return don;

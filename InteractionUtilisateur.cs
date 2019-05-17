@@ -100,6 +100,29 @@ namespace TD7_8
             return choix;
         }
 
+        public static DateTime DemanderDateTime(string message="")
+        {
+            Console.WriteLine($"Entrer une date au format \"dd/MM/yyyy\".");
+            Console.WriteLine($"{message}");
+            string lecture;
+            DateTime date = DateTime.Now;
+            bool valid;
+            do
+            {
+                lecture = Console.ReadLine();
+                try
+                {
+                    date = DateTime.ParseExact(lecture, "dd/MM/yyyy", null);
+                    valid = true;
+                }
+                catch
+                {
+                    valid = false;
+                    Console.WriteLine("Date invalide. Réessayer");
+                }
+            } while (!valid);
+            return date;
+        }
 
         /// <summary>
         /// Demande à l'utilisateur une entrée pour une recherche, et lui permet de choisir un objet parmi les résultats de cette recherche.

@@ -6,7 +6,7 @@
       <Compartment Name="Properties" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AEAAAAAAAAAAAAAAAACAIEQAACAAIABAAGAgQABAACQ=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAACAIEQAACAAIABAAGAgQABAACQ=</HashCode>
       <FileName>Personnes\Personne.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -152,7 +152,6 @@
       <Field Name="donsArchives" />
       <Field Name="donsEnAttenteTraitement" />
     </ShowAsCollectionAssociation>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="TD7_8.Armoire">
     <Position X="14.5" Y="21.25" Width="1.5" />
@@ -160,6 +159,7 @@
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Objets\Armoire.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="TD7_8.Chevet">
     <Position X="16.75" Y="21.25" Width="1.5" />
@@ -167,6 +167,7 @@
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Objets\Chevet.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="TD7_8.Matelas">
     <Position X="19" Y="21.25" Width="1.5" />
@@ -174,6 +175,7 @@
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Objets\Matelas.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="TD7_8.Table">
     <Position X="24" Y="21.25" Width="1.75" />
@@ -196,6 +198,7 @@
       <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAI=</HashCode>
       <FileName>Objets\Table.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="TD7_8.Chaise">
     <Position X="21.25" Y="21.25" Width="1.5" />
@@ -203,6 +206,7 @@
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Objets\Chaise.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="TD7_8.Materiel">
     <Position X="25.25" Y="12.5" Width="1.5" />
@@ -214,7 +218,7 @@
       </Delegate>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAACAAACAAAAAAAAAAQAAAAFAAAg=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAACAAAACAAAAAQAAAAFAAAA=</HashCode>
       <FileName>Objets\Materiel.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="1.226" />
@@ -222,23 +226,26 @@
   <Class Name="TD7_8.Cuisiniere">
     <Position X="28.75" Y="21.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAEAAAA=</HashCode>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAABAAACAQAAAAAAAAEAAAA=</HashCode>
       <FileName>Objets\Cuisiniere.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="TD7_8.Refrigerateur">
     <Position X="26.5" Y="21.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
       <FileName>Objets\Refrigerateur.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="TD7_8.LaveLinge">
     <Position X="31" Y="21.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
       <FileName>Objets\LaveLinge.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="TD7_8.DonLegue">
     <Position X="19" Y="11.25" Width="3" />
@@ -294,21 +301,21 @@
       <Path>
         <Point X="21.5" Y="6.887" />
         <Point X="21.5" Y="7.2" />
-        <Point X="22.292" Y="7.2" Type="JumpStart" />
+        <Point X="22.26" Y="7.2" Type="JumpStart" />
         <Point X="22.458" Y="7.2" Type="JumpEnd" />
         <Point X="23.75" Y="7.2" />
         <Point X="23.75" Y="7.5" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PersonnesMorales\GardeMeuble.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.DepotVente">
     <Position X="18.5" Y="7.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAEAAAgAAAAAAgAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAACAEAAAgAAAAAAgAAAA=</HashCode>
       <FileName>DepotVente.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -324,6 +331,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
       <FileName>IIdentifiable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TD7_8.ICreableInterface&lt;T&gt;" Collapsed="true">
+    <Position X="26" Y="16.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ICreableInterface.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />
