@@ -22,6 +22,11 @@ namespace TD7_8
         static List<Don> donsArchives = new List<Don>();
         static Queue<Don> donsEnAttenteTraitement = new Queue<Don>();
 
+        public static int Count
+        {
+            get { return (donsArchives.Count + donsTraites.Count + donsEnAttenteTraitement.Count); }
+        }
+
         private static int dernierIdDonne = 0;
 
         //TODO constructeur, LIST DONS / OBJETS LEGUES DS OBJETS LEUGES , ETC PR TRACABILITE

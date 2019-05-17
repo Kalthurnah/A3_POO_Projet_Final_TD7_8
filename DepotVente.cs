@@ -21,6 +21,22 @@ namespace TD7_8
         //Todo override Add element dans le dépot vente pour incrémenter le solde en plus de rajouter l'élém ds la liste
         //Idem pr Delete
 
+        public static double MoyennePrixGenerale()
+        {
+            double moyenne = 0;
+            int cmpt = 0;
+            foreach (DepotVente depotVente in lieuxStockage.OfType<DepotVente>())
+            {
+                moyenne = moyenne + depotVente.MoyennePrix();
+                cmpt++;
+            }
+            if (cmpt != 0)
+            {
+                moyenne = moyenne / cmpt;
+            }
+            return moyenne;
+        }
+
         //On retourne la moyenne du prix des objets présents dans le DepotVente
         public double MoyennePrix()
         {
