@@ -27,7 +27,7 @@ namespace TD7_8
         protected Fonction fonctionAdherent;
 
         public Fonction FonctionAdherent { get => fonctionAdherent; set => fonctionAdherent = value; }
-        public new static int Count { get => CompterPersonnesTypees<Adherent>(); }
+        public new static int Count { get => personnes.OfType<Adherent>().Count<Adherent>(); }
 
         /// <summary>
         /// Crée une instance de la classe Adhérent, selon son statut

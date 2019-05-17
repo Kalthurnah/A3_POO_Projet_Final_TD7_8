@@ -21,6 +21,8 @@ namespace TD7_8
         //Todo override Add element dans le dépot vente pour incrémenter le solde en plus de rajouter l'élém ds la liste
         //Idem pr Delete
 
+        public static int Count { get => lieuxStockage.OfType<DepotVente>().Count<DepotVente>(); }
+
         public static double MoyennePrixGenerale()
         {
             double moyenne = 0;
@@ -43,7 +45,7 @@ namespace TD7_8
 
             double moy = 0;// On initialise la moyenne à zéro
             int nb = donsStockes.Count();// On stocke la taille de notre liste de matériel
-            // Pour chaque don dans cette liste on ajoute la valeur de l'objet à la moyenne
+                                         // Pour chaque don dans cette liste on ajoute la valeur de l'objet à la moyenne
             foreach (Don don in donsStockes.Values)
             {
                 moy += don.Objet.Prix;

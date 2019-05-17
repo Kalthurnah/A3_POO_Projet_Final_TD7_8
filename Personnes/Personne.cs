@@ -11,7 +11,7 @@ namespace TD7_8
     {
         static protected List<Personne> personnes = new List<Personne>();//Stocke les personne créees de facon statique dans la classe Personne.
         static int dernierIdDonne = 0;// Le dernier id donné n'est pas forcément le nombre de personnes, dans le cas ou on en supprime par exemple.
-        public static int Count { get => CompterPersonnesTypees<Personne>(); }//Compteur de personne, qu'on remplace dans les classes filles avec new
+        public static int Count { get => personnes.Count(); }//Compteur de personne, qu'on remplace dans les classes filles avec new
 
         //Attributs d'instance v .
 
@@ -50,25 +50,7 @@ namespace TD7_8
             personnes.Add(this);
         }
 
-
-        /// <summary>
-        /// Méthode statique protégée, permettant de compter les personnes d'un type donné.
-        /// Elle est appelée par les propriétés individuelles des classes, commme Personne.Count ou Beneficiaire.Count
-        /// </summary>
-        /// <typeparam name="T">Type de personnes qu'on veut compter</typeparam>
-        /// <returns></returns>
-        protected static int CompterPersonnesTypees<T>() where T : Personne//Condition pour que cette méthode ne prenne que des types T héritant de Personne.
-        {
-            int compte = 0;
-            foreach (T personneTypee in personnes.OfType<T>())
-            {
-                //Pour chaque personne du type demandé
-                compte++;
-            }
-            return compte;
-        }
-        
-        public static void ImporterCSV<T>(string nomFichier) where T : Personne
+            public static void ImporterCSV<T>(string nomFichier) where T : Personne
         {
             StreamReader fichLect = new StreamReader(nomFichier);
             char[] sep = new char[1] { ';' };
