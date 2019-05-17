@@ -24,6 +24,18 @@ namespace TD7_8
         {
             throw new NotImplementedException();
             //TODO
+        public static double MoyenneDureeStockageGenerale()
+        {
+            double moy = 0;
+            foreach (LieuStockage lieuStockage in lieuxStockage)
+            {
+                moy += lieuStockage.MoyenneDureeStockage();
+            }
+            if (lieuxStockage.Count != 0)
+            {
+                moy = moy / lieuxStockage.Count;
+            }
+            return moy;
         }
 
         public DonLegue LeguerObjet()
