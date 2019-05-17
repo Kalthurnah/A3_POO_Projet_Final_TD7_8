@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace TD7_8
 {
@@ -49,6 +50,13 @@ namespace TD7_8
             listeTrouverDon.AddRange(donsArchives.FindAll(predicate));
             return listeTrouverDon;
         }
+        public List<Don> TrouverDon<T>(Predicate<Don> predicate) where T:Don
+        {
+            List<Don> listeTrouverDon = new List<Don>(donsDisponibles);
+            listeTrouverDon.AddRange(donsArchives);
+            listeTrouverDon.OfType<T>().ToList().FindAll(predicate);
+            return listeTrouverDon;
+        }
 
         public string DescriptionComplementaire { get => descriptionComplementaire; }
         public DateTime DateReception { get => dateReception; }
@@ -86,6 +94,31 @@ namespace TD7_8
 
 
 
+
+        //TODO ARCHIVER DONS
+
+        private void TraiterDonEnAttente(Adherent adherentTraitantDossier, StatutDon nouveauStatut, LieuStockage lieuStockageDon = null)
+        {
+            if (statut != StatutDon.EnAttente) { throw new InvalidOperationException("Opération invalide : Le don n'est pas en attente"); }
+
+            this.adherentTraitantDossier = adherentTraitantDossier;
+            this.statut = nouveauStatut;
+
+            switch (statut)
+            {
+                case StatutDon.Stocke:
+                    this.lieuStockageDon = lieuStockageDon ?? throw new ArgumentNullException("lieuStockageDon", "le lieu de stockage du don est null");
+                    // La syntaxe "a??b" s'apparente à un if(x!=null){a}else{b} - cf "null-coalescing operator"
+                    lieuStockageDon.StockerDon(this);
+                    goto case StatutDon.Accepte;//Une fois que le don est stocké, on fait la même chose qu'un don accepté.
+                case StatutDon.Accepte:
+                    donsDisponibles.Add(this);
+                    break;
+                case StatutDon.Refuse:
+                    donsArchives.Add(this);
+                    break;
+            }
+        }
         /// <summary>
         /// Interface de traitement de dons, qui affiche le dernier traitement en attente dans la file,
         /// demande les informations à l'utilisateur, puis traite le don en l'enlevant de la file d'attente des dons en attente
@@ -128,31 +161,6 @@ namespace TD7_8
             Console.ReadKey();
         }
 
-
-        //TODO ARCHIVER DONS
-
-        private void TraiterDonEnAttente(Adherent adherentTraitantDossier, StatutDon nouveauStatut, LieuStockage lieuStockageDon = null)
-        {
-            if (statut != StatutDon.EnAttente) { throw new InvalidOperationException("Opération invalide : Le don n'est pas en attente"); }
-
-            this.adherentTraitantDossier = adherentTraitantDossier;
-            this.statut = nouveauStatut;
-
-            switch (statut)
-            {
-                case StatutDon.Stocke:
-                    this.lieuStockageDon = lieuStockageDon ?? throw new ArgumentNullException("lieuStockageDon", "le lieu de stockage du don est null");
-                    // La syntaxe "a??b" s'apparente à un if(x!=null){a}else{b} - cf "null-coalescing operator"
-                    lieuStockageDon.StockerDon(this);
-                    goto case StatutDon.Accepte;//Une fois que le don est stocké, on fait la même chose qu'un don accepté.
-                case StatutDon.Accepte:
-                    donsDisponibles.Add(this);
-                    break;
-                case StatutDon.Refuse:
-                    donsArchives.Add(this);
-                    break;
-            }
-        }
 
 
         public static Don InterfaceCreationDon()
