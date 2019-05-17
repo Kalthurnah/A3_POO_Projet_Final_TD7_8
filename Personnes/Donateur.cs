@@ -7,7 +7,7 @@ namespace TD7_8
 {
     public class Donateur : Adherent
     {
-        public new static int Count { get => CompterPersonnesTypees<Donateur>(); }
+        public new static int Count { get => personnes.OfType<Donateur>().Count<Donateur>(); }
 
         /// <summary>
         /// Crée une instance de la classe Donateur, selon son statut

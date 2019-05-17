@@ -16,14 +16,14 @@ namespace TD7_8
 
         public DateTime DateNaissance { get => dateNaissance; }
 
-        public new static int Count { get => CompterPersonnesTypees<Beneficiaire>(); }
+        public new static int Count { get => personnes.OfType<Beneficiaire>().Count<Beneficiaire>(); }
 
         /// <summary>
         /// Accesseur pour obtenir l'age selon l'année actuelle à l'execution. Ne calcule qu'avec les années sans se préoccuper du mois / jour
         /// </summary>
         public int Age { get => (DateTime.Now.Year - dateNaissance.Year); }
 
-        
+
         /// <summary>
         /// Crée une instance de la classe Beneficiaire
         /// </summary>
@@ -43,7 +43,7 @@ namespace TD7_8
             }
             if (Count != 0)
             {
-                moy = moy/Count;
+                moy = moy / Count;
             }
             return moy;
         }
