@@ -28,7 +28,7 @@ namespace TD7_8
                 case 2:
                     MenuRecherchePersonneMode<Donateur>();
                     break;
-                case 3:
+                case 3 :
                     MenuRecherchePersonneMode<Personne>();
                     break;
             }
@@ -42,6 +42,7 @@ namespace TD7_8
                      () => Console.WriteLine(Beneficiaire.MoyenneAge()),
                      () => Console.WriteLine(Beneficiaire.Count),
                      () => Console.WriteLine(Donateur.Count),
+                     () => Console.WriteLine(Adherent.Count),
                      () => Console.WriteLine(Don.Count),
                      () => Console.WriteLine(Recherche.RechercheDonStatut("accepte").Count),
                      Rien },
@@ -49,7 +50,8 @@ namespace TD7_8
                          "Obtenir la moyenne de prix dans les dépot-ventes",
                          "Obtenir la moyenne d'âge des bénéficiaires",
                          "Obtenir le nombre de bénéficiaires",
-                         "Obtenir le nombre de donateurs",
+                         "Obtenir le nombre de donateur",
+                         "Obtenir le nombre d'adhérents",
                          "Obtenir le nombre de propositions de dons",
                          "Afficher le nombre de dons acceptés",
                          "Quitter" });
