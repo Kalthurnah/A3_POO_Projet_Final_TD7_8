@@ -162,9 +162,9 @@ namespace TD7_8
 
         public static Don InterfaceCreationDon()
         {
-            Don don;
+            Don don=null;//todo rem
             Materiel materiel = Materiel.InterfaceCreationMateriel();//TODO
-            don = new Don(TODO);
+            //don = new Don(TODO);
 
             return don;
 

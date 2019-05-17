@@ -7,8 +7,37 @@ namespace TD7_8
 {
     public class LaveLinge : ElectroMenager
     {
-        public LaveLinge(double longueur, double largeur, double hauteur, double prix) : base(longueur, largeur, hauteur,prix)
+        public LaveLinge(double longueur, double largeur, double hauteur, double prix) : base(longueur, largeur, hauteur, prix)
         {
+        }
+
+        //TODO CHECK LES TYPES (Materiel)
+        static public new Materiel InterfaceCreationMateriel()
+        {
+            bool valid = false;
+            double longueur = 0;
+            double largeur = 0;
+            double hauteur = 0;
+            double prix = 0;
+            do
+            {
+                Dictionary<string, string> parametres = InteractionUtilisateur.DemanderParametres(new string[] { "longueur", "largeur", "hauteur", "prix" });
+
+                try
+                {
+                    longueur = Convert.ToDouble(parametres["longueur"]);
+                    largeur = Convert.ToDouble(parametres["largeur"]);
+                    hauteur = Convert.ToDouble(parametres["largeur"]);
+                    prix = Convert.ToDouble(parametres["largeur"]);
+                    valid = true;
+                }
+                catch
+                {
+                    valid = false;
+                }
+            } while (!valid);
+
+            return new LaveLinge(longueur, largeur, hauteur, prix);
         }
     }
 }
