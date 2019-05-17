@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -66,7 +67,58 @@ namespace TD7_8
             }
             return compte;
         }
+        
+        public static void ImporterCSV<T>(string nomFichier) where T : Personne
+        {
+            StreamReader fichLect = new StreamReader(nomFichier);
+            char[] sep = new char[1] { ';' };
+            string ligne = "";
+            string[] datas = new string[6];
+            DateTime date;
+            string nom;
+            string prenom;
+            string adresse;
+            string tel;
+            Adherent.Fonction statut;
+            while (fichLect.Peek() > 0)
+            {
+                ligne = fichLect.ReadLine();
+                if (ligne != "")
+                {
+                    Console.WriteLine($"Ajout du {typeof(T).Name} : " + ligne);
+                    datas = ligne.Split(sep);
+                    nom = datas[1];
+                    prenom = datas[4];
+                    adresse = datas[2];
+                    tel = datas[3];
+                    if(typeof(T)==typeof(Beneficiaire))
+                    {
 
-
+                        date = DateTime.ParseExact(datas[5], "dd/MM/yyyy", null);
+                        Beneficiaire beneficiaire = new Beneficiaire(date, nom, prenom, adresse, tel);
+                    }
+                    else
+                    {
+                        switch (datas[5])
+                        {
+                            case "membre":
+                                statut = Adherent.Fonction.Membre ;
+                                break;
+                            case "tresorier":
+                                statut = Adherent.Fonction.Tresorier;
+                                break;
+                            case "president":
+                                statut = Adherent.Fonction.President;
+                                break;
+                            default:
+                                statut = Adherent.Fonction.Membre;
+                                break;
+                        }
+                        Adherent adherent = new Adherent(statut, nom, prenom, adresse, tel);
+                    }
+                }
+            }
+            Console.WriteLine("Importation terminée.");
+        }
     }
 }
