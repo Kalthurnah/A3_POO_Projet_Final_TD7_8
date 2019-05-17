@@ -86,7 +86,7 @@ namespace TD7_8
             return objetChoisi;
         }
 
-        //TODO CHOIX
+        //TODO COMS
         public static Dictionary<string, string> DemanderParametres(string[] parametresADemander)
         {
             Dictionary<string, string> choix = new Dictionary<string, string>();
