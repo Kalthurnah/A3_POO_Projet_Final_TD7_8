@@ -21,8 +21,8 @@ namespace TD7_8
             do
             {
                 Menu.sousMenu menuChoisi = InteractionUtilisateur.DemanderChoixObjet<Menu.sousMenu>("Menu :",
-                     new Menu.sousMenu[] { Menu.MenuRecherchePersonne, quitter },
-                     new string[] { "Recherche de personnes", "Quitter" });
+                     new Menu.sousMenu[] { Menu.MenuRecherchePersonne, Menu.MenuStatistiques, quitter },
+                     new string[] { "Recherche de personnes", "Statistiques", "Quitter" });
                 menuChoisi();
             } while (true);
             
