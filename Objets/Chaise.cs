@@ -11,7 +11,7 @@ namespace TD7_8
         {
         }
 
-        static public new Materiel InterfaceCreationMateriel()
+        static public new Materiel InterfaceCreation()
         {
             bool valid = false;
             double longueur = 0;
