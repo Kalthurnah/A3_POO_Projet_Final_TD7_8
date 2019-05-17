@@ -10,6 +10,7 @@ namespace TD7_8
     /// </summary>
     public class DonLegue : IIdentifiable
     {
+        static list<DonLegue> donsLegues;
         private Materiel objet;
         private Type typeObjet;
         private Don DonInitial;
@@ -30,6 +31,12 @@ namespace TD7_8
 
         public int Identifiant { get => objet.Identifiant; }
 
+        /// <summary>
+        /// Constructeur de donLegue. Retirer l'élément de la liste des dons dispos doit être fait après l'avoir légué - ie pour leguer un don appeler don.Leguer !!
+        /// </summary>
+        /// <param name="DonALeguer"></param>
+        /// <param name="beneficiaireObjet"></param>
+        /// <param name="dateLegue"></param>
         public DonLegue(Don DonALeguer, Beneficiaire beneficiaireObjet, DateTime dateLegue)
         {
             //On obtient les infos depuis le don initial
@@ -42,7 +49,18 @@ namespace TD7_8
             this.beneficiaireObjet = beneficiaireObjet;
             this.lieuStockage = DonALeguer.LieuStockageDon;
 
+            //On ajoute le don à la liste des dons légués
+            donsLegues.Add(this);
+
         }
-            //TODO ARCHIVER UN DON EN LE LEGUANT ? (implementer don.LeguerDon() j'imagine ?)
+
+
+        public static DonLegue InterfaceCreation()
+        {
+            Don donALeguer = Menu.MenuRechercheDon();
+
+            return DonLegue donLegue = donALeguer.Leguer();
+        }
+
     }
 }

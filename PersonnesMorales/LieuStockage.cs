@@ -11,6 +11,9 @@ namespace TD7_8
         protected SortedList<int, Don> donsStockes;
         protected SortedList<int, DonLegue> donsLegues;
 
+        protected SortedList<int, Don> DonsStockes { get => donsStockes; }
+        protected SortedList<int, DonLegue> DonsLegues { get => donsLegues; }
+
         public LieuStockage(string nom, string prenom, string adresse, string numeroTel) : base(nom, prenom, adresse, numeroTel)
         {
             donsStockes = new SortedList<int, Don>();
@@ -34,6 +37,10 @@ namespace TD7_8
         public void StockerDon(Don donAAjouter)
         {
             donsStockes.Add(donAAjouter.Identifiant, donAAjouter);
+        }
+        public void LeguerDon(DonLegue donLegue) {
+            donsStockes.Remove(donLegue.Identifiant);
+            donsLegues.Add(donLegue.Identifiant, donLegue);
         }
 
         public static double MoyenneDureeStockageGenerale()
@@ -64,12 +71,6 @@ namespace TD7_8
             return moy;
         }
 
-        public DonLegue LeguerDon(Don donALeguer, Beneficiaire beneficiaire, DateTime dateLeguee)
-        {
-            DonLegue donLegue = new DonLegue(donALeguer, beneficiaire, dateLeguee);
-            donsStockes.Remove(donLegue.Identifiant);
-            return donLegue;
-        }
 
         public static LieuStockage InterfaceCreationLieuStockage<T>() where T : LieuStockage
         {

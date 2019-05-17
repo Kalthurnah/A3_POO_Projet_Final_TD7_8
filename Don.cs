@@ -87,7 +87,7 @@ namespace TD7_8
             this.adherentTraitantDossier = null;
             this.lieuStockageDon = null;
             this.dateReception = dateReception;
-            //On l'ajoute à la file d'attente des dons non traités.
+            //On l'ajoute dc à la file d'attente des dons non traités.
             donsEnAttenteTraitement.Enqueue(this);
         }
 
@@ -95,7 +95,9 @@ namespace TD7_8
 
 
         //TODO ARCHIVER DONS
-
+        /// <summary>
+        /// Traite un don précédemment en attente, et l'ajoute dans la liste adaptée. Ne pas oublier de dépiler le don de la file d'attente !
+        /// </summary>
         private void TraiterDonEnAttente(Adherent adherentTraitantDossier, StatutDon nouveauStatut, LieuStockage lieuStockageDon = null)
         {
             if (statut != StatutDon.EnAttente) { throw new InvalidOperationException("Opération invalide : Le don n'est pas en attente"); }
@@ -124,7 +126,7 @@ namespace TD7_8
         /// </summary>
         public static void InterfaceValidationDons()
         {
-            //Si il n'y a pas 
+            //Si il n'y a pas de dons en attente 
             if (donsEnAttenteTraitement.Count < 1)
             {
                 Console.WriteLine("Pas de don en attente !");
@@ -161,6 +163,17 @@ namespace TD7_8
         }
 
 
+        public DonLegue Leguer(Beneficiaire beneficiaire, DateTime dateLeguee)
+        {
+            DonLegue donLegue = new DonLegue(this, beneficiaire, dateLeguee);
+            donsDisponibles.Remove(this);
+            donsArchives.Add(this);
+            if (lieuStockageDon != null)
+            {
+                lieuStockageDon.LeguerDon(donLegue);
+            }
+            return donLegue;
+        }
 
         //Todo com
         public static Don InterfaceCreation()

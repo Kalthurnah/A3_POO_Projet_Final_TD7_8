@@ -28,10 +28,62 @@ namespace TD7_8
                 case 2:
                     MenuRecherchePersonneMode<Donateur>();
                     break;
-                case 3 :
+                case 3:
                     MenuRecherchePersonneMode<Personne>();
                     break;
             }
+        }
+        public Don void MenuRechercheDon()
+        {
+            int typeChoisi = InteractionUtilisateur.DemanderChoixInt("Choisir le type d'objet du don à chercher :",
+                new string[] { "Matériel (Recherche globale)", "Objet volumineux", "Vaisselle", "Assiette", "Couvert" });
+
+            //Todo ajouter les autres types
+            switch (typeChoisi)
+            {
+                case 0:
+                    return MenuRechercheDonMode<Materiel>();
+                    break;
+                case 1:
+                    return MenuRechercheDonMode<ObjetVolumineux>();
+                    break;
+                case 2:
+                    return MenuRechercheDonMode<Vaisselle>();
+                    break;
+                case 3:
+                    return MenuRechercheDonMode<Assiette>();
+                    break;
+                case 4:
+                    return MenuRechercheDonMode<Couvert>();
+                    break;
+                case 5:
+                    return MenuRechercheDonMode<>();
+                    break;
+                case 6:
+                    return MenuRechercheDonMode<>();
+                    break;
+                case 7:
+                    return MenuRechercheDonMode<>();
+                    break;
+                case 8:
+                    return MenuRechercheDonMode<>();
+                    break;
+            }
+        }
+        public static Don MenuRechercheDonMode<T>() where T : Materiel
+        {
+
+            Recherche.FonctionRecherche<T> modeDeRechercheChoisi = InteractionUtilisateur.DemanderChoixObjet<Recherche.FonctionRecherche<T>>("Choisir le mode de recherche :",
+                new Recherche.FonctionRecherche<T>[] {
+                    Recherche.RechercheDonStatut,
+                    Recherche.RechercheParMoisDon,
+                },
+                new string[] { "Recherche par statut (en ", "Recherche par numéro de téléphone" }
+                );
+            //on obtient la fonction de recherche correspondant au choix utilisateur
+
+
+            return InteractionUtilisateur.RechercherUnElement<T>(modeDeRechercheChoisi);
         }
 
         public static void MenuStatistiques()
@@ -74,7 +126,7 @@ namespace TD7_8
 
             return InteractionUtilisateur.RechercherUnElement<T>(modeDeRechercheChoisi);
         }
-        
+
         public static void MenuDon()
         {
             //TODO
@@ -90,8 +142,8 @@ namespace TD7_8
             Console.WriteLine("Donnez le nom du fichier à importer : ");
             string nomFichier = Console.ReadLine();
             sousMenu menuChoisi = InteractionUtilisateur.DemanderChoixObjet<sousMenu>("Qu'allez-vous importer ?",
-                 new sousMenu[] {()=> Personne.ImporterCSV<Beneficiaire>(nomFichier), () => Personne.ImporterCSV<Adherent>(nomFichier), Rien },
-                     new string[] { "Des bénéficiaires","Des adhérents", "Quitter" });
+                 new sousMenu[] { () => Personne.ImporterCSV<Beneficiaire>(nomFichier), () => Personne.ImporterCSV<Adherent>(nomFichier), Rien },
+                     new string[] { "Des bénéficiaires", "Des adhérents", "Quitter" });
             menuChoisi();
         }
     }
