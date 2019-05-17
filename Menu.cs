@@ -41,7 +41,7 @@ namespace TD7_8
                      () => Console.WriteLine(DepotVente.MoyennePrixGenerale()),
                      () => Console.WriteLine(Beneficiaire.MoyenneAge()),
                      () => Console.WriteLine(Beneficiaire.Count),
-                     () => Console.WriteLine(Adherent.Count),
+                     () => Console.WriteLine(Donateur.Count),
                      () => Console.WriteLine(Don.Count),
                      () => Console.WriteLine(Recherche.RechercheDonStatut("accepte").Count),
                      Rien },
@@ -49,7 +49,7 @@ namespace TD7_8
                          "Obtenir la moyenne de prix dans les dépot-ventes",
                          "Obtenir la moyenne d'âge des bénéficiaires",
                          "Obtenir le nombre de bénéficiaires",
-                         "Obtenir le nombre d'adhérents",
+                         "Obtenir le nombre de donateurs",
                          "Obtenir le nombre de propositions de dons",
                          "Afficher le nombre de dons acceptés",
                          "Quitter" });
