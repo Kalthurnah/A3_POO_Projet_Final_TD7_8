@@ -107,7 +107,7 @@ namespace TD7_8
         }
 
         delegate Personne CreateurPersonne();
-        public static Personne InterfaceCreation()
+        public static new Personne InterfaceCreation()
         {
             CreateurPersonne createurChoisi = InteractionUtilisateur.DemanderChoixObjet<CreateurPersonne>("Quel est le type de personnes à créer ?",
                 new CreateurPersonne[] { Adherent.InterfaceCreation,

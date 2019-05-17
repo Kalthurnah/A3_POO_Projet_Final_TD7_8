@@ -45,5 +45,12 @@ namespace TD7_8
         {
             this.fonctionAdherent = fonction;
         }
+
+        static public new Personne InterfaceCreation()
+        {
+            Personne personneCree;
+            //TODO demander details et creer 
+            return personneCree=new Adherent();
+        }
     }
 }

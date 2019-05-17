@@ -48,5 +48,12 @@ namespace TD7_8
             return moy;
         }
 
+        public static new Personne InterfaceCreation()
+        {
+            Personne personneCree;
+            //TODO demander details et creer 
+            return personneCree = new Beneficiaire();
+        }
+
     }
 }
