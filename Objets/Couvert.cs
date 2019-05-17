@@ -5,9 +5,9 @@ using System.Text;
 
 namespace TD7_8
 {
-    public class Couverts : Vaisselle
+    public class Couvert : Vaisselle
     {
-        public Couverts(int nombreDePieces,double prix=0) : base(nombreDePieces,prix)
+        public Couvert(int nombreDePieces,double prix=0) : base(nombreDePieces,prix)
         {
         }
     }
