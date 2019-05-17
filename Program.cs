@@ -13,6 +13,10 @@ namespace TD7_8
     {
         static void Main(string[] args)
         {
+            //TODO Ajouter import menu
+Personne.ImporterCSV<Beneficiaire>("Beneficiaires.txt");
+            Personne.ImporterCSV<Adherent>("Adherents.txt");
+
             Menu.sousMenu quitter = delegate () { return; };
             do
             {
@@ -21,6 +25,7 @@ namespace TD7_8
                      new string[] { "Recherche de personnes", "Quitter" });
                 menuChoisi();
             } while (true);
+            
         }
     }
 }
