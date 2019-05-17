@@ -118,7 +118,7 @@ namespace TD7_8
             List<T> resultats;
             do
             {
-                Console.WriteLine($"Recherche d'une instance de {typeof(T)}");
+                Console.WriteLine($"Recherche d'une instance de {typeof(T).Name}");
                 if (nomArgumentRecherche != null)
                 {
                     Console.WriteLine($"Entrer un {nomArgumentRecherche} >");
