@@ -79,7 +79,29 @@ namespace TD7_8
 
             return Don.TrouverDon(don => don.Statut == statutCherche && don.Objet is ObjetVolumineux);
         };
+        public static List<Don> RechercheDonParStatutType<T>(string statutcherche) where T : Materiel
+        {
+            Don.StatutDon statutCherche;
+            //Todo accepter plus de cas pr les entrees utilisateurs ? Et annoncer les existantes avant ?
+            switch (statutcherche.ToLower())
+            {
+                case "accepte":
+                    statutCherche = Don.StatutDon.Accepte;
+                    break;
+                case "refuse":
+                    statutCherche = Don.StatutDon.Refuse;
+                    break;
+                case "stocke":
+                    statutCherche = Don.StatutDon.Stocke;
+                    break;
+                default:
+                    statutCherche = Don.StatutDon.EnAttente;
+                    break;
+            }
 
+
+            return Don.TrouverDon<T>(don => don.Statut == statutCherche && don.Objet is T);
+        }
         #endregion
 
         //Delegate définies anonymement, lambda à l'intérieur, delegate définies pas anonymement ci dessous... On a fait le tour :P !!
