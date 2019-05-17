@@ -45,6 +45,7 @@ namespace TD7_8
                      () => Console.WriteLine(Adherent.Count),
                      () => Console.WriteLine(Don.Count),
                      () => Console.WriteLine(Recherche.RechercheDonStatut("accepte").Count),
+                     () => Console.WriteLine(Recherche.RechercheDonStatutVolumineux("accepte").Count/ObjetVolumineux.Count),
                      Rien },
                      new string[] { "Obtenir la moyenne de temps entre la reception et le retrait des dons",
                          "Obtenir la moyenne de prix dans les dépot-ventes",
@@ -53,7 +54,8 @@ namespace TD7_8
                          "Obtenir le nombre de donateur",
                          "Obtenir le nombre d'adhérents",
                          "Obtenir le nombre de propositions de dons",
-                         "Afficher le nombre de dons acceptés",
+                         "Obtenir le nombre de dons acceptés",
+                         "Obtenir le ratio de propositions d'objets volumineux acceptées par rapport aux reçues",
                          "Quitter" });
             moyChoisie();
         }
