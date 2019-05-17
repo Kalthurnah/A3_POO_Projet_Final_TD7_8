@@ -18,7 +18,7 @@ namespace TD7_8
             Stocke
         }
 
-        static List<Don> donsTraites = new List<Don>();
+        static List<Don> donsDisponibles = new List<Don>();
         static List<Don> donsArchives = new List<Don>();
         static Queue<Don> donsEnAttenteTraitement = new Queue<Don>();
 
@@ -44,6 +44,14 @@ namespace TD7_8
 
 
         public int Identifiant { get => idDon; }
+
+        public static List<Don> TrouverDon(Predicate<Don> predicate)
+        {
+            List<Don> listeTrouverDon = donsDisponibles.FindAll(predicate);
+            listeTrouverDon.AddRange(donsArchives.FindAll(predicate));
+            return listeTrouverDon;
+        }
+
         public string DescriptionComplementaire { get => descriptionComplementaire; }
         public DateTime DateReception { get => dateReception; }
         public Type TypeObjet { get => typeObjet; }
