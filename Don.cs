@@ -203,7 +203,7 @@ namespace TD7_8
             LieuStockage lieuStockageDon = null;
             if (nouveauStatut == StatutDon.Stocke)
             {
-                lieuStockageDon = InteractionUtilisateur.RechercherUnElement<LieuStockage>(Recherche.RechercheParNomLieuStockageType<LieuStockage>, true, "nom");
+                lieuStockageDon = InteractionUtilisateur.RechercherUnElement<LieuStockage>(Recherche.RechercheParNomLieuStockageType<LieuStockage>, true, "nom (Ne rien entrer les affichera tous.)");
             }
 
             Console.WriteLine("Pour valider le dossier, il nous faut votre identité. Qui êtes vous ?");
