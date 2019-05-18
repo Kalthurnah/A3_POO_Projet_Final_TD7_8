@@ -115,33 +115,35 @@ namespace TD7_8
         }
 
 
+        //TODO ARCHIVER DONS SI LEGUES
 
-
-        //TODO ARCHIVER DONS
         /// <summary>
-        /// Traite un don précédemment en attente, et l'ajoute dans la liste adaptée. Ne pas oublier de dépiler le don de la file d'attente !
+        /// Traite le premier don dans la file d'attente, l'en retire et l'ajoute dans la liste adaptée (dons disponibles ou archivés en cas de refus..
         /// </summary>
-        private void TraiterDonEnAttente(Adherent adherentTraitantDossier, StatutDon nouveauStatut, LieuStockage lieuStockageDon = null)
+        public static void TraiterDonEnAttente(Adherent adherentTraitantDossier, StatutDon nouveauStatut, LieuStockage lieuStockageDon = null)
         {
-            if (statut != StatutDon.EnAttente) { throw new InvalidOperationException("Opération invalide : Le don n'est pas en attente"); }
 
-            this.adherentTraitantDossier = adherentTraitantDossier;
-            this.statut = nouveauStatut;
+            Don donEnTraitement = donsEnAttenteTraitement.Dequeue();
+            if (donEnTraitement.statut != StatutDon.EnAttente) { throw new InvalidOperationException("Opération invalide : Le don n'est pas en attente"); }
 
-            switch (statut)
+            donEnTraitement.adherentTraitantDossier = adherentTraitantDossier;
+            donEnTraitement.statut = nouveauStatut;
+
+            switch (donEnTraitement.statut)
             {
                 case StatutDon.Stocke:
-                    this.lieuStockageDon = lieuStockageDon ?? throw new ArgumentNullException("lieuStockageDon", "le lieu de stockage du don est null");
+                    donEnTraitement.lieuStockageDon = lieuStockageDon ?? throw new ArgumentNullException("lieuStockageDon", "le lieu de stockage du don est null");
                     // La syntaxe "a??b" s'apparente à un if(x!=null){a}else{b} - cf "null-coalescing operator"
-                    lieuStockageDon.StockerDon(this);
+                    lieuStockageDon.StockerDon(donEnTraitement);
                     goto case StatutDon.Accepte;//Une fois que le don est stocké, on fait la même chose qu'un don accepté.
                 case StatutDon.Accepte:
-                    donsDisponibles.Add(this);
+                    donsDisponibles.Add(donEnTraitement);
                     break;
                 case StatutDon.Refuse:
-                    donsArchives.Add(this);
+                    donsArchives.Add(donEnTraitement);
                     break;
             }
+
         }
         /// <summary>
         /// Interface de traitement de dons, qui affiche le dernier traitement en attente dans la file,
@@ -160,7 +162,7 @@ namespace TD7_8
             Don donEnTraitement = donsEnAttenteTraitement.Peek();
             Console.WriteLine("Le dernier don en attente est le suivant :");
             Console.WriteLine(donEnTraitement);//Affiche le ToString du don
-            //TODO TOSTRING DON 
+                                               //TODO TOSTRING DON, PERSONNE, etc
             Console.WriteLine("\n");
             //On demande les infos à l'utilisateur :
             StatutDon nouveauStatut = InteractionUtilisateur.DemanderChoixObjet<StatutDon>("Ce don est en attente. Faut-il :",
@@ -175,9 +177,7 @@ namespace TD7_8
             Console.WriteLine("Pour valider le dossier, il nous faut votre identité. Qui êtes vous ?");
             Adherent adherentTraitantDossier = Menu.MenuRecherchePersonneMode<Adherent>(true);
 
-            donEnTraitement.TraiterDonEnAttente(adherentTraitantDossier, nouveauStatut, lieuStockageDon);
-
-            donsEnAttenteTraitement.Dequeue();
+            TraiterDonEnAttente(adherentTraitantDossier, nouveauStatut, lieuStockageDon);
 
             Console.WriteLine($"Le don a été correctement traité. Il reste {donsEnAttenteTraitement.Count} dons en attente !");
 
@@ -193,7 +193,7 @@ namespace TD7_8
             donsArchives.Add(this);
             if (lieuStockageDon != null)
             {
-                lieuStockageDon.LeguerDon(donLegue);
+                lieuStockageDon.LeguerDon(donLegue);//Le retire des dons stockés dans ce lieu de stockage
             }
             return donLegue;
         }
@@ -203,7 +203,7 @@ namespace TD7_8
         {
             Materiel materiel = Materiel.InterfaceCreation();
             Donateur donateur = Menu.MenuRecherchePersonneMode<Donateur>(demanderChoix: true);
-            DateTime dateReception = InteractionUtilisateur.DemanderDateTime();
+            DateTime dateReception = InteractionUtilisateur.DemanderDateTime("Entrez la date de reception.");
 
             Console.WriteLine("Entrez une description. (Ou laissez la vide)");
             string description = Console.ReadLine();
