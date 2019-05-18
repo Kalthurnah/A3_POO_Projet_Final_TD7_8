@@ -8,6 +8,8 @@ namespace TD7_8
 {
     public class Menu
     {
+        //TODO COMS 
+
 
         public delegate void sousMenu();
         public delegate double fonctionMoyenne();
@@ -17,22 +19,32 @@ namespace TD7_8
             int typeChoisi = InteractionUtilisateur.DemanderChoixInt("Choisir le type de personne à chercher :",
                 new string[] { "Adhérent", "Bénéficiaire", "Donateur", "Personne (Recherche globale)" });
 
+            //Pas réussi à récupérer une méthode typée directement comme delegate.. TODO psk flemme de switch.. Surtout avec les dons
             switch (typeChoisi)
             {
                 case 0:
-                    MenuRecherchePersonneMode<Adherent>();
+                    MenuRecherchePersonneMode<Adherent>(false);
                     break;
                 case 1:
-                    MenuRecherchePersonneMode<Beneficiaire>();
+                    MenuRecherchePersonneMode<Beneficiaire>(false);
                     break;
                 case 2:
-                    MenuRecherchePersonneMode<Donateur>();
+                    MenuRecherchePersonneMode<Donateur>(false);
                     break;
                 case 3:
-                    MenuRecherchePersonneMode<Personne>();
+                    MenuRecherchePersonneMode<Personne>(false);
                     break;
             }
         }
+
+        public static void MenuPersonne()
+        {
+            sousMenu menuChoisi = InteractionUtilisateur.DemanderChoixObjet<sousMenu>("Menu Personnes :",
+                 new sousMenu[] { MenuImportation, MenuRecherchePersonne, , Rien },
+                 new string[] { "Importation d'autres bénéficiaires ou adhérents", "Ajout manuel de personnes","Recherche de personnes", "Modification de Personnes", "Retour" });
+            menuChoisi();
+        }
+
         public static Don MenuRechercheDon(bool demanderChoix)
         {
             int typeChoisi = InteractionUtilisateur.DemanderChoixInt("Choisir le type d'objet du don à chercher :",
@@ -86,7 +98,7 @@ namespace TD7_8
             //on obtient la fonction de recherche correspondant au choix utilisateur
 
 
-            return InteractionUtilisateur.RechercherUnElement<Don>(modeDeRechercheChoisi,demanderChoix);
+            return InteractionUtilisateur.RechercherUnElement<Don>(modeDeRechercheChoisi, demanderChoix);
         }
 
         public static void MenuStatistiques()
@@ -111,11 +123,13 @@ namespace TD7_8
                          "Obtenir le nombre de propositions de dons",
                          "Obtenir le nombre de dons acceptés",
                          "Obtenir le ratio de propositions d'objets volumineux acceptées par rapport aux reçues",
-                         "Quitter" });
-            moyChoisie();
+                         "Retour" });
+
+            //On lance la fonction d'affichage de statistique choisie (vive les delegate parce qu'on a pas a faire un gros switch tout moche c'est formidable)
+            afficherStatistiqueChoisie();
         }
 
-        public static T MenuRecherchePersonneMode<T>(bool demanderChoix = false) where T : Personne
+        public static T MenuRecherchePersonneMode<T>(bool demanderChoix) where T : Personne
         {
             Recherche.FonctionRecherche<T> modeDeRechercheChoisi = InteractionUtilisateur.DemanderChoixObjet<Recherche.FonctionRecherche<T>>("Choisir le mode de recherche :",
                 new Recherche.FonctionRecherche<T>[] {
@@ -130,23 +144,23 @@ namespace TD7_8
             return InteractionUtilisateur.RechercherUnElement<T>(modeDeRechercheChoisi);
         }
 
-        public static void MenuDon()
+        public static void MenuDons()
         {
             //TODO
-
             sousMenu menuChoisi = InteractionUtilisateur.DemanderChoixObjet<sousMenu>("Menu :",
-                 new sousMenu[] { Don.InterfaceValidationDons, Rien },
-                     new string[] { "Valider les dons en attente", "Quitter" });
+                 new sousMenu[] { Don.InterfaceValidationDons, () => Don.InterfaceCreation(), ()=>Menu.MenuRechercheDon(false), Menu., Rien },
+                     new string[] { "Valider ou stocker un don en attente","Créer un don (celui-ci sera mis en attente de validation)", "Rechercher un don","Léguer un don à un créateur.","Quitter" });
             menuChoisi();
+            //TODO : Le menu de recherche de don ce serait pas un joli p'tit bonus ca ;P ? C'etait pas demandé uwu.
         }
 
-        public static void MenuImporter()
+
+        public static void MenuImportation()
         {
-            Console.WriteLine("Donnez le nom du fichier à importer : ");
-            string nomFichier = Console.ReadLine();
+            string nomFichier = InteractionUtilisateur.DemanderChoixString("Chemin/Nom du fichier à importer ? (n'oubliez pas l'extension .txt)");
             sousMenu menuChoisi = InteractionUtilisateur.DemanderChoixObjet<sousMenu>("Qu'allez-vous importer ?",
                  new sousMenu[] { () => Personne.ImporterCSV<Beneficiaire>(nomFichier), () => Personne.ImporterCSV<Adherent>(nomFichier), Rien },
-                     new string[] { "Des bénéficiaires", "Des adhérents", "Quitter" });
+                     new string[] { "Des bénéficiaires", "Des adhérents", "Retour" });
             menuChoisi();
         }
     }
