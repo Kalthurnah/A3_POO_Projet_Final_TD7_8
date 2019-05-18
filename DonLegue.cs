@@ -21,7 +21,7 @@ namespace TD7_8
         private double montant;
         private DateTime dateLegue;
 
-        public List<DonLegue> DonsLegues { get => donsLegues; }
+        public static List<DonLegue> DonsLegues { get => donsLegues; }
         public LieuStockage LieuStockage { get => lieuStockage; }
         public string Description { get => description; }
         public double Montant { get => montant; }
