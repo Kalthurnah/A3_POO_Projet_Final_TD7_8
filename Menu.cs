@@ -43,7 +43,7 @@ namespace TD7_8
                  new sousMenu[] { () => InteractionUtilisateur.ListerObjets<Don>("Liste des dons refusés triés par date",Tri.TriRefuseParDate()),
                      () => InteractionUtilisateur.ListerObjets<Don>("Liste des dons acceptés ou stockés triés par Nom de donateur",Tri.TriAccepteStocke( x => x.NomDonateur)),
                      () => InteractionUtilisateur.ListerObjets<Don>("Liste des dons acceptés ou stockés triés par identifiant",Tri.TriAccepteStocke( x => x.Identifiant)),
-                     () => InteractionUtilisateur.ListerObjets<DonLegue>("Liste des dons donnés/vendus par numéro de bénéficiaire", Tri.TriVenduDonne( x => x.BeneficiaireObjet.NumeroTel)),
+                     () => InteractionUtilisateur.ListerObjets<DonLegue>("Liste des dons donnés/vendus par numéro de bénéficiaire", Tri.TriVenduDonne( x => x.BeneficiaireObjet.Identifiant)),
                      Rien },
                  new string[] { "Liste des dons refusés triés par date",
                      "Liste des dons acceptés ou stockés triés par Nom de donateur",
