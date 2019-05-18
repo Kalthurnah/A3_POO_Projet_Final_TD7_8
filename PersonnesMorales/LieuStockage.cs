@@ -14,7 +14,7 @@ namespace TD7_8
         public SortedList<int, Don> DonsStockes { get => donsStockes; }
         public SortedList<int, DonLegue> DonsLegues { get => donsLegues; }
 
-        public LieuStockage(string nom,  string adresse, string numeroTel) : base(nom, adresse, numeroTel)
+        public LieuStockage(string nom, string adresse, string numeroTel) : base(nom, adresse, numeroTel)
         {
             donsStockes = new SortedList<int, Don>();
             donsLegues = new SortedList<int, DonLegue>();
@@ -63,7 +63,7 @@ namespace TD7_8
             List<Don> donsTrouves = new List<Don>();
             foreach (Don don in donsStockes.Values)
             {
-                if (don.TypeObjet==typeof(M) && predicate(don))
+                if (don.TypeObjet == typeof(M) && predicate(don))
                 {
                     donsTrouves.Add(don);
                 }
@@ -115,20 +115,20 @@ namespace TD7_8
         public static LieuStockage InterfaceCreationLieuStockage<T>() where T : LieuStockage
         {
             LieuStockage nouveauLieu;
-            Dictionary<string, string> parametres = InteractionUtilisateur.DemanderParametres(new string[] { "nom", "prenom", "adresse", "numeroTel" });
+            Dictionary<string, string> parametres = InteractionUtilisateur.DemanderParametres(new string[] { "nom", "adresse", "numeroTel" });
             if (typeof(T) == typeof(DepotVente))
             {
-                nouveauLieu = new DepotVente(parametres["nom"], parametres["prenom"], parametres["adresse"], parametres["numeroTel"]);
+                nouveauLieu = new DepotVente(parametres["nom"], parametres["adresse"], parametres["numeroTel"]);
             }
             else
             {
                 if (typeof(T) == typeof(GardeMeuble))
                 {
-                    nouveauLieu = new GardeMeuble(parametres["nom"], parametres["prenom"], parametres["adresse"], parametres["numeroTel"]);
+                    nouveauLieu = new GardeMeuble(parametres["nom"], parametres["adresse"], parametres["numeroTel"]);
                 }
                 else
                 {   //type association
-                    nouveauLieu = new StockageAssociation(parametres["nom"], parametres["prenom"], parametres["adresse"], parametres["numeroTel"]);
+                    nouveauLieu = new StockageAssociation(parametres["nom"], parametres["adresse"], parametres["numeroTel"]);
                 }
 
             }
