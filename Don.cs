@@ -201,7 +201,7 @@ namespace TD7_8
             Donateur donateur = Menu.MenuRecherchePersonneMode<Donateur>(demanderChoix: true);
             DateTime dateReception = InteractionUtilisateur.DemanderDateTime("Entrez la date de reception.");
 
-            string description = InteractionUtilisateur.DemanderString("Entrez une description. (Ou laissez la vide)");
+            string description = InteractionUtilisateur.DemanderString("Entrez une description. (Ou laissez la vide)")
             Don don = new Don(materiel, donateur, dateReception, description);
             return don;
         }
