@@ -18,7 +18,7 @@ namespace TD7_8
             Console.WriteLine();
             Personne.ImporterCSV<Adherent>("Adherents.txt");
             Console.WriteLine("\nAppuyer sur une touche pour continuer;");
-
+            InitialisationValeurs();
             Console.ReadKey();
 
             do
@@ -33,7 +33,7 @@ namespace TD7_8
             } while (true);
         }
 
-        private void InitialisationValeurs()
+        public static void InitialisationValeurs()
         {
             //TODO Ajouter des lieux de stockage, dons, etc
             new Don(new Chaise(1, 1, 1, 5), new Donateur(Adherent.Fonction.Membre, "A", "a", "adresse1", "04090823"), DateTime.ParseExact("12/12/2012", "dd/MM/yyyy", null));

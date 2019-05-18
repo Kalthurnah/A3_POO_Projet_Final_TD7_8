@@ -157,5 +157,6 @@ namespace TD7_8
         {
             return $"{Nom} {Prenom}, id : {identifiant}, joignable au {numeroTel} au {adresse}";//+ type et détails supp' (dans les classes héritantes)
         }
+
     }
 }
