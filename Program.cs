@@ -36,6 +36,12 @@ namespace TD7_8
         private void InitialisationValeurs()
         {
             //TODO Ajouter des lieux de stockage, dons, etc
+            new Don(new Chaise(1, 1, 1, 5), new Donateur(Adherent.Fonction.Membre, "A", "a", "adresse1", "04090823"), DateTime.ParseExact("12/12/2012", "dd/MM/yyyy", null));
+            new Don(new Cuisiniere(2, 2, 2, 2, 1, 500), new Donateur(Adherent.Fonction.President, "P", "p", "adresseP", "012424090823"), DateTime.ParseExact("12/12/2012", "dd/MM/yyyy", null));
+            new Don(new Matelas(3, 3, 3, 50), new Donateur(Adherent.Fonction.Tresorier, "T", "t", "adresseT", "04424090823"), DateTime.ParseExact("12/12/2012", "dd/MM/yyyy", null));
+
+
+
         }
     }
 }

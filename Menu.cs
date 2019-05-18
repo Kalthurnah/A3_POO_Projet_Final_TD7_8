@@ -23,6 +23,7 @@ namespace TD7_8
         /// Sous menu "vide" permettant ainsi de retourner à l'accueil sans rien faire.
         /// </summary>
         public static sousMenu Rien = () => { };
+
         public static void MenuRecherchePersonne()
         {
             int typeChoisi = InteractionUtilisateur.DemanderChoixInt("Choisir le type de personne à chercher :",
