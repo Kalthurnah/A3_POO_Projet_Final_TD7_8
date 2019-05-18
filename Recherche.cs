@@ -25,7 +25,6 @@ namespace TD7_8
         public static List<Don> RechercheDonParStatutType<T>(string statutCherche) where T : Materiel
         {
             Don.StatutDon statutDonCherche;
-            // TODO Annoncer lors de la demandes les choix possibles avant ? (par le biais de nomArgumentRecherche par ex ds la func de recherche)
             switch (statutCherche.ToLower())
             {
                 case "accepte":

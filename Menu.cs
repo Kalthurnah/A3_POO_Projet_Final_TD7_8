@@ -41,7 +41,7 @@ namespace TD7_8
         {
             sousMenu menuChoisi = InteractionUtilisateur.DemanderChoixObjet<sousMenu>("Menu Tri :",
 
-                 new sousMenu[] { () => InteractionUtilisateur.ListerObjets("Liste des dons refusés triés par date",Tri.TriRefuseParDate()),
+                 new sousMenu[] { () => InteractionUtilisateur.ListerObjets("Liste des dons refusés triés par date",Tri.TriRefuse(don=>don.DateReception)),
                      () => InteractionUtilisateur.ListerObjets("Liste des dons acceptés ou stockés triés par nom de donateur",Tri.TriAccepteStocke( don => don.NomDonateur)),
                      () => InteractionUtilisateur.ListerObjets("Liste des dons acceptés ou stockés triés par identifiant",Tri.TriAccepteStocke( don => don.Identifiant)),
                      () => InteractionUtilisateur.ListerObjets("Liste des dons donnés/vendus par numéro de bénéficiaire", Tri.TriVenduDonne( donLegue => donLegue.BeneficiaireObjet.Identifiant)),

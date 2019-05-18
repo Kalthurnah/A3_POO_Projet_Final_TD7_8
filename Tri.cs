@@ -17,17 +17,21 @@ namespace TD7_8
         public delegate T FonctionObtentionProprieteDon<T>(Don don) where T : IComparable<T>;
         public delegate T FonctionObtentionProprieteDonLegue<T>(DonLegue donLegue) where T : IComparable<T>;
 
-        static public List<Don> TriRefuseParDate()
+        /// <summary>
+        /// Fonction retournant une liste de dons refusés, triés selon la propriété dont on a le get en argument
+        /// </summary>
+        /// <typeparam name="T">Type de l'élément à comparer</typeparam>
+        /// <param name="fonctionObtentionPropriete">fonction donnant la propriété à comparer </param>
+        /// <returns>liste triée de dons refusés</returns>
+        static public List<Don> TriRefuse<T>(FonctionObtentionProprieteDon<T> fonctionObtentionPropriete) where T : IComparable<T>
         {
             List<Don> donsRefusesParDate = Don.TrouverDon(don => don.Statut == Don.StatutDon.Refuse);
-            donsRefusesParDate.Sort((x, y) => x.DateReception.CompareTo(y.DateReception));
+            donsRefusesParDate.Sort((x, y) => fonctionObtentionPropriete(x).CompareTo(fonctionObtentionPropriete(y)));
             return donsRefusesParDate;
-            //Todo la rendre generique pour qu'elle prenne une fonction d'obtention de propriete en param ? (comme celle de dessous)
         }
 
         /// <summary>
-        /// Fonction retournant une liste de dons acceptés ou stockés, triés selon la propriété dont on a le get en argument
-        /// </summary>
+        /// F        /// </summary>
         /// <example>
         /// <code>
         /// TriAccepteStocke<int>(x => x.Identifiant);
