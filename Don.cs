@@ -232,7 +232,7 @@ namespace TD7_8
 
         public override string ToString()
         {
-            string res = $"Don {idDon} {statut} de offert le {dateReception.ToString("dd/MM/YY")} par {nomDonateur} ({numeroTelDonateur}, {adresseDonateur}) stocké à {lieuStockageDon}" +
+            string res = $"Don {idDon} {statut} offert le {dateReception.ToString("dd/MM/YY")} par {nomDonateur} ({numeroTelDonateur}, {adresseDonateur}) stocké à {lieuStockageDon}" +
                 $"traité par {adherentTraitantDossier} : {objet.ToString()} ; {descriptionComplementaire}.";
             return res;
         }
