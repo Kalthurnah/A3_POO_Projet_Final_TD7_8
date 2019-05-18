@@ -26,16 +26,16 @@ namespace TD7_8
         }
 
         /// <summary>
-        /// Fonction retournant une liste triée de don
+        /// Fonction retournant une liste de dons acceptés ou stockés, triés selon la propriété dont on a le get en argument
         /// </summary>
         /// <example>
         /// <code>
         /// TriAccepteStocke<int>(x => x.Identifiant);
         /// </code>
         /// </example>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="fonctionObtentionPropriete"></param>
-        /// <returns></returns>
+        /// <typeparam name="T">Type de l'élément à comparer</typeparam>
+        /// <param name="fonctionObtentionPropriete">fonction donnant la propriété à comparer </param>
+        /// <returns>liste triée de dons acceptés ou stockés</returns>
         static public List<Don> TriAccepteStocke<T>(FonctionObtentionProprieteDon<T> fonctionObtentionPropriete) where T : IComparable<T>
         {
             List<Don> donsAccepteStocke = Don.TrouverDon(don => don.Statut == Don.StatutDon.Accepte || don.Statut == Don.StatutDon.Stocke);
@@ -43,6 +43,12 @@ namespace TD7_8
             return donsAccepteStocke;
         }
 
+        /// <summary>
+        /// Fonction retournant une liste de dons légués, triés selon la propriété dont on a le get en argument
+        /// </summary>
+        /// <typeparam name="T">Type de l'élément à comparer</typeparam>
+        /// <param name="fonctionObtentionPropriete">fonction donnant la propriété à comparer </param>
+        /// <returns>liste triée de dons légués acceptés ou stockés</returns>
         static public List<DonLegue> TriVenduDonne<T>(FonctionObtentionProprieteDonLegue<T> fonctionObtentionPropriete) where T : IComparable<T>
         {
             List<DonLegue> donsVendusDonnes = new List<DonLegue>();
@@ -51,6 +57,14 @@ namespace TD7_8
             return donsVendusDonnes;
         }
 
+        /// <summary>
+        /// Fonction retournant une liste de dons stockés dont l'objet est de type M, triés selon la propriété dont on a le get en argument
+        /// </summary>
+        /// <typeparam name="T">Type de l'élément à comparer</typeparam>
+        /// <typeparam name="M">Type de l'objet du don. Par exemple Materiel</typeparam>
+        /// <param name="fonctionObtentionPropriete">fonction donnant la propriété à comparer </param>
+        /// <param name="lieuStockage">Instance du lieu de stockage dans laquelle chercher</param>
+        /// <returns>liste triée de dons stockés</returns>
         static public List<Don> TriLieuStockage<M, T>(LieuStockage lieuStockage, FonctionObtentionProprieteDon<T> fonctionObtentionPropriete) where T : IComparable<T> where M : Materiel
         {
             List<Don> donsStockes = lieuStockage.TrouverDon<M>(don => don.LieuStockageDon == lieuStockage);
@@ -59,7 +73,13 @@ namespace TD7_8
             return donsStockes;
         }
 
-        //TODO COM
+        /// <summary>
+        /// Fonction demandant à l'utilisateur de choisir une instance de lieu de stockage, puis retournant une liste de dons stockés dedans dont l'objet est de type M, triés selon la propriété dont on a le get en argument
+        /// </summary>
+        /// <typeparam name="T">Type de l'élément à comparer</typeparam>
+        /// <typeparam name="M">Type de l'objet du don. Par exemple Materiel</typeparam>
+        /// <param name="message">Message à afficher avant la liste d'objets</param>
+        /// <param name="fonctionObtentionPropriete"></param>
         static public void sousMenuTriLieuStockage<M, T>(string message, FonctionObtentionProprieteDon<T> fonctionObtentionPropriete) where T : IComparable<T> where M : Materiel
         {
 
@@ -67,6 +87,9 @@ namespace TD7_8
             InteractionUtilisateur.ListerObjets<Don>(message, TriLieuStockage<M, T>(lieuStockageDon, fonctionObtentionPropriete));
 
         }
+        /// <summary>
+        /// Fonction affichant dans l'ordre les catégories les plus fréquentes des objets stockés.
+        /// </summary>
         public static void AfficherPrincipalesCategoriesEnStock()
         {
 
