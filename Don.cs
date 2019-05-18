@@ -113,9 +113,22 @@ namespace TD7_8
             }
             return compteur;
         }
-        /// <summary>
-        /// Traite le premier don dans la file d'attente, l'en retire et l'ajoute dans la liste adaptée (dons disponibles ou archivés en cas de refus..
-        /// </summary>
+
+        public static List<KeyValuePair<Type, int>> ObtenirTypesMaterielsStockesParFrequence()
+        {
+
+            //TODO Principales catégories d’articles en stock
+            //Idée : On crée un dictionnaire avec clé = type et valeur = nombre, (recherche sur les dons non archives avec Don.Stocke, puis compte pour chaque)
+            //Puis on trie cette liste par valeur  comme l'exemple sort per value d'ici https://www.dotnetperls.com/sort-dictionary
+            //ou var ordered = dict.OrderByDescending(x => x.Value); : nouvelle collection + des delegate = prof content. 
+            //Après on loop sur la boucle pour les afficher ds l'ordre
+            //foreach (KeyValuePair<Type,int> element in dict.OrderByDescending(x=> x.Value))
+            //{
+            // element.Key.Name : nom du matériel, element.Value : nombre de stockés.
+            //Plus qu'a writeline
+            //}
+
+        }
 
         public DonLegue Leguer(Beneficiaire beneficiaire, DateTime dateLeguee)
         {
@@ -128,6 +141,10 @@ namespace TD7_8
             }
             return donLegue;
         }
+
+        /// <summary>
+        /// Traite le premier don dans la file d'attente, l'en retire et l'ajoute dans la liste adaptée (dons disponibles ou archivés en cas de refus..
+        /// </summary>
         public static void TraiterDonEnAttente(Adherent adherentTraitantDossier, StatutDon nouveauStatut, LieuStockage lieuStockageDon = null)
         {
 
