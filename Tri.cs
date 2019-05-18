@@ -12,6 +12,8 @@ namespace TD7_8
         //https://docs.microsoft.com/en-us/dotnet/api/system.comparison-1?view=netframework-4.8
         //Ex : Comparer don par identifiant, comparer don par nom, etc... J'pense que dans leurs classes elle meme ce serait mieux qu'ici 🤔
 
+            //TODO Com : en gros une fonction qui depuis un don retourne une propriété d'un don
+        public delegate T ObtentionPropriete<T>(Don don) where T : IComparable;
         static public List<Don> TriRefuseParDate()
         {
             List<Don> donsRefusesParDate = new List<Don>();
@@ -37,7 +39,27 @@ namespace TD7_8
             donsAccepteStocke.Sort((x, y) => x.Identifiant.CompareTo(y.Identifiant));
             return donsAccepteStocke;
         }
-        
+
+        /// <summary>
+        /// TODO COM
+        /// </summary>
+        /// <example>
+        /// <code>
+        /// TriAccepteStocke<int>(x => x.Identifiant);
+        /// </code>
+        /// </example>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="fonctionObtentionPropriete"></param>
+        /// <returns></returns>
+        static public List<Don> TriAccepteStocke<T>(ObtentionPropriete<T> fonctionObtentionPropriete) where T : IComparable
+        {
+            List<Don> donsAccepteStocke = new List<Don>();
+            donsAccepteStocke = Recherche.RechercheDonParStatutType<Materiel>("accepté");
+            donsAccepteStocke.AddRange(Recherche.RechercheDonParStatutType<Materiel>("stocké"));
+            donsAccepteStocke.Sort((x, y) => fonctionObtentionPropriete(x).CompareTo(fonctionObtentionPropriete(y)));
+            return donsAccepteStocke;
+        }
+
         public static void AfficherPrincipalesCategoriesEnStock()
         {
 
@@ -45,7 +67,7 @@ namespace TD7_8
             {
                 Console.WriteLine($"{element.Key} : {element.Value} stockés");
             }
-            
+
         }
     }
 }
