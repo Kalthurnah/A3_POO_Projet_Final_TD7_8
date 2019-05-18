@@ -15,10 +15,18 @@ namespace TD7_8
             return confirmation;
         }
 
-        public static void ListerChoixObjets<T>(string message, T[] listeChoix)
+        public static void ListerObjets<T>(string message, T[] listeChoix)
         {
             Console.WriteLine(message);
             for (int index = 0; index < listeChoix.Length; index++)
+            {
+                Console.WriteLine($"{index + 1} - {listeChoix[index]}");
+            }
+        }
+        public static void ListerObjets<T>(string message, List<T> listeChoix)
+        {
+            Console.WriteLine(message);
+            for (int index = 0; index < listeChoix.Count; index++)
             {
                 Console.WriteLine($"{index + 1} - {listeChoix[index]}");
             }
@@ -35,7 +43,7 @@ namespace TD7_8
             string lecture = "";
             bool valid = false;
             int choix = 0;
-            ListerChoixObjets<string>(message, listeIntitulesChoix);
+            ListerObjets<string>(message, listeIntitulesChoix);
             Console.WriteLine("Entrer un choix >");
 
             do
@@ -192,7 +200,7 @@ namespace TD7_8
                 }
                 else
                 {//Si on n'exige pas que l'utilisateur fasse un choix, on affiche juste la liste
-                    ListerChoixObjets<T>($"Voici les {resultats.Count}résultats", resultats.ToArray());
+                    ListerObjets<T>($"Voici les {resultats.Count} résultats", resultats);
                 }
             } while (!ObtenirConfirmation("Continuer et quitter la recherche ? (Si vous choissisez non, vous pourrez relancer une recherche.)"));//On relance une recherche si l'utilisateur n'a pas reconfirmé son choix
 

@@ -166,17 +166,6 @@ namespace TD7_8
                          "Retour" });
             //TODO Volume des ventes ventilé suivant les destinations possibles
 
-            //TODO Principales catégories d’articles en stock
-            //Idée : On crée un dictionnaire avec clé = type et valeur = nombre, (recherche sur les dons non archives avec Don.Stocke, puis compte pour chaque)
-            //Puis on trie cette liste par valeur  comme l'exemple sort per value d'ici https://www.dotnetperls.com/sort-dictionary
-            //ou var ordered = dict.OrderByDescending(x => x.Value); : nouvelle collection + des delegate = prof content. 
-            //Après on loop sur la boucle pour les afficher ds l'ordre
-            //foreach (KeyValuePair<Type,int> element in dict.OrderByDescending(x=> x.Value))
-            //{
-                // element.Key.Name : nom du matériel, element.Value : nombre de stockés.
-                //Plus qu'a writeline
-            //}
-
             //On lance la fonction d'affichage de statistique choisie (vive les delegate parce qu'on a pas a faire un gros switch tout moche c'est formidable)
             afficherStatistiqueChoisie();
         }
