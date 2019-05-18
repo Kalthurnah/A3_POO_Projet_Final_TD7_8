@@ -16,8 +16,7 @@ namespace TD7_8
         public delegate T FonctionObtentionPropriete<T>(Don don) where T : IComparable;
         static public List<Don> TriRefuseParDate()
         {
-            List<Don> donsRefusesParDate = new List<Don>();
-            donsRefusesParDate = Recherche.RechercheDonParStatutType<Materiel>("refusé");
+            List<Don> donsRefusesParDate = Don.TrouverDon(don => don.Statut == Don.StatutDon.Refuse);
             donsRefusesParDate.Sort((x, y) => x.DateReception.CompareTo(y.DateReception));
             return donsRefusesParDate;
             //Todo la rendre generique pour qu'elle prenne une fonction d'obtention de propriete en param ? (comme celle de dessous)
