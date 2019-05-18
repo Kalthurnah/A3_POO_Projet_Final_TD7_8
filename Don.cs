@@ -229,6 +229,13 @@ namespace TD7_8
             Don don = new Don(materiel, donateur, dateReception, description);
             return don;
         }
+
+        public override string ToString()
+        {
+            string res = $"Don {idDon} {statut} de {typeObjet} reçu le {dateReception} offert par {nomDonateur} ({numeroTelDonateur}, {adresseDonateur}) stocké à {lieuStockageDon}" +
+                $"traité par {adherentTraitantDossier} : {objet.ToString()} {descriptionComplementaire}.";
+            return res;
+        }
     }
 
 }
