@@ -31,5 +31,11 @@ namespace TD7_8
             prix = InteractionUtilisateur.DemanderDouble("Entrer le prix");
             return new Couvert(nombreDePieces, prix);
         }
+
+        public override string ToString()
+        {
+            string res = $"Couvert : {base.NombreDePieces} pièces, {base.Prix} euros.";
+            return res;
+        }
     }
 }

@@ -31,5 +31,12 @@ namespace TD7_8
             } while (!valide);
             return new Assiette(nombreDePieces, prix);
         }
+
+        public override string ToString()
+        {
+            string res = $"Assiette : {base.NombreDePieces} pièces, {base.Prix} euros.";
+            return res;
+        }
+
     }
 }
