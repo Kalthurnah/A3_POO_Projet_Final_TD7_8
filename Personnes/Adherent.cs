@@ -27,7 +27,7 @@ namespace TD7_8
         protected Fonction fonctionAdherent;
 
         public Fonction FonctionAdherent { get => fonctionAdherent; set => fonctionAdherent = value; }
-        public new static int Count { get => personnes.OfType<Adherent>().Count<Adherent>(); }
+        public new static int Count { get => personnes.OfType<Adherent>().Count(); }
 
         /// <summary>
         /// Crée une instance de la classe Adhérent, selon son statut
@@ -35,11 +35,10 @@ namespace TD7_8
         /// 
         /// <example> Cet exemple montre comment initialiser une instance de la classe <see cref="Adherent"/> 
         /// <code> 
-        /// Adherent jacques = new Adherent(1,Adherent.Fonction.Membre, "DUPONT", "Jacques", "1 Rue du filou, Paris", "0123456789");
+        /// Adherent jacques = new Adherent(Adherent.Fonction.Membre, "DUPONT", "Jacques", "1 Rue du filou, Paris", "0123456789");
         /// </code> 
         /// </example>
         /// 
-        /// <param name="identifiant">Identifiant de l'adhérent </param>
         /// <param name="fonction">Fonction de l'adhérent. Sous la forme <code>Adherent.Fonction.X</code> </param>
         public Adherent(Fonction fonction, string nom, string prenom, string adresse, string numeroTel) : base(nom, prenom, adresse, numeroTel)
         {

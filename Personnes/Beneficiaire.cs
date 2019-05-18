@@ -16,7 +16,7 @@ namespace TD7_8
 
         public DateTime DateNaissance { get => dateNaissance; }
 
-        public new static int Count { get => personnes.OfType<Beneficiaire>().Count<Beneficiaire>(); }
+        public new static int Count { get => personnes.OfType<Beneficiaire>().Count(); }
 
         /// <summary>
         /// Accesseur pour obtenir l'age selon l'année actuelle à l'execution. Ne calcule qu'avec les années sans se préoccuper du mois / jour
