@@ -57,8 +57,8 @@ namespace TD7_8
         {
             StreamReader fichLect = new StreamReader(nomFichier);
             char[] sep = new char[1] { ';' };
-            string ligne = "";//TODO : retirer le =.., meme raison qu'en dessous 
-            string[] datas = new string[6];//Todo : retirer le = ... car ligne.split retourne de toute facon une new string[]
+            string ligne;
+            string[] datas;
             DateTime date;
             string nom;
             string prenom;
