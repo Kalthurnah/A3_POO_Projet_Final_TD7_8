@@ -28,5 +28,14 @@ namespace TD7_8
             donsAccepteStocke.Sort((x, y) => x.NomDonateur.CompareTo(y.NomDonateur));
             return donsAccepteStocke;
         }
+
+        static public List<Don> TriAccepteStockeId()
+        {
+            List<Don> donsAccepteStocke = new List<Don>();
+            donsAccepteStocke = Recherche.RechercheDonParStatutType<Materiel>("accepté");
+            donsAccepteStocke.AddRange(Recherche.RechercheDonParStatutType<Materiel>("stocké"));
+            donsAccepteStocke.Sort((x, y) => x.Identifiant.CompareTo(y.Identifiant));
+            return donsAccepteStocke;
+        }
     }
 }
