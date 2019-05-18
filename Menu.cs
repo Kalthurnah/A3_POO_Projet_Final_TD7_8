@@ -217,7 +217,7 @@ namespace TD7_8
                      new string[] { "Valider ou stocker un don en attente",
                          "Créer un don (celui-ci sera mis en attente de validation)",
                          "Rechercher un don",
-                         "Léguer un don à un créateur.",
+                         "Léguer un don à un bénéficiaire.",
                          "Retour" });
             menuChoisi();
         }
