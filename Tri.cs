@@ -13,13 +13,14 @@ namespace TD7_8
         //Ex : Comparer don par identifiant, comparer don par nom, etc... J'pense que dans leurs classes elle meme ce serait mieux qu'ici 🤔
 
             //TODO Com : en gros une fonction qui depuis un don retourne une propriété d'un don
-        public delegate T ObtentionPropriete<T>(Don don) where T : IComparable;
+        public delegate T FonctionObtentionPropriete<T>(Don don) where T : IComparable;
         static public List<Don> TriRefuseParDate()
         {
             List<Don> donsRefusesParDate = new List<Don>();
             donsRefusesParDate = Recherche.RechercheDonParStatutType<Materiel>("refusé");
             donsRefusesParDate.Sort((x, y) => x.DateReception.CompareTo(y.DateReception));
             return donsRefusesParDate;
+            //Todo la rendre generique pour qu'elle prenne une fonction d'obtention de propriete en param ? (comme celle de dessous)
         }
 
         static public List<Don> TriAccepteStockeNom()
@@ -51,7 +52,7 @@ namespace TD7_8
         /// <typeparam name="T"></typeparam>
         /// <param name="fonctionObtentionPropriete"></param>
         /// <returns></returns>
-        static public List<Don> TriAccepteStocke<T>(ObtentionPropriete<T> fonctionObtentionPropriete) where T : IComparable
+        static public List<Don> TriAccepteStocke<T>(FonctionObtentionPropriete<T> fonctionObtentionPropriete) where T : IComparable
         {
             List<Don> donsAccepteStocke = Don.TrouverDon(don=>don.Statut== Don.StatutDon.Accepte || don.Statut==Don.StatutDon.Stocke);
             donsAccepteStocke.Sort((x, y) => fonctionObtentionPropriete(x).CompareTo(fonctionObtentionPropriete(y)));
