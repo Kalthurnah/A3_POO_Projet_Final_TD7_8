@@ -20,7 +20,10 @@ namespace TD7_8
 
         }
 
-
+        /// <summary>
+        /// Permet de créer un donateur à partir des informations rentrées au clavier par l'utilisateur.
+        /// </summary>
+        /// <returns></returns>
         public static new Personne InterfaceCreation()
         {
             Dictionary<string, string> parametres = InteractionUtilisateur.DemanderParametres(new string[] { "nom", "prénom", "adresse", "numéro de téléphone" });
