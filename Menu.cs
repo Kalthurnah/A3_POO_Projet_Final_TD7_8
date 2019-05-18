@@ -40,10 +40,12 @@ namespace TD7_8
         public static void MenuTris()
         {
             sousMenu menuChoisi = InteractionUtilisateur.DemanderChoixObjet<sousMenu>("Menu Tri :",
+
                  new sousMenu[] { () => InteractionUtilisateur.ListerObjets("Liste des dons refusés triés par date",Tri.TriRefuseParDate()),
                      () => InteractionUtilisateur.ListerObjets("Liste des dons acceptés ou stockés triés par nom de donateur",Tri.TriAccepteStocke( don => don.NomDonateur)),
                      () => InteractionUtilisateur.ListerObjets("Liste des dons acceptés ou stockés triés par identifiant",Tri.TriAccepteStocke( don => don.Identifiant)),
                      () => InteractionUtilisateur.ListerObjets("Liste des dons donnés/vendus par numéro de bénéficiaire", Tri.TriVenduDonne( donLegue => donLegue.BeneficiaireObjet.Identifiant)),
+                     () => InteractionUtilisateur.ListerObjets<DonLegue>("Liste des dons donnés/vendus par mois", Tri.TriVenduDonne( x => x.DateLegue.Month)),
                      () => Tri.sousMenuTriLieuStockage<Materiel,string>("Liste des dons stockés par entrepôt et par catégorie",don=>don.TypeObjet.Name),
                      () => Tri.sousMenuTriLieuStockage<Materiel,string>("Liste des dons stockés par entrepôt et par description",don=>don.DescriptionComplementaire),
                      () => Tri.sousMenuTriLieuStockage<ObjetVolumineux,double>("Liste des dons stockés par entrepôt et par volume",don=>((ObjetVolumineux)don.Objet).Volume),
@@ -54,7 +56,10 @@ namespace TD7_8
                      "Liste des dons acceptés ou stockés triés par Nom de donateur",
                      "Liste des dons acceptés ou stockés triés par identifiant",
                      "Liste des dons donnés/vendus par numéro de bénéficiaire",
+                     "Liste des dons donnés/vendus par mois",
                      "Liste des dons stockés par entrepôt et par catégorie/description",
+                     "Liste des dons stockés par entrepôt et par description",
+                     "Liste des dons stockés par entrepôt et par volume",
                      "Retour" });
             menuChoisi();
         }
