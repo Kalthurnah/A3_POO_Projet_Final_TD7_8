@@ -20,5 +20,11 @@ namespace TD7_8
 
             return new Matelas(longueur, largeur, hauteur, prix);
         }
+
+        public override string ToString()
+        {
+            string res = $"Matelas de dimensions {base.Dimensions} à {base.Prix}€.";
+            return base.ToString();
+        }
     }
 }
