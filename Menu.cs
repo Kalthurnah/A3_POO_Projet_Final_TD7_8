@@ -46,20 +46,22 @@ namespace TD7_8
                      () => InteractionUtilisateur.ListerObjets("Liste des dons acceptés ou stockés triés par identifiant",Tri.TriAccepteStocke( don => don.Identifiant)),
                      () => InteractionUtilisateur.ListerObjets("Liste des dons donnés/vendus par numéro de bénéficiaire", Tri.TriVenduDonne( donLegue => donLegue.BeneficiaireObjet.Identifiant)),
                      () => InteractionUtilisateur.ListerObjets<DonLegue>("Liste des dons donnés/vendus par mois", Tri.TriVenduDonne( x => x.DateLegue.Month)),
-                     () => Tri.sousMenuTriLieuStockage<Materiel,string>("Liste des dons stockés par entrepôt et par catégorie",don=>don.TypeObjet.Name),
-                     () => Tri.sousMenuTriLieuStockage<Materiel,string>("Liste des dons stockés par entrepôt et par description",don=>don.DescriptionComplementaire),
-                     () => Tri.sousMenuTriLieuStockage<ObjetVolumineux,double>("Liste des dons stockés par entrepôt et par volume",don=>((ObjetVolumineux)don.Objet).Volume),
+                     () => Tri.sousMenuTriLieuStockage<Materiel,string>("Liste des dons stockés dans ce lieu de stockage par catégorie",don=>don.TypeObjet.Name),
+                     () => Tri.sousMenuTriLieuStockage<Materiel,string>("Liste des dons stockés dans ce lieu de stockage par description",don=>don.DescriptionComplementaire),
+                     () => Tri.sousMenuTriLieuStockage<ObjetVolumineux,double>("Liste des dons stockés dans ce lieu de stockage par volume",don=>((ObjetVolumineux)don.Objet).Volume),
                      //Vu qu'un objet d'un don n'est pas forcément volumineux en temps normal, il est nécéssaire de caster l'objet du don en objet volumineux pour accéder à son volume.
                      //Il n'y a ici pas de risque d'erreur à l'execution car on a spécifié à la méthode générique TriLieuStockage de ne récupérer que les objets volumineux stockés.
+                     () => Tri.sousMenuTriLieuStockage<Materiel,double>("Liste des dons stockés dans ce lieu de stockage par prix",don=>(don.Objet).Prix),
                      Rien },
                  new string[] { "Liste des dons refusés triés par date",
                      "Liste des dons acceptés ou stockés triés par Nom de donateur",
                      "Liste des dons acceptés ou stockés triés par identifiant",
                      "Liste des dons donnés/vendus par numéro de bénéficiaire",
                      "Liste des dons donnés/vendus par mois",
-                     "Liste des dons stockés par entrepôt et par catégorie/description",
-                     "Liste des dons stockés par entrepôt et par description",
-                     "Liste des dons stockés par entrepôt et par volume",
+                     "Liste des dons stockés par lieu de stockage et par catégorie/description",
+                     "Liste des dons stockés par lieu de stockage et par description",
+                     "Liste des dons stockés par lieu de stockage et par volume",
+                     "Liste des dons stockés par lieu de stockage et par prix",
                      "Retour" });
             menuChoisi();
         }

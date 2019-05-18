@@ -105,6 +105,18 @@ namespace TD7_8
             List<T> personnesTypees = personnes.OfType<T>().ToList();
             return personnesTypees.FindAll(predicate);
         }
+        /// <summary>
+        /// Méthode supprimant une personne de la liste des personnes.
+        /// </summary>
+        public void Supprimer()
+        {
+            personnes.Remove(this);
+        }
+
+        public int CompareTo(Personne other)
+        {
+            return nom.CompareTo(other.Nom);
+        }
 
         delegate Personne CreateurPersonne();
         public static Personne InterfaceCreation()
@@ -122,17 +134,5 @@ namespace TD7_8
             return personneCree;
         }
 
-        /// <summary>
-        /// Méthode supprimant une personne de la liste des personnes.
-        /// </summary>
-        public void Supprimer()
-        {
-            personnes.Remove(this);
-        }
-
-        public int CompareTo(Personne other)
-        {
-            return nom.CompareTo(other.Nom);
-        }
     }
 }
