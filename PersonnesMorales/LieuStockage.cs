@@ -63,7 +63,7 @@ namespace TD7_8
             List<Don> donsTrouves = new List<Don>();
             foreach (Don don in donsStockes.Values)
             {
-                if (don.TypeObjet == typeof(M) && predicate(don))
+                if (don.Objet is M && predicate(don))
                 {
                     donsTrouves.Add(don);
                 }

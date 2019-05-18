@@ -112,7 +112,7 @@ namespace TD7_8
             }
             foreach (Don don in donsDisponibles)
             {
-                if (don.typeObjet is T && (statutsACompter == null || statutsACompter.Contains(don.Statut)))
+                if (don.Objet is T && (statutsACompter == null || statutsACompter.Contains(don.Statut)))
                 {
                     compteur++;
                 }
@@ -121,7 +121,7 @@ namespace TD7_8
             {
                 foreach (Don don in donsArchives)
                 {
-                    if (don.typeObjet is T && (statutsACompter == null || statutsACompter.Contains(don.Statut)))
+                    if (don.Objet is T && (statutsACompter == null || statutsACompter.Contains(don.Statut)))
                     {
                         compteur++;
                     }
