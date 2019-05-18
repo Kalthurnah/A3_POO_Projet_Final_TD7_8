@@ -12,8 +12,13 @@ namespace TD7_8
         //https://docs.microsoft.com/en-us/dotnet/api/system.comparison-1?view=netframework-4.8
         //Ex : Comparer don par identifiant, comparer don par nom, etc... J'pense que dans leurs classes elle meme ce serait mieux qu'ici 🤔
 
-            //TODO Com : en gros une fonction qui depuis un don retourne une propriété d'un don
+        //TODO Com : en gros une fonction qui depuis un don retourne une propriété d'un don
+
+        public delegate T ObtentionPropriete<T>(Don don) where T : IComparable;
+        public delegate T ObtentionProprieteLegue<T>(DonLegue donLegue) where T : IComparable;
+        
         public delegate T FonctionObtentionPropriete<T>(Don don) where T : IComparable;
+
         static public List<Don> TriRefuseParDate()
         {
             List<Don> donsRefusesParDate = Don.TrouverDon(don => don.Statut == Don.StatutDon.Refuse);
@@ -56,6 +61,14 @@ namespace TD7_8
             List<Don> donsAccepteStocke = Don.TrouverDon(don=>don.Statut== Don.StatutDon.Accepte || don.Statut==Don.StatutDon.Stocke);
             donsAccepteStocke.Sort((x, y) => fonctionObtentionPropriete(x).CompareTo(fonctionObtentionPropriete(y)));
             return donsAccepteStocke;
+        }
+
+        static public List<DonLegue> TriVenduDonne<T>(ObtentionProprieteLegue<T> fonctionObtentionPropriete) where T : IComparable
+        {
+            List<DonLegue> donsVendusDonnes = new List<DonLegue>();
+            donsVendusDonnes = DonLegue.DonsLegues;
+            donsVendusDonnes.Sort((x, y) => fonctionObtentionPropriete(x).CompareTo(fonctionObtentionPropriete(y)));
+            return donsVendusDonnes;
         }
 
         public static void AfficherPrincipalesCategoriesEnStock()
