@@ -37,6 +37,12 @@ namespace TD7_8
             }
         }
 
+        public static void MenuTris()
+        {
+            //TODOOOO
+            throw new NotImplementedException();
+        }
+
         public static void MenuPersonne()
         {
             sousMenu menuChoisi = InteractionUtilisateur.DemanderChoixObjet<sousMenu>("Menu Personnes :",
