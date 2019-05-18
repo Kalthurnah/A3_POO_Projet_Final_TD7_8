@@ -7,7 +7,7 @@ namespace TD7_8
 {
     public class Donateur : Adherent
     {
-        public new static int Count { get => CompterPersonnesTypees<Donateur>(); }
+        public new static int Count { get => personnes.OfType<Donateur>().Count(); }
 
         /// <summary>
         /// Crée une instance de la classe Donateur, selon son statut
@@ -18,6 +18,25 @@ namespace TD7_8
             : base(fonction, nom, prenom, adresse, numeroTel)
         {
 
+        }
+
+        /// <summary>
+        /// Permet de créer un donateur à partir des informations rentrées au clavier par l'utilisateur.
+        /// </summary>
+        /// <returns></returns>
+        public static new Personne InterfaceCreation()
+        {
+            Dictionary<string, string> parametres = InteractionUtilisateur.DemanderParametres(new string[] { "nom", "prénom", "adresse", "numéro de téléphone" });
+            Fonction fonction = InteractionUtilisateur.DemanderChoixObjet("Renseigner sa fonction dans l'association",
+                new Fonction[] { Fonction.Membre, Fonction.Tresorier, Fonction.President },
+                new string[] { "Membre", "Tresorier", "President" }
+                );
+            return new Donateur(fonction, parametres["nom"], parametres["prénom"], parametres["adresse"], parametres["numéro de téléphone"]);
+        }
+
+        public override string ToString()
+        {
+            return base.ToString()+" et donateur";
         }
     }
 }

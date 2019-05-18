@@ -16,14 +16,14 @@ namespace TD7_8
 
         public DateTime DateNaissance { get => dateNaissance; }
 
-        public new static int Count { get => CompterPersonnesTypees<Beneficiaire>(); }
+        public new static int Count { get => personnes.OfType<Beneficiaire>().Count(); }
 
         /// <summary>
         /// Accesseur pour obtenir l'age selon l'année actuelle à l'execution. Ne calcule qu'avec les années sans se préoccuper du mois / jour
         /// </summary>
         public int Age { get => (DateTime.Now.Year - dateNaissance.Year); }
 
-        
+
         /// <summary>
         /// Crée une instance de la classe Beneficiaire
         /// </summary>
@@ -37,18 +37,43 @@ namespace TD7_8
         public static double MoyenneAge()
         {
             double moy = 0;
-            int nb = 0;
             foreach (Beneficiaire beneficiaire in personnes.OfType<Beneficiaire>())
             {//On itère parmi uniquement les bénéficiaires de notre liste de personnes enregistrées.
-                nb++;
                 moy += beneficiaire.Age;
             }
-            if (nb != 0)
+            if (Count != 0)
             {
-                moy = nb;
+                moy = moy / Count;
             }
             return moy;
         }
 
+        public static new Personne InterfaceCreation()
+        {
+            DateTime dateNaissance = InteractionUtilisateur.DemanderDateTime("Entrez la date de naissance");
+            Dictionary<string, string> parametres= InteractionUtilisateur.DemanderParametres(new string[] { "nom", "prénom", "adresse", "numéro de téléphone" });
+            return new Beneficiaire(dateNaissance,parametres["nom"],parametres["prénom"], parametres["adresse"], parametres["numéro de téléphone"]);
+        }
+
+        public override string ToString()
+        {
+            return base.ToString()+$", agé de {Age} ans";
+        }
+
+
+        public void ExporterBeneficiaires()
+        {
+            string[] lignes = new string[Beneficiaire.Count];
+            string ligne = "";
+            List<Beneficiaire> beneficiaires = TrouverInstance<Beneficiaire>(x => true);
+            int i = 0;
+            foreach (Beneficiaire beneficiaire in beneficiaires)
+            {
+                ligne = beneficiaire.nom + ";" + beneficiaire.prenom + ";" + beneficiaire.adresse + ";" + beneficiaire.numeroTel + ";" + beneficiaire.dateNaissance;
+                lignes[i] = ligne;
+                i++;
+            }
+            File.WriteAllLines(@"C: \Users\Public\export_beneficiaires.txt", lignes);
+        }
     }
 }

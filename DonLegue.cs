@@ -10,6 +10,8 @@ namespace TD7_8
     /// </summary>
     public class DonLegue : IIdentifiable
     {
+        //Liste des dons légués. Les dons initiaux correspondants à ceux ci sont toujours stockes dans Don.donsArchives
+        static List<DonLegue> donsLegues = new List<DonLegue>();
         private Materiel objet;
         private Type typeObjet;
         private Don DonInitial;
@@ -19,6 +21,7 @@ namespace TD7_8
         private double montant;
         private DateTime dateLegue;
 
+        public static List<DonLegue> DonsLegues { get => donsLegues; }
         public LieuStockage LieuStockage { get => lieuStockage; }
         public string Description { get => description; }
         public double Montant { get => montant; }
@@ -30,6 +33,12 @@ namespace TD7_8
 
         public int Identifiant { get => objet.Identifiant; }
 
+        /// <summary>
+        /// Constructeur de donLegue. Retirer l'élément de la liste des dons dispos doit être fait après l'avoir légué - ie pour leguer un don appeler don.Leguer !!
+        /// </summary>
+        /// <param name="DonALeguer"></param>
+        /// <param name="beneficiaireObjet"></param>
+        /// <param name="dateLegue"></param>
         public DonLegue(Don DonALeguer, Beneficiaire beneficiaireObjet, DateTime dateLegue)
         {
             //On obtient les infos depuis le don initial
@@ -37,12 +46,32 @@ namespace TD7_8
             this.objet = DonALeguer.Objet;
             this.typeObjet = DonALeguer.TypeObjet;
             this.montant = DonALeguer.Objet.Prix;
-
+            this.dateLegue = dateLegue;
             this.description = DonALeguer.DescriptionComplementaire;
             this.beneficiaireObjet = beneficiaireObjet;
             this.lieuStockage = DonALeguer.LieuStockageDon;
 
+            //On ajoute le don à la liste des dons légués
+            donsLegues.Add(this);
         }
-            //TODO ARCHIVER UN DON EN LE LEGUANT ? (implementer don.LeguerDon() j'imagine ?)
+
+        /// <summary>
+        /// Interface utilisateur pour leguer un don disponible
+        /// </summary>
+        /// <returns>La nouvelle instance de don légué</returns>
+        public static DonLegue InterfaceLeguerDon()
+        {
+            Don donALeguer = Menu.MenuRechercheDon(demanderChoix: true);
+            Beneficiaire beneficiaire = Menu.MenuRecherchePersonneMode<Beneficiaire>(demanderChoix: true);
+            DateTime dateLegue = InteractionUtilisateur.DemanderDateTime("Rentrer la date à laquelle le don a été légué.");
+            return donALeguer.Leguer(beneficiaire, dateLegue);
+        }
+
+        public override string ToString()
+        {
+            string res = $"{DonInitial.ToString()} legué le {dateLegue} à {beneficiaireObjet.ToString()}.";
+            return res;
+        }
+
     }
 }

@@ -7,8 +7,14 @@ namespace TD7_8
 {
     public class StockageAssociation : LieuStockage
     {
-        public StockageAssociation(string nom, string prenom, string adresse, string numeroTel) : base(nom, prenom, adresse, numeroTel)
+        public StockageAssociation(string nom, string adresse, string numeroTel) : base(nom, adresse, numeroTel)
         {
         }
+        public override string ToString()
+        {
+            string res = $" Stockge asso: {identifiant}, {nom}, {adresse}, {numeroTel}.";
+            return res;
+        }
+
     }
 }

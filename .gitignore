@@ -344,3 +344,4 @@ azure-pipelines.yml
 
 #DEvTime file
 *.dt
+GlobalSuppressions.cs

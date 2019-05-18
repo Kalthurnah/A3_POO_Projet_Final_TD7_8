@@ -31,11 +31,36 @@ namespace TD7_8
         private FormeTable Forme { get => forme; }
         private TypeTable Type { get => type; }
 
-        public Table(TypeTable type, FormeTable forme, double longueur, double largeur, double hauteur, double prix=0) : base(longueur, largeur, hauteur, prix)
+        public Table(TypeTable type, FormeTable forme, double longueur, double largeur, double hauteur, double prix = 0) : base(longueur, largeur, hauteur, prix)
         {
             this.type = type;
             this.forme = forme;
         }
 
+
+        static public new Materiel InterfaceCreation()
+        {
+
+            double longueur = InteractionUtilisateur.DemanderDouble("Entrer la longueur");
+            double largeur = InteractionUtilisateur.DemanderDouble("Entrer la largeur");
+            double hauteur = InteractionUtilisateur.DemanderDouble("Entrer la hauteur");
+            double prix = InteractionUtilisateur.DemanderDouble("Entrer le prix");
+            TypeTable typeTable = InteractionUtilisateur.DemanderChoixObjet<TypeTable>("Choisir le type de table",
+                new TypeTable[] { TypeTable.Cuisine, TypeTable.Salon },
+                new string[] { "Table de cuisine", "Table de salon" }
+                );
+            FormeTable formeTable = InteractionUtilisateur.DemanderChoixObjet<FormeTable>("Choisir la forme de la table",
+                new FormeTable[] { FormeTable.Carree, FormeTable.Rectangulaire, FormeTable.Ronde },
+                new string[] { "Carrée", "Rectangulaire", "Ronde" }
+                );
+
+            return new Table(typeTable, formeTable, longueur, largeur, hauteur, prix);
+        }
+
+        public override string ToString()
+        {
+            string res = $"Table {forme} de {type} de dimensions {Dimensions.longueur}x{Dimensions.largeur}x{Dimensions.hauteur} à {Prix} euros.";
+            return res;
+        }
     }
 }
