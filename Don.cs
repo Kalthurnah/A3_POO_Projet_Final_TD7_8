@@ -83,7 +83,7 @@ namespace TD7_8
             listeTrouverDon.AddRange(donsArchives.FindAll(predicate));
             return listeTrouverDon;
         }
-        
+
         /// <summary>
         /// Renvoie la liste de don de type T ayant la condition passée en argument.
         /// </summary>
@@ -130,7 +130,7 @@ namespace TD7_8
             return compteur;
         }
 
-        public static Dictionary<string,int> ObtenirTypesStockesParFrequence()
+        public static Dictionary<string, int> ObtenirTypesStockesParFrequence()
         {
             Dictionary<string, int> qteMaterielStocke = new Dictionary<string, int>();
             foreach (Don don in donsDisponibles)
@@ -162,6 +162,7 @@ namespace TD7_8
         /// <returns></returns>
         public DonLegue Leguer(Beneficiaire beneficiaire, DateTime dateLeguee)
         {
+            if (statut == StatutDon.Refuse) { return null; }
             DonLegue donLegue = new DonLegue(this, beneficiaire, dateLeguee);
             donsDisponibles.Remove(this);
             donsArchives.Add(this);
@@ -260,8 +261,10 @@ namespace TD7_8
 
         public override string ToString()
         {
-            string res = $"Don {idDon} {statut} offert le {dateReception.ToString("dd/MM/YY")} par {nomDonateur} ({numeroTelDonateur}, {adresseDonateur}) stocké à {lieuStockageDon}" +
-                $"traité par {adherentTraitantDossier} : {objet.ToString()} ; {descriptionComplementaire}.";
+            string res = $"Don {idDon} {statut} offert le {dateReception.ToString("dd/MM/yy")} par {nomDonateur} ({numeroTelDonateur}, {adresseDonateur}) ";
+            res += lieuStockageDon != null ? $" stocké à {lieuStockageDon} " : "";
+            res += adherentTraitantDossier != null ? $"traité par {adherentTraitantDossier} " : "";
+            res += $"\n{objet.ToString()} ; {descriptionComplementaire}.";
             return res;
         }
     }

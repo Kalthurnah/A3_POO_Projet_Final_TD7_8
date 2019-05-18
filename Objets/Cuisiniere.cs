@@ -49,7 +49,7 @@ namespace TD7_8
 
         public override string ToString()
         {
-            string res = $"Cuisinière à {nombrePlaques} plaques, de dimensions {Dimensions.longueur}x{Dimensions.largeur}x{Dimensions.hauteur}, de puissance {puissance}W à {Prix}€.";
+            string res = $"Cuisinière à {nombrePlaques} plaques, de dimensions {Dimensions.longueur}x{Dimensions.largeur}x{Dimensions.hauteur}, de puissance {puissance}W à {Prix}euros.";
             return res;
         }
     }

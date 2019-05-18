@@ -10,9 +10,9 @@ namespace TD7_8
         double solde;
 
         /// <summary>
-        /// A la création du dépot vente, son solde est de 1000€
+        /// A la création du dépot vente, son solde est de 1000euros
         /// </summary>
-        public DepotVente(string nom,  string adresse, string numeroTel) : base(nom, adresse, numeroTel)
+        public DepotVente(string nom, string adresse, string numeroTel) : base(nom, adresse, numeroTel)
         {
             solde = 1000;
         }
@@ -67,13 +67,19 @@ namespace TD7_8
         /// <param name="donLegue"></param>
         public override void LeguerDon(DonLegue donLegue)
         {
-            donsStockes.Remove(donLegue.Identifiant);
+            base.LeguerDon(donLegue);
             solde -= donLegue.Objet.Prix;
-            donsLegues.Add(donLegue.Identifiant, donLegue);
         }
+
+        public override void StockerDon(Don donAAjouter)
+        {
+            base.StockerDon(donAAjouter);
+            solde += donAAjouter.Objet.Prix;
+        }
+
         public override string ToString()
         {
-            string res = $" Depot vente: {identifiant}, {nom}, {adresse}, {numeroTel}. Solde {Solde} €";
+            string res = $" Depot vente: {identifiant}, {nom}, {adresse}, {numeroTel}. Solde {Solde} euros";
             return res;
         }
     }

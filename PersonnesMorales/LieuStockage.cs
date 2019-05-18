@@ -37,7 +37,7 @@ namespace TD7_8
         /// Ajoute un don à la liste des dons stockés.
         /// </summary>
         /// <param name="donAAjouter"></param>
-        public void StockerDon(Don donAAjouter)
+        public virtual void StockerDon(Don donAAjouter)
         {
             donsStockes.Add(donAAjouter.Identifiant, donAAjouter);
         }
