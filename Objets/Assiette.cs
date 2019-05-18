@@ -7,10 +7,19 @@ namespace TD7_8
 {
     public class Assiette : Vaisselle
     {
+        /// <summary>
+        /// Permet de créer une instance de classe Assiette
+        /// </summary>
+        /// <param name="nombreDePieces"></param>
+        /// <param name="prix"></param>
         public Assiette(int nombreDePieces, double prix=0) : base(nombreDePieces,prix)
         {
         }
 
+        /// <summary>
+        /// Permet de créer une instance Assiette à partir des informations rentrées au clavier par l'utilisateur.
+        /// </summary>
+        /// <returns></returns>
         static public new Materiel InterfaceCreation()
         {
             bool valide = false;

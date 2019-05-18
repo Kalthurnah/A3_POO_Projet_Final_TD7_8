@@ -7,10 +7,21 @@ namespace TD7_8
 {
     public class Chevet : MobilierChambre
     {
+        /// <summary>
+        /// Permet de créer une instance de classe Chevet
+        /// </summary>
+        /// <param name="longueur"></param>
+        /// <param name="largeur"></param>
+        /// <param name="hauteur"></param>
+        /// <param name="prix"></param>
         public Chevet(double longueur, double largeur, double hauteur, double prix = 0) : base(longueur, largeur, hauteur, prix)
         {
         }
 
+        /// <summary>
+        /// Créé une instance de classe Chevet à partir des informations rentrées par l'utilisateur.
+        /// </summary>
+        /// <returns></returns>
         static public new Materiel InterfaceCreation()
         {
             double longueur = InteractionUtilisateur.DemanderDouble("Entrer la longueur");

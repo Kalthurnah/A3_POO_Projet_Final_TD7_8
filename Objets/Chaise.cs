@@ -7,10 +7,21 @@ namespace TD7_8
 {
     public class Chaise : MobilierSalleCuisine
     {
+        /// <summary>
+        /// Permet de créer une instance de classe Chaise
+        /// </summary>
+        /// <param name="longueur"></param>
+        /// <param name="largeur"></param>
+        /// <param name="hauteur"></param>
+        /// <param name="prix"></param>
         public Chaise(double longueur, double largeur, double hauteur, double prix = 0) : base(longueur, largeur, hauteur, prix)
         {
         }
 
+        /// <summary>
+        /// Permet d'initialiser la création d'une instance de classe Chaise à partir des informations rentrées au clavier.
+        /// </summary>
+        /// <returns></returns>
         static public new Materiel InterfaceCreation()
         {
 
