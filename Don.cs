@@ -71,13 +71,25 @@ namespace TD7_8
             donsEnAttenteTraitement.Enqueue(this);
         }
 
+
+        /// <summary>
+        /// Renvoie la liste d'instance don ayant la condition passée en argument.
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
         public static List<Don> TrouverDon(Predicate<Don> predicate)
         {
             List<Don> listeTrouverDon = donsDisponibles.FindAll(predicate);
             listeTrouverDon.AddRange(donsArchives.FindAll(predicate));
             return listeTrouverDon;
         }
-        //Todo coms
+        
+        /// <summary>
+        /// Renvoie la liste de don de type T ayant la condition passée en argument.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
         public static List<Don> TrouverDon<T>(Predicate<Don> predicate) where T : Materiel
         {
             List<Don> listeTrouverDon = new List<Don>(donsDisponibles);
@@ -85,7 +97,12 @@ namespace TD7_8
             listeTrouverDon.FindAll(don => (predicate(don) && don.objet is T));
             return listeTrouverDon;
         }
-        //TOdo com et mentionner que par defaut liste tous les statuts
+
+        /// <summary>
+        /// Fonction qui compte les dons de type T ayant certains statuts listés en argument.
+        /// Elle compte également les dons correspondants dans les archives lorsqu'on le précise en argument.
+        /// Par défaut, elle considère la liste de tous les statuts, donc elle compte tous les dons de type T.
+        /// </summary>
         public static int CountTraites<T>(bool InclureArchive = false, StatutDon[] statutsACompter = null) where T : Materiel
         {
             int compteur = 0;
@@ -135,6 +152,14 @@ namespace TD7_8
             return qteMaterielStocke;
         }
 
+        /// <summary>
+        /// Permet de léguer un don à un bénéficaire. On créé un DonLegue avec le Don et le Bénéficaire.
+        /// Supprime également le don de la liste de dons disponibles et l'ajoute aux archives.
+        /// Supprime également le don du lieu de stockage s'il en avait un.
+        /// </summary>
+        /// <param name="beneficiaire"></param>
+        /// <param name="dateLeguee"></param>
+        /// <returns></returns>
         public DonLegue Leguer(Beneficiaire beneficiaire, DateTime dateLeguee)
         {
             DonLegue donLegue = new DonLegue(this, beneficiaire, dateLeguee);
@@ -218,7 +243,11 @@ namespace TD7_8
         }
 
 
-        //Todo com
+        /// <summary>
+        /// Interface de création d'un don, appelant les interfaces de créations de Materiel, Donateur.
+        /// Demande à l'utilisateur une date de reception et une description optionnelle
+        /// </summary>
+        /// <returns></returns>
         public static Don InterfaceCreation()
         {
             Materiel materiel = Materiel.InterfaceCreation();
