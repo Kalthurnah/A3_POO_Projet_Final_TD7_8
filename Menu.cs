@@ -103,8 +103,8 @@ namespace TD7_8
         public static Don MenuRechercheDon(bool demanderChoix)
         {
             int typeChoisi = InteractionUtilisateur.DemanderChoixInt("Choisir le type d'objet du don à chercher :",
-                new string[] { "Matériel (Recherche globale)", "Armoire", "Assiette", "Chaise", "Chevet" });
-            //Todo ajouter les autres types ci dessus
+                new string[] { "Matériel (Recherche globale)", "Armoire", "Assiette", "Chaise", "Chevet", "Couvert", "Cuisinière", "Electro-ménager",
+                    "Lave-linge", "Matelas","Mobilier de chambre", "Mobilier de salle à manger / cuisine", "Réfrigérateur", "Table", "Vaisselle"});
 
             switch (typeChoisi)
             {
