@@ -153,7 +153,7 @@ namespace TD7_8
                      () => Console.WriteLine(Don.CountTraites<Materiel>()),
                      () => Console.WriteLine(Recherche.RechercheDonParStatutType<Materiel>("accepte").Count),
                      () => Console.WriteLine(Don.CountTraites<ObjetVolumineux>(true,new Don.StatutDon[]{Don.StatutDon.Accepte, Don.StatutDon.Stocke})/Don.CountTraites<ObjetVolumineux>(true)),
-                     Tri.AfficherPrincipalesCategoriesEnStock
+                     Tri.AfficherPrincipalesCategoriesEnStock,
                      Rien },
                      new string[] { "Obtenir la moyenne de temps entre la reception et le retrait des dons",
                          "Obtenir la moyenne de prix dans les dépot-ventes",

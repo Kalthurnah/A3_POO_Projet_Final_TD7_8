@@ -71,7 +71,6 @@ namespace TD7_8
             donsEnAttenteTraitement.Enqueue(this);
         }
 
-
         public static List<Don> TrouverDon(Predicate<Don> predicate)
         {
             List<Don> listeTrouverDon = donsDisponibles.FindAll(predicate);
