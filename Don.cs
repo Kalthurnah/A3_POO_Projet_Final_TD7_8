@@ -21,11 +21,33 @@ namespace TD7_8
         static List<Don> donsArchives = new List<Don>();
         static Queue<Don> donsEnAttenteTraitement = new Queue<Don>();
 
-        public static int Count
+        //TOdo com et mentionner que par defaut liste tous les statuts
+        public static int CountTraites<T>(bool InclureArchive = false, StatutDon[] statutsACompter = null) where T : Materiel
         {
-            get { return (donsArchives.Count + donsDisponibles.Count + donsEnAttenteTraitement.Count); }
+            int compteur = 0;
+            if (statutsACompter == null)
+            {
+                statutsACompter = new StatutDon[] { StatutDon.EnAttente, StatutDon.Refuse, StatutDon.Stocke, StatutDon.Accepte };
+            }
+            foreach (Don don in donsDisponibles)
+            {
+                if (don.typeObjet is T && (statutsACompter == null || statutsACompter.Contains(don.Statut)))
+                {
+                    compteur++;
+                }
+            }
+            if (InclureArchive)
+            {
+                foreach (Don don in donsArchives)
+                {
+                    if (don.typeObjet is T && (statutsACompter == null || statutsACompter.Contains(don.Statut)))
+                    {
+                        compteur++;
+                    }
+                }
+            }
+            return compteur;
         }
-
         private static int dernierIdDonne = 0;
 
         //TODO constructeur, LIST DONS / OBJETS LEGUES DS OBJETS LEUGES , ETC PR TRACABILITE
