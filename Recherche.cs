@@ -21,7 +21,12 @@ namespace TD7_8
 
         #region Dons
 
-
+        /// <summary>
+        /// Permet de rechercher un don selon son statut et son type d'objet
+        /// </summary>
+        /// <typeparam name="T">type de l'objet du don</typeparam>
+        /// <param name="statutCherche"></param>
+        /// <returns>Liste de dons correspondants</returns>
         public static List<Don> RechercheDonParStatutType<T>(string statutCherche) where T : Materiel
         {
             Don.StatutDon statutDonCherche;
@@ -46,6 +51,12 @@ namespace TD7_8
             return Don.TrouverDon<T>(don => don.Statut == statutDonCherche);
         }
 
+        /// <summary>
+        /// Permet de rechercher un don selon son mois de réception et son type d'objet
+        /// </summary>
+        /// <typeparam name="T">type de l'objet du don</typeparam>
+        /// <param name="moisDuDon"></param>
+        /// <returns>Liste de dons correspondants</returns>
         public static List<Don> RechercheDonParMoisType<T>(string moisDuDon) where T : Materiel
         {
             int mois = 0;

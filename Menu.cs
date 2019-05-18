@@ -10,16 +10,23 @@ namespace TD7_8
     {
         //TODO COMS 
 
-
+        /// <summary>
+        /// Delegue sous menu qui ne prend ni argument et ne retourne rien. Utile pour afficher qqchose ou ouvrir un menu.
+        /// </summary>
         public delegate void sousMenu();
+        /// <summary>
+        /// Delegate de fonction de moyenne
+        /// </summary>
+        /// <returns>moyenne</returns>
         public delegate double fonctionMoyenne();
+        /// <summary>
+        /// Sous menu "vide" permettant ainsi de retourner à l'accueil sans rien faire.
+        /// </summary>
         public static sousMenu Rien = () => { };
         public static void MenuRecherchePersonne()
         {
             int typeChoisi = InteractionUtilisateur.DemanderChoixInt("Choisir le type de personne à chercher :",
                 new string[] { "Adhérent", "Bénéficiaire", "Donateur", "Personne (Recherche globale)" });
-
-            //Pas réussi à récupérer une méthode typée directement comme delegate.. TODO psk flemme de switch.. Surtout avec les dons
             switch (typeChoisi)
             {
                 case 0:

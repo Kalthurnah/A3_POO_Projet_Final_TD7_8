@@ -31,7 +31,8 @@ namespace TD7_8
         }
 
         /// <summary>
-        /// F        /// </summary>
+        /// Fonction retournant une liste de dons acceptés ou stockés, triés selon la propriété dont on a le get en argument        
+        /// </summary>
         /// <example>
         /// <code>
         /// TriAccepteStocke<int>(x => x.Identifiant);
