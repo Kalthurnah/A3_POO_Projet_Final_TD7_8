@@ -59,5 +59,22 @@ namespace TD7_8
         {
             return base.ToString()+$", agé de {Age} ans";
         }
+
+
+        public void ExporterDonnee( string nomFichier)
+        {
+            string[] lignes = new string[Beneficiaire.Count];
+            string ligne = "";
+            StreamWriter sw = null;
+            List<Beneficiaire> beneficiaires = TrouverInstance<Beneficiaire>(x => true);
+            int i = 0;
+            foreach (Beneficiaire beneficiaire in beneficiaires)
+            {
+                ligne = beneficiaire.nom + ";" + beneficiaire.prenom + ";" + beneficiaire.adresse + ";" + beneficiaire.numeroTel + ";" + beneficiaire.dateNaissance;
+                lignes[i] = ligne;
+                i++;
+            }
+            File.WriteAllLines(@"C: \Users\Public\" + nomFichier, lignes);
+        }
     }
 }

@@ -203,6 +203,5 @@ namespace TD7_8
 
             return instanceChoisie;
         }
-
     }
 }
