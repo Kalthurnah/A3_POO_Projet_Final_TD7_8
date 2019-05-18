@@ -11,8 +11,8 @@ namespace TD7_8
         protected SortedList<int, Don> donsStockes;
         protected SortedList<int, DonLegue> donsLegues;
 
-        protected SortedList<int, Don> DonsStockes { get => donsStockes; }
-        protected SortedList<int, DonLegue> DonsLegues { get => donsLegues; }
+        public SortedList<int, Don> DonsStockes { get => donsStockes; }
+        public SortedList<int, DonLegue> DonsLegues { get => donsLegues; }
 
         public LieuStockage(string nom, string prenom, string adresse, string numeroTel) : base(nom, prenom, adresse, numeroTel)
         {
@@ -70,8 +70,7 @@ namespace TD7_8
             }
             return moy;
         }
-
-
+        
         public static LieuStockage InterfaceCreationLieuStockage<T>() where T : LieuStockage
         {
             LieuStockage nouveauLieu;
