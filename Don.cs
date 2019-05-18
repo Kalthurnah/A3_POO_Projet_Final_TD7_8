@@ -114,19 +114,26 @@ namespace TD7_8
             return compteur;
         }
 
-        public static List<KeyValuePair<Type, int>> ObtenirTypesStockesParFrequence()
+        public static Dictionary<string,int> ObtenirTypesStockesParFrequence()
         {
-            //TODO Principales catégories d’articles en stock
-            //Idée : On crée un dictionnaire avec clé = type et valeur = nombre, (recherche sur les dons non archives avec Don.Stocke, puis compte pour chaque)
-            //Puis on trie cette liste par valeur  comme l'exemple sort per value d'ici https://www.dotnetperls.com/sort-dictionary
-            //ou var ordered = dict.OrderByDescending(x => x.Value); : nouvelle collection + des delegate = prof content. 
-            //Après on loop sur la boucle pour les afficher ds l'ordre
-            //foreach (KeyValuePair<Type,int> element in dict.OrderByDescending(x=> x.Value))
-            //{
-            // element.Key.Name : nom du matériel, element.Value : nombre de stockés.
-            //Plus qu'a writeline
-            //}
-
+            Dictionary<string, int> qteMaterielStocke = new Dictionary<string, int>();
+            foreach (Don don in donsDisponibles)
+            {
+                if (don.Statut == StatutDon.Stocke)
+                {
+                    if (qteMaterielStocke.ContainsKey(don.typeObjet.Name))
+                    {
+                        qteMaterielStocke[don.typeObjet.Name]++;
+                    }
+                    else
+                    {
+                        qteMaterielStocke.Add(don.typeObjet.Name, 1);
+                    }
+                }
+            }
+            //On a ici un dico non trié des types de matériel présents et de leur qté stockée.
+            qteMaterielStocke.OrderByDescending(key => key.Value);
+            return qteMaterielStocke;
         }
 
         public DonLegue Leguer(Beneficiaire beneficiaire, DateTime dateLeguee)
