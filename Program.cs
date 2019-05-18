@@ -27,7 +27,6 @@ namespace TD7_8
                 Menu.sousMenu menuChoisi = InteractionUtilisateur.DemanderChoixObjet<Menu.sousMenu>("Menu principal :",
                      new Menu.sousMenu[] { Menu.MenuPersonne, Menu.MenuDons, Menu.MenuStatistiques, Menu.MenuTris, () => Environment.Exit(0) },
                      new string[] { "Personnes & Importation", "Dons & Traitement", "Statistiques & Comptes", "Listes et Tris", "Quitter" });
-                //TODO : Dans les autres menus, l'intitulé de la fonction "rien" doit etre appelée Retour et non Quitter
                 menuChoisi();
                 Console.WriteLine("Appuyer sur une touche pour continuer");
                 Console.ReadKey();
