@@ -13,7 +13,6 @@ namespace TD7_8
     {
         static void Main(string[] args)
         {
-            //TODO Ajouter import menu
             Console.WriteLine("Importation initiale des données de Beneficiaires.txt et Adherents.txt");
             Personne.ImporterCSV<Beneficiaire>("Beneficiaires.txt");
             Console.WriteLine();
