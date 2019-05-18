@@ -54,5 +54,10 @@ namespace TD7_8
                 );
             return new Adherent(fonction, parametres["nom"], parametres["prénom"], parametres["adresse"], parametres["numéro de téléphone"]);
         }
+
+        public override string ToString()
+        {
+            return base.ToString()+$", {fonctionAdherent}";
+        }
     }
 }

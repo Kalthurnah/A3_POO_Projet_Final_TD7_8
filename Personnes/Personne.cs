@@ -133,5 +133,9 @@ namespace TD7_8
             return personneCree;
         }
 
+        public override string ToString()
+        {
+            return $"{Nom} {Prenom}, id : {identifiant}, joignable au {numeroTel} au {adresse}";//+ type et détails supp' (dans les classes héritantes)
+        }
     }
 }
