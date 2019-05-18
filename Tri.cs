@@ -53,9 +53,7 @@ namespace TD7_8
         /// <returns></returns>
         static public List<Don> TriAccepteStocke<T>(ObtentionPropriete<T> fonctionObtentionPropriete) where T : IComparable
         {
-            List<Don> donsAccepteStocke = new List<Don>();
-            donsAccepteStocke = Recherche.RechercheDonParStatutType<Materiel>("accepté");
-            donsAccepteStocke.AddRange(Recherche.RechercheDonParStatutType<Materiel>("stocké"));
+            List<Don> donsAccepteStocke = Don.TrouverDon(don=>don.Statut== Don.StatutDon.Accepte || don.Statut==Don.StatutDon.Stocke);
             donsAccepteStocke.Sort((x, y) => fonctionObtentionPropriete(x).CompareTo(fonctionObtentionPropriete(y)));
             return donsAccepteStocke;
         }
