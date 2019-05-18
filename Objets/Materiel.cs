@@ -28,8 +28,16 @@ namespace TD7_8
             this.prix = prix;
         }
 
-        //delegate qui retourne TODOOO COM
+        /// <summary>
+        /// Delegate ayant pour but la création de matériel.
+        /// </summary>
+        /// <returns></returns>
         public delegate Materiel CreateurMateriel();
+        /// <summary>
+        /// Interface permettant la création d'un objet en fonction du type voulu par l'utilisateur.
+        /// Renvoie aux interfaces de créations de chaque objet précis
+        /// </summary>
+        /// <returns></returns>
         public static Materiel InterfaceCreation()
         {
             CreateurMateriel createurChoisi = InteractionUtilisateur.DemanderChoixObjet<CreateurMateriel>("Quel est le type de matériel à créer ?",
@@ -43,7 +51,6 @@ namespace TD7_8
                     Assiette.InterfaceCreation,
                     Cuisiniere.InterfaceCreation,
                     Table.InterfaceCreation},
-             //TODO On a tout mis ca y est j'crois bien?
              new string[] { "Réfrigérateur",
                  "Lave-Linge",
                  "Chaise",
