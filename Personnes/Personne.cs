@@ -48,6 +48,11 @@ namespace TD7_8
             personnes.Add(this);
         }
 
+        /// <summary>
+        /// Permet d'importer les fichiers CSV ou TXT dont les données sont séparés par des ";".
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="nomFichier"></param>
         public static void ImporterCSV<T>(string nomFichier) where T : Personne
         {
             StreamReader fichLect = new StreamReader(nomFichier);
@@ -100,11 +105,18 @@ namespace TD7_8
             Console.WriteLine("Importation terminée.");
         }
 
+        /// <summary>
+        /// Permet de trouver toutes les instances de type T héritant de Personne répondant à la condition passée en argument.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
         public static List<T> TrouverInstance<T>(Predicate<T> predicate) where T : Personne
         {
             List<T> personnesTypees = personnes.OfType<T>().ToList();
             return personnesTypees.FindAll(predicate);
         }
+
         /// <summary>
         /// Méthode supprimant une personne de la liste des personnes.
         /// </summary>
