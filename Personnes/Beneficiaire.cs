@@ -65,7 +65,6 @@ namespace TD7_8
         {
             string[] lignes = new string[Beneficiaire.Count];
             string ligne = "";
-            StreamWriter sw = null;
             List<Beneficiaire> beneficiaires = TrouverInstance<Beneficiaire>(x => true);
             int i = 0;
             foreach (Beneficiaire beneficiaire in beneficiaires)

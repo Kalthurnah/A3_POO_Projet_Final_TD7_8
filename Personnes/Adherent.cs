@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace TD7_8
@@ -58,6 +59,21 @@ namespace TD7_8
         public override string ToString()
         {
             return base.ToString()+$", {fonctionAdherent}";
+        }
+
+        public void ExporterAdherents()
+        {
+            string[] lignes = new string[Adherent.Count];
+            string ligne = "";
+            List<Adherent> adherents = TrouverInstance<Adherent>(x => true);
+            int i = 0;
+            foreach (Adherent adherent in adherents)
+            {
+                ligne = adherent.nom + ";" + adherent.prenom + ";" + adherent.adresse + ";" + adherent.numeroTel + ";" + adherent.fonctionAdherent;
+                lignes[i] = ligne;
+                i++;
+            }
+            File.WriteAllLines(@"C: \Users\Public\export_adherents.txt", lignes);
         }
     }
 }
