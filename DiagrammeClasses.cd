@@ -61,7 +61,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="TD7_8.ObjetVolumineux">
-    <Position X="51.25" Y="5.75" Width="2.25" />
+    <Position X="40.75" Y="5.75" Width="2.25" />
     <Compartments>
       <Compartment Name="Properties" Collapsed="true" />
     </Compartments>
@@ -78,7 +78,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.Vaisselle">
-    <Position X="62.75" Y="5.75" Width="2" />
+    <Position X="52.25" Y="5.75" Width="2" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
@@ -88,7 +88,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.MobilierChambre">
-    <Position X="45.5" Y="9.25" Width="1.5" />
+    <Position X="35" Y="9.25" Width="1.5" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
@@ -98,7 +98,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.MobilierSalleCuisine">
-    <Position X="51.5" Y="9.25" Width="1.75" />
+    <Position X="41" Y="9.25" Width="1.75" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
@@ -108,7 +108,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.ElectroMenager">
-    <Position X="57.5" Y="9.25" Width="1.5" />
+    <Position X="47" Y="9.25" Width="1.5" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
@@ -162,28 +162,28 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="TD7_8.Armoire">
-    <Position X="43.25" Y="11.25" Width="1.5" />
+    <Position X="32.75" Y="11.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Objets\Armoire.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.Chevet">
-    <Position X="45.5" Y="11.25" Width="1.5" />
+    <Position X="35" Y="11.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Objets\Chevet.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.Matelas">
-    <Position X="47.75" Y="11.25" Width="1.5" />
+    <Position X="37.25" Y="11.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Objets\Matelas.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.Table">
-    <Position X="52.75" Y="11.25" Width="1.75" />
+    <Position X="42.25" Y="11.25" Width="1.75" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
@@ -200,19 +200,19 @@
       </Enum>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAADAAAAAQAAAAAAAAI=</HashCode>
+      <HashCode>AAAAAgAAAAAAAAAEAAAAAAAAAAADAAAAAQAAAAAAAAI=</HashCode>
       <FileName>Objets\Table.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.Chaise">
-    <Position X="50" Y="11.25" Width="1.5" />
+    <Position X="39.5" Y="11.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Objets\Chaise.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.Materiel">
-    <Position X="54" Y="2.5" Width="1.5" />
+    <Position X="43.5" Y="2.5" Width="1.5" />
     <NestedTypes>
       <Delegate Name="TD7_8.Materiel.CreateurMateriel" Collapsed="true">
         <TypeIdentifier>
@@ -227,23 +227,23 @@
     <Lollipop Position="1.226" />
   </Class>
   <Class Name="TD7_8.Cuisiniere">
-    <Position X="57.5" Y="11.25" Width="1.5" />
+    <Position X="47" Y="11.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQAAAAAAAAAAAAAAAAAAAAABAAACAQAAAAAAAAEAAAA=</HashCode>
+      <HashCode>AQAAAAAAAAAAAAAEAAAAAAABAAACAQAAAAAAAAEAAAA=</HashCode>
       <FileName>Objets\Cuisiniere.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.Refrigerateur">
-    <Position X="55.25" Y="11.25" Width="1.5" />
+    <Position X="44.75" Y="11.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Objets\Refrigerateur.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.LaveLinge">
-    <Position X="59.75" Y="11.25" Width="1.5" />
+    <Position X="49.25" Y="11.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Objets\LaveLinge.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -303,16 +303,16 @@
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.Assiette">
-    <Position X="62" Y="8.75" Width="1.5" />
+    <Position X="51.5" Y="8.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Objets\Assiette.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.Couvert">
-    <Position X="64.25" Y="8.75" Width="1.5" />
+    <Position X="53.75" Y="8.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Objets\Couvert.cs</FileName>
     </TypeIdentifier>
   </Class>
