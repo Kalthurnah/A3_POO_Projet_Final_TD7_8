@@ -14,10 +14,8 @@ namespace TD7_8
 
         //TODO Com : en gros une fonction qui depuis un don retourne une propriété d'un don
 
-        public delegate T ObtentionPropriete<T>(Don don) where T : IComparable;
-        public delegate T ObtentionProprieteLegue<T>(DonLegue donLegue) where T : IComparable;
-        
-        public delegate T FonctionObtentionPropriete<T>(Don don) where T : IComparable;
+        public delegate T FonctionObtentionProprieteDon<T>(Don don) where T : IComparable;
+        public delegate T FonctionObtentionProprieteDonLegue<T>(DonLegue donLegue) where T : IComparable;
 
         static public List<Don> TriRefuseParDate()
         {
@@ -25,24 +23,6 @@ namespace TD7_8
             donsRefusesParDate.Sort((x, y) => x.DateReception.CompareTo(y.DateReception));
             return donsRefusesParDate;
             //Todo la rendre generique pour qu'elle prenne une fonction d'obtention de propriete en param ? (comme celle de dessous)
-        }
-
-        static public List<Don> TriAccepteStockeNom()
-        {
-            List<Don> donsAccepteStocke = new List<Don>();
-            donsAccepteStocke = Recherche.RechercheDonParStatutType<Materiel>("accepté");
-            donsAccepteStocke.AddRange(Recherche.RechercheDonParStatutType<Materiel>("stocké"));
-            donsAccepteStocke.Sort((x, y) => x.NomDonateur.CompareTo(y.NomDonateur));
-            return donsAccepteStocke;
-        }
-
-        static public List<Don> TriAccepteStockeId()
-        {
-            List<Don> donsAccepteStocke = new List<Don>();
-            donsAccepteStocke = Recherche.RechercheDonParStatutType<Materiel>("accepté");
-            donsAccepteStocke.AddRange(Recherche.RechercheDonParStatutType<Materiel>("stocké"));
-            donsAccepteStocke.Sort((x, y) => x.Identifiant.CompareTo(y.Identifiant));
-            return donsAccepteStocke;
         }
 
         /// <summary>
@@ -56,14 +36,14 @@ namespace TD7_8
         /// <typeparam name="T"></typeparam>
         /// <param name="fonctionObtentionPropriete"></param>
         /// <returns></returns>
-        static public List<Don> TriAccepteStocke<T>(FonctionObtentionPropriete<T> fonctionObtentionPropriete) where T : IComparable
+        static public List<Don> TriAccepteStocke<T>(FonctionObtentionProprieteDon<T> fonctionObtentionPropriete) where T : IComparable
         {
-            List<Don> donsAccepteStocke = Don.TrouverDon(don=>don.Statut== Don.StatutDon.Accepte || don.Statut==Don.StatutDon.Stocke);
+            List<Don> donsAccepteStocke = Don.TrouverDon(don => don.Statut == Don.StatutDon.Accepte || don.Statut == Don.StatutDon.Stocke);
             donsAccepteStocke.Sort((x, y) => fonctionObtentionPropriete(x).CompareTo(fonctionObtentionPropriete(y)));
             return donsAccepteStocke;
         }
 
-        static public List<DonLegue> TriVenduDonne<T>(ObtentionProprieteLegue<T> fonctionObtentionPropriete) where T : IComparable
+        static public List<DonLegue> TriVenduDonne<T>(FonctionObtentionProprieteDonLegue<T> fonctionObtentionPropriete) where T : IComparable
         {
             List<DonLegue> donsVendusDonnes = new List<DonLegue>();
             donsVendusDonnes = DonLegue.DonsLegues;
