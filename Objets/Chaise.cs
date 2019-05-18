@@ -21,5 +21,11 @@ namespace TD7_8
 
             return new Chaise(longueur, largeur, hauteur, prix);
         }
+
+        public override string ToString()
+        {
+            string res = $"Chaise de dimensions {base.Dimensions} à {base.Prix}€.";
+            return base.ToString();
+        }
     }
 }

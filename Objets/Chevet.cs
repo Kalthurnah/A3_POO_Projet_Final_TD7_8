@@ -20,5 +20,11 @@ namespace TD7_8
 
             return new Chevet(longueur, largeur, hauteur, prix);
         }
+
+        public override string ToString()
+        {
+            string res = $"Table de chevet de dimensions {base.Dimensions} à {base.Prix}€.";
+            return base.ToString();
+        }
     }
 }
