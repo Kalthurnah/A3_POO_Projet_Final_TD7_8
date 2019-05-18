@@ -64,5 +64,11 @@ namespace TD7_8
             return donALeguer.Leguer(beneficiaire,dateLegue);
         }
 
+        public override string ToString()
+        {
+            string res = $"{DonInitial.ToString()} legué le {dateLegue} à {beneficiaireObjet.ToString()}.";
+            return res;
+        }
+
     }
 }
