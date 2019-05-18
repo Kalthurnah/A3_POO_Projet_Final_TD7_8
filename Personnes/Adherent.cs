@@ -45,11 +45,14 @@ namespace TD7_8
             this.fonctionAdherent = fonction;
         }
 
-        static public new Personne InterfaceCreation()
+        public static new Personne InterfaceCreation()
         {
-            Personne personneCree;
-            //TODO demander details et creer 
-            return personneCree=new Adherent();
+            Dictionary<string, string> parametres = InteractionUtilisateur.DemanderParametres(new string[] { "nom", "prénom", "adresse", "numéro de téléphone" });
+            Fonction fonction = InteractionUtilisateur.DemanderChoixObjet("Renseigner sa fonction dans l'association",
+                new Fonction[] { Fonction.Membre, Fonction.Tresorier, Fonction.President },
+                new string[] { "Membre", "Tresorier", "President" }
+                );
+            return new Adherent(fonction, parametres["nom"], parametres["prénom"], parametres["adresse"], parametres["numéro de téléphone"]);
         }
     }
 }

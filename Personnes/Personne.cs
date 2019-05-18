@@ -129,8 +129,7 @@ namespace TD7_8
                  "Donateur",
                  "Bénéficiaire"}
              );
-            //TODO AJOUTER & creer LES CREATEURS
-            Personne personneCree = createurChoisi();//Lance l'interface de création pour l'objet choisi.
+            Personne personneCree = createurChoisi();//Lance l'interface de création pour le type de personne choisi.
             return personneCree;
         }
 
