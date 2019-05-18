@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace TD7_8
 {
+    /// <summary>
+    /// Classe stockant nos delegues de fonctions de recherche pour un appel rapide
+    /// </summary>
     public class Recherche
     {
 
         /// <summary>
-        /// Fonction de recherche retournant les résultats de recherche selon une entrée donnée
+        /// Fonction de recherche retournant les résultats de recherche selon une entrée fournie.
         /// <typeparam name="T">Type d'objet.</typeparam>
         /// <param name="comparaison">Paramètre de recherche : valeur que le predicat recherchera dans une des informations de l'objet.</param>
         /// <returns>Liste de résultats</returns>
@@ -18,93 +21,48 @@ namespace TD7_8
 
         #region Dons
 
-        //TODO REMOVE !! Inutile ! Mais garder le format de delegate pr les tris avec des IComparer ?
-        //Todo jeter un oeil au "multi-delegate"
-        public static FonctionRecherche<Don> RechercheParMoisDon = delegate (string moisDuDon)
-         {
-             int mois = 0;
-             try
-             {
-                 mois = Convert.ToInt32(moisDuDon);
-             }
-             catch
-             {
-                 return new List<Don>();
-             }
 
-             return Don.TrouverDon(don => don.DateReception.Month == mois);
-         };
-
-
-        public static FonctionRecherche<Don> RechercheDonStatut = delegate (string statut)
+        public static List<Don> RechercheDonParStatutType<T>(string statutCherche) where T : Materiel
         {
-            Don.StatutDon statutCherche;
-            switch (statut.ToLower())
+            Don.StatutDon statutDonCherche;
+            // TODO Annoncer lors de la demandes les choix possibles avant ? (par le biais de nomArgumentRecherche par ex ds la func de recherche)
+            switch (statutCherche.ToLower())
             {
                 case "accepte":
-                    statutCherche = Don.StatutDon.Accepte;
+                case "accepté":
+                    statutDonCherche = Don.StatutDon.Accepte;
                     break;
                 case "refuse":
-                    statutCherche = Don.StatutDon.Refuse;
+                case "refusé":
+                    statutDonCherche = Don.StatutDon.Refuse;
                     break;
                 case "stocke":
-                    statutCherche = Don.StatutDon.Stocke;
+                case "stocké":
+                    statutDonCherche = Don.StatutDon.Stocke;
                     break;
                 default:
-                    statutCherche = Don.StatutDon.EnAttente;
+                    statutDonCherche = Don.StatutDon.EnAttente;
                     break;
             }
-
-            return Don.TrouverDon(don => don.Statut == statutCherche);
-        };
-
-        public static FonctionRecherche<Don> RechercheDonStatutVolumineux = delegate (string statut)
-        {
-            Don.StatutDon statutCherche;
-            switch (statut.ToLower())
-            {
-                case "accepte":
-                    statutCherche = Don.StatutDon.Accepte;
-                    break;
-                case "refuse":
-                    statutCherche = Don.StatutDon.Refuse;
-                    break;
-                case "stocke":
-                    statutCherche = Don.StatutDon.Stocke;
-                    break;
-                default:
-                    statutCherche = Don.StatutDon.EnAttente;
-                    break;
-            }
-
-            return Don.TrouverDon(don => don.Statut == statutCherche && don.Objet is ObjetVolumineux);
-        };
-        public static List<Don> RechercheDonParStatutType<T>(string statutcherche) where T : Materiel
-        {
-            Don.StatutDon statutCherche;
-            //Todo accepter plus de cas pr les entrees utilisateurs ? Et annoncer les existantes avant ?
-            switch (statutcherche.ToLower())
-            {
-                case "accepte":
-                    statutCherche = Don.StatutDon.Accepte;
-                    break;
-                case "refuse":
-                    statutCherche = Don.StatutDon.Refuse;
-                    break;
-                case "stocke":
-                    statutCherche = Don.StatutDon.Stocke;
-                    break;
-                default:
-                    statutCherche = Don.StatutDon.EnAttente;
-                    break;
-            }
-
-
-            return Don.TrouverDon<T>(don => don.Statut == statutCherche && don.Objet is T);
+            return Don.TrouverDon<T>(don => don.Statut == statutDonCherche);
         }
-        #endregion
 
-        //Delegate définies anonymement, lambda à l'intérieur, delegate définies pas anonymement ci dessous... On a fait le tour :P !!
+        public static List<Don> RechercheDonParMoisType<T>(string moisDuDon) where T : Materiel
+        {
+            int mois = 0;
+            try
+            {
+                mois = Convert.ToInt32(moisDuDon);
+            }
+            catch
+            {
+                return new List<Don>();
+            }
+
+            return Don.TrouverDon<T>(don => don.DateReception.Month == mois);
+        }
+
+        #endregion
 
         #region Personnes
 

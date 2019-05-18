@@ -91,16 +91,16 @@ namespace TD7_8
 
         public static void MenuStatistiques()
         {
-            sousMenu moyChoisie = InteractionUtilisateur.DemanderChoixObjet<sousMenu>("Menu :",
+            sousMenu afficherStatistiqueChoisie = InteractionUtilisateur.DemanderChoixObjet<sousMenu>("Menu :",
                  new sousMenu[] { () => Console.WriteLine(LieuStockage.MoyenneDureeStockageGenerale()),
                      () => Console.WriteLine(DepotVente.MoyennePrixGenerale()),
                      () => Console.WriteLine(Beneficiaire.MoyenneAge()),
                      () => Console.WriteLine(Beneficiaire.Count),
                      () => Console.WriteLine(Donateur.Count),
                      () => Console.WriteLine(Adherent.Count),
-                     () => Console.WriteLine(Don.Count),
-                     () => Console.WriteLine(Recherche.RechercheDonStatut("accepte").Count),
-                     () => Console.WriteLine(Recherche.RechercheDonStatutVolumineux("accepte").Count/Don.TrouverDon<ObjetVolumineux>(x => true).Count),
+                     () => Console.WriteLine(Don.CountTraites<Materiel>()),
+                     () => Console.WriteLine(Recherche.RechercheDonParStatutType<Materiel>("accepte").Count),
+                     () => Console.WriteLine(Don.CountTraites<ObjetVolumineux>(true,new Don.StatutDon[]{Don.StatutDon.Accepte, Don.StatutDon.Stocke})/Don.CountTraites<ObjetVolumineux>(true)),
                      Rien },
                      new string[] { "Obtenir la moyenne de temps entre la reception et le retrait des dons",
                          "Obtenir la moyenne de prix dans les dépot-ventes",
