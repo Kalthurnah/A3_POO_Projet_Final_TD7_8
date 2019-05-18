@@ -219,7 +219,6 @@ namespace TD7_8
             Don donEnTraitement = donsEnAttenteTraitement.Peek();
             Console.WriteLine("Le dernier don en attente est le suivant :");
             Console.WriteLine(donEnTraitement);//Affiche le ToString du don
-                                               //TODO TOSTRING DON, PERSONNE, etc
             Console.WriteLine("\n");
             //On demande les infos à l'utilisateur :
             StatutDon nouveauStatut = InteractionUtilisateur.DemanderChoixObjet<StatutDon>("Ce don est en attente. Faut-il :",

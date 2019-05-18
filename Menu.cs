@@ -181,7 +181,7 @@ namespace TD7_8
                          "Obtenir le ratio de propositions d'objets volumineux acceptées par rapport aux reçues",
                          "Obtenir les principales catégories d’articles en stock",
                          "Retour" });
-            //TODO Volume des ventes ventilé suivant les destinations possibles
+            //TODO Volume des ventes ventilé suivant les destinations possibles... Pas compris l'instruction.
 
             //On lance la fonction d'affichage de statistique choisie (vive les delegate parce qu'on a pas a faire un gros switch tout moche c'est formidable)
             afficherStatistiqueChoisie();

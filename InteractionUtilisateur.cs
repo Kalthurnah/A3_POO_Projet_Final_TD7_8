@@ -69,7 +69,6 @@ namespace TD7_8
             return choix - 1;//-1 pour rapporter le choix à un index entre 0 et length (exclu)
         }
 
-        //TOdo coms
         public static string DemanderString(string message)
         {
             Console.WriteLine(message);
@@ -100,7 +99,6 @@ namespace TD7_8
             return objetChoisi;
         }
 
-        //TODO COMS
         public static Dictionary<string, string> DemanderParametres(string[] parametresADemander)
         {
             Dictionary<string, string> choix = new Dictionary<string, string>();
