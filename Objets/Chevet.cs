@@ -13,7 +13,6 @@ namespace TD7_8
 
         static public new Materiel InterfaceCreation()
         {
-            bool valid = false;
             double longueur = InteractionUtilisateur.DemanderDouble("Entrer la longueur");
             double largeur = InteractionUtilisateur.DemanderDouble("Entrer la largeur");
             double hauteur = InteractionUtilisateur.DemanderDouble("Entrer la hauteur");

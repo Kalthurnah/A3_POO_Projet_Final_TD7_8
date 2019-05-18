@@ -66,7 +66,7 @@ namespace TD7_8
             }
             if (donsLegues.Count != 0)
             {
-                moy = moy / lieuxStockage.Count;
+                moy /= lieuxStockage.Count;
             }
             return moy;
         }

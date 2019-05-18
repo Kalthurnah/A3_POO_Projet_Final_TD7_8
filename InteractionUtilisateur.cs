@@ -87,7 +87,6 @@ namespace TD7_8
         public static T DemanderChoixObjet<T>(string message, T[] listeChoix, string[] listeIntitulesChoix = null)
         {
             T objetChoisi;
-            int choix = 0;
             if (listeIntitulesChoix == null)
             {
                 listeIntitulesChoix = new string[listeChoix.Length];//Nouvelle liste de longueur identique au nombre de choix
@@ -96,7 +95,7 @@ namespace TD7_8
                     listeIntitulesChoix[i] = listeChoix[i].ToString();
                 }
             }
-            choix = DemanderChoixInt(message, listeIntitulesChoix);
+            int choix = DemanderChoixInt(message, listeIntitulesChoix);
             objetChoisi = listeChoix[choix];//L'objet choisi est celui de la liste correspondant au numéro choisi par l'utilisateur. 
             return objetChoisi;
         }
@@ -170,7 +169,7 @@ namespace TD7_8
         {
 
             T instanceChoisie = default(T);
-            bool valid = false;
+            bool valid;
             string lecture;
             List<T> resultats;
             do

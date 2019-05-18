@@ -52,8 +52,8 @@ namespace TD7_8
         {
             StreamReader fichLect = new StreamReader(nomFichier);
             char[] sep = new char[1] { ';' };
-            string ligne = "";
-            string[] datas = new string[6];
+            string ligne = "";//TODO : retirer le =.., meme raison qu'en dessous 
+            string[] datas = new string[6];//Todo : retirer le = ... car ligne.split retourne de toute facon une new string[]
             DateTime date;
             string nom;
             string prenom;
@@ -74,7 +74,7 @@ namespace TD7_8
                     if (typeof(T) == typeof(Beneficiaire))
                     {
                         date = DateTime.ParseExact(datas[5], "dd/MM/yyyy", null);
-                        Beneficiaire beneficiaire = new Beneficiaire(date, nom, prenom, adresse, tel);
+                        new Beneficiaire(date, nom, prenom, adresse, tel);
                     }
                     else
                     {
@@ -93,7 +93,7 @@ namespace TD7_8
                                 statut = Adherent.Fonction.Membre;
                                 break;
                         }
-                        Adherent adherent = new Adherent(statut, nom, prenom, adresse, tel);
+                        new Adherent(statut, nom, prenom, adresse, tel);
                     }
                 }
             }

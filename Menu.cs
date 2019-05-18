@@ -186,7 +186,7 @@ namespace TD7_8
             //on obtient la fonction de recherche correspondant au choix utilisateur
 
             //On lance une recherche avec cette fonction de recherche choisie.
-            return InteractionUtilisateur.RechercherUnElement<T>(modeDeRechercheChoisi);
+            return InteractionUtilisateur.RechercherUnElement<T>(modeDeRechercheChoisi,demanderChoix);
         }
 
         public static void MenuDons()
