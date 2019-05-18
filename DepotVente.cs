@@ -18,9 +18,6 @@ namespace TD7_8
         }
 
         public double Solde { get => solde; }
-        //Todo override Add element dans le dépot vente pour incrémenter le solde en plus de rajouter l'élém ds la liste
-        //Idem pr Delete
-
         public static int Count { get => lieuxStockage.OfType<DepotVente>().Count<DepotVente>(); }
 
         /// <summary>
@@ -62,6 +59,17 @@ namespace TD7_8
                 moy = moy / nb;
             }
             return moy;
+        }
+
+        /// <summary>
+        /// Permet d'enlever un don des dons stockés et de l'ajouter à la liste des dons légués.
+        /// </summary>
+        /// <param name="donLegue"></param>
+        public override void LeguerDon(DonLegue donLegue)
+        {
+            donsStockes.Remove(donLegue.Identifiant);
+            solde -= donLegue.Objet.Prix;
+            donsLegues.Add(donLegue.Identifiant, donLegue);
         }
     }
 }

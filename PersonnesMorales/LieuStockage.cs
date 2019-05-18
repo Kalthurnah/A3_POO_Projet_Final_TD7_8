@@ -46,7 +46,7 @@ namespace TD7_8
         /// Permet d'enlever un don des dons stockés et de l'ajouter à la liste des dons légués.
         /// </summary>
         /// <param name="donLegue"></param>
-        public void LeguerDon(DonLegue donLegue)
+        public virtual void LeguerDon(DonLegue donLegue)
         {
             donsStockes.Remove(donLegue.Identifiant);
             donsLegues.Add(donLegue.Identifiant, donLegue);
@@ -55,7 +55,7 @@ namespace TD7_8
         /// <summary>
         /// Permet de trouver les dons d'un certain type correspondants à la condition passée en argument.
         /// </summary>
-        /// <typeparam name="M"></typeparam>
+        /// <typeparam name="M">Type de matériel </typeparam>
         /// <param name="predicate"></param>
         /// <returns></returns>
         public List<Don> TrouverDon<M>(Predicate<Don> predicate) where M : Materiel
@@ -74,7 +74,7 @@ namespace TD7_8
         /// <summary>
         /// Permet de calculer la durée de stockage moyenne de tous les lieux de stockage.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>durée de stockage moyenne de tous les lieux de stockage.</returns>
         public static double MoyenneDureeStockageGenerale()
         {
             double moy = 0;
@@ -92,7 +92,7 @@ namespace TD7_8
         /// <summary>
         /// Permet de calculer la durée de stockage moyenne d'un lieu de stockage.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>durée de stockage moyenne de cette instance de lieu de stockage.</returns>
         public double MoyenneDureeStockage()
         {
             double moy = 0;
@@ -110,8 +110,8 @@ namespace TD7_8
         /// <summary>
         /// Permet de créer un lieu de stockage selon les saisies en console faites par l'utilisateur.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
+        /// <typeparam name="T">Type de lieu de stockage à créer</typeparam>
+        /// <returns>Le nouveau lieu de stockage</returns>
         public static LieuStockage InterfaceCreationLieuStockage<T>() where T : LieuStockage
         {
             LieuStockage nouveauLieu;
