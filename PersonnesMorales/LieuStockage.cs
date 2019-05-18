@@ -38,9 +38,23 @@ namespace TD7_8
         {
             donsStockes.Add(donAAjouter.Identifiant, donAAjouter);
         }
-        public void LeguerDon(DonLegue donLegue) {
+        public void LeguerDon(DonLegue donLegue)
+        {
             donsStockes.Remove(donLegue.Identifiant);
             donsLegues.Add(donLegue.Identifiant, donLegue);
+        }
+
+        public List<Don> TrouverDon<M>(Predicate<Don> predicate) where M : Materiel
+        {
+            List<Don> donsTrouves = new List<Don>();
+            foreach (Don don in donsStockes.Values)
+            {
+                if (don.TypeObjet==typeof(M) && predicate(don))
+                {
+                    donsTrouves.Add(don);
+                }
+            }
+            return donsTrouves;
         }
 
         public static double MoyenneDureeStockageGenerale()
@@ -70,7 +84,7 @@ namespace TD7_8
             }
             return moy;
         }
-        
+
         public static LieuStockage InterfaceCreationLieuStockage<T>() where T : LieuStockage
         {
             LieuStockage nouveauLieu;
