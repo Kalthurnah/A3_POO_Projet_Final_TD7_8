@@ -10,7 +10,7 @@ namespace TD7_8
     /// </summary>
     public class DonLegue : IIdentifiable
     {
-        static list<DonLegue> donsLegues;
+        static List<DonLegue> donsLegues;
         private Materiel objet;
         private Type typeObjet;
         private Don DonInitial;
@@ -55,11 +55,12 @@ namespace TD7_8
         }
 
 
-        public static DonLegue InterfaceCreation()
+        public static DonLegue InterfaceLeguerDon()
         {
-            Don donALeguer = Menu.MenuRechercheDon();
-            //TODO DEMANDER BENEFICIAIRE
-            return donALeguer.Leguer();
+            Don donALeguer = Menu.MenuRechercheDon(demanderChoix:true);
+            Beneficiaire beneficiaire = Menu.MenuRecherchePersonneMode<Beneficiaire>(demanderChoix:true);
+            DateTime dateLegue = InteractionUtilisateur.DemanderDateTime("Rentrer la date à laquelle le don a été légué.");
+            return donALeguer.Leguer(beneficiaire,dateLegue);
         }
 
     }
