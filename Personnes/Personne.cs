@@ -115,12 +115,19 @@ namespace TD7_8
                     Beneficiaire.InterfaceCreation},
              new string[] { "Adhérent",
                  "Donateur",
-                 "Bénéficiaire"             }
+                 "Bénéficiaire"}
              );
             //TODO AJOUTER & creer LES CREATEURS
             Personne personneCree = createurChoisi();//Lance l'interface de création pour l'objet choisi.
             return personneCree;
         }
 
+        /// <summary>
+        /// Méthode supprimant une personne de la liste des personnes.
+        /// </summary>
+        public void Supprimer()
+        {
+            personnes.Remove(this);
+        }
     }
 }

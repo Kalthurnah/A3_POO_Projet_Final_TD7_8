@@ -51,6 +51,32 @@ namespace TD7_8
             menuChoisi();
         }
 
+        private static void MenuModificationPersonne()
+        {
+            Personne personneAModifier = MenuRecherchePersonneMode<Personne>(demanderChoix: true);
+
+            sousMenu actionChoisie = InteractionUtilisateur.DemanderChoixObjet<sousMenu>($"Que modifier pour cette personne ?",
+                new sousMenu[] {
+                personneAModifier.Supprimer,
+                () => personneAModifier.Nom=InteractionUtilisateur.DemanderString("Nouveau nom"),
+                ()=>personneAModifier.Prenom=InteractionUtilisateur.DemanderString("Nouveau prénom"),
+                ()=>personneAModifier.NumeroTel=InteractionUtilisateur.DemanderString("Nouveau numéro de téléphone"),
+                ()=>personneAModifier.Adresse=InteractionUtilisateur.DemanderString("Nouvelle adresse"),
+                Rien },
+            new string[] { "La supprimer",
+                "Changer son nom",
+                "Changer son prénom",
+                "Changer son numéro de téléphone",
+                "Changer son adresse",
+                "Retour" });
+            if (actionChoisie != Rien)
+            {
+
+                actionChoisie();
+                Console.WriteLine("Terminé.");
+            }
+        }
+
         public static Don MenuRechercheDon(bool demanderChoix)
         {
             int typeChoisi = InteractionUtilisateur.DemanderChoixInt("Choisir le type d'objet du don à chercher :",
