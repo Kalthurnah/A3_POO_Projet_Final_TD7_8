@@ -28,5 +28,15 @@ namespace TD7_8
             donsAccepteStocke.Sort((x, y) => x.NomDonateur.CompareTo(y.NomDonateur));
             return donsAccepteStocke;
         }
+
+        public static void AfficherPrincipalesCategoriesEnStock()
+        {
+
+            foreach (KeyValuePair<string, int> element in Don.ObtenirTypesStockesParFrequence())
+            {
+                Console.WriteLine($"{element.Key} : {element.Value} stockés");
+            }
+
+        }
     }
 }
