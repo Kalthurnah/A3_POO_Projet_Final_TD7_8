@@ -136,5 +136,11 @@ namespace TD7_8
 
         }
 
+        public override string ToString()
+        {
+            string res = $" Depot Vente: {identifiant}, {nom}, {adresse}, {numeroTel}.";
+            return res;
+        }
+
     }
 }

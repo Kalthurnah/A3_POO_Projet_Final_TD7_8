@@ -71,5 +71,10 @@ namespace TD7_8
             solde -= donLegue.Objet.Prix;
             donsLegues.Add(donLegue.Identifiant, donLegue);
         }
+        public override string ToString()
+        {
+            string res = $" Depot vente: {identifiant}, {nom}, {adresse}, {numeroTel}. Solde {Solde} €";
+            return res;
+        }
     }
 }

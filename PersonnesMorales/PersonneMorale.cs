@@ -9,7 +9,7 @@ namespace TD7_8
     {
         static int dernierIdDonne = 0;// Le dernier id donné n'est pas forcément le nombre de personnes, dans le cas ou on en supprime par exemple.
 
-        private int identifiant;
+        protected int identifiant;
         protected string nom;
         protected string adresse;
         protected string numeroTel;
@@ -36,12 +36,6 @@ namespace TD7_8
             this.nom = nom;
             this.adresse = adresse;
             this.numeroTel = numeroTel;
-        }
-
-        public override string ToString()
-        {
-            string res = $"Personne Morale : {identifiant}, {nom}, {adresse}, {numeroTel}.";
-            return res;
         }
 
     }
