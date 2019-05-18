@@ -33,16 +33,22 @@ namespace TD7_8
             } while (true);
         }
 
+        /// <summary>
+        /// Insere des valeurs au pif pour tester
+        /// </summary>
         public static void InitialisationValeurs()
         {
             //TODO Ajouter des lieux de stockage, dons, etc
-            new Don(new Chaise(1, 1, 1, 5), new Donateur(Adherent.Fonction.Membre, "A", "a", "adresse1", "04090823"), DateTime.ParseExact("12/12/2012", "dd/MM/yyyy", null));
+            Don don0=new Don(new Chaise(1, 1, 1, 5), new Donateur(Adherent.Fonction.Membre, "A", "a", "adresse1", "04090823"), DateTime.ParseExact("12/12/2012", "dd/MM/yyyy", null));
             Don don1 = new Don(new Cuisiniere(2, 2, 2, 2, 1, 500), new Donateur(Adherent.Fonction.President, "P", "p", "adresseP", "012424090823"), DateTime.ParseExact("12/11/2008", "dd/MM/yyyy", null));
             Don don2 = new Don(new Matelas(3, 3, 3, 50), new Donateur(Adherent.Fonction.Tresorier, "T", "t", "adresseT", "04424090823"), DateTime.ParseExact("12/10/2009", "dd/MM/yyyy", null));
+            Don don3 = new Don(new Matelas(3, 3, 3, 50), new Donateur(Adherent.Fonction.Tresorier, "T", "t", "adresseT", "04424090823"), DateTime.ParseExact("12/10/2008", "dd/MM/yyyy", null));
             Don.TraiterDonEnAttente(new Adherent(Adherent.Fonction.Membre, "TR", "tr", "adressetr", "040456790823"), Don.StatutDon.Stocke, new DepotVente("DepotA", "Adressuuuh", "127712 :D"));
 
-            Don.TraiterDonEnAttente(new Adherent(Adherent.Fonction.Membre, "TR", "tr", "adressetr", "040456790823"), Don.StatutDon.Stocke, new DepotVente("DepotA", "Adressuuuh", "127712 :D"));
-            don1.Leguer(new Beneficiaire(DateTime.ParseExact("12/10/1960", "dd/MM/yyyy", null), "FFZ", "aaa", "adressedsqfsd", "2643565432"), DateTime.ParseExact("12/10/2010", "dd/MM/yyyy", null));
+            Don.TraiterDonEnAttente(new Adherent(Adherent.Fonction.Membre, "TRSGF", "trARGQSDFV", "adressetr", "040456790823"), Don.StatutDon.Stocke, new DepotVente("DepotB", "AdressuBBBuuh", "12732712"));
+            Don.TraiterDonEnAttente(new Adherent(Adherent.Fonction.Membre, "TQEGSGR", "tSr", "adressetSQDFr", "040A2343456790823"), Don.StatutDon.Refuse);
+            Don.TraiterDonEnAttente(new Adherent(Adherent.Fonction.Membre, "TQSDFQSDFR", "trQDSF", "aQSDdressetr", "040423R23456790823"), Don.StatutDon.Accepte);
+            don3.Leguer(new Beneficiaire(DateTime.ParseExact("12/10/1960", "dd/MM/yyyy", null), "FFZ", "aaa", "adressedsqfsd", "2643565432"), DateTime.ParseExact("12/10/2010", "dd/MM/yyyy", null));
             don2.Leguer(new Beneficiaire(DateTime.ParseExact("12/10/1950", "dd/MM/yyyy", null), "B", "b", "adresseB", "256643565432"), DateTime.Now);
 
 
