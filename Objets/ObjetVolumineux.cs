@@ -14,9 +14,9 @@ namespace TD7_8
             public double hauteur;
         }
 
-        private Dimension dimensions;
+        protected Dimension dimensions;
 
-        private double volume;
+        protected double volume;
 
 
         public Dimension Dimensions { get => dimensions; }
@@ -42,7 +42,7 @@ namespace TD7_8
         /// <summary>
         /// Méthode d'instance qui met à jour l'attribut du volume de l'objet depuis ses dimensions 
         /// </summary>
-        private void MettreAJourVolume()
+        protected void MettreAJourVolume()
         {
             volume = CalculerVolume(dimensions);//On recalcule le volume de l'objet à partir de ses dimensions, et on met à jour l'attribut volume en conséquence.
         }
