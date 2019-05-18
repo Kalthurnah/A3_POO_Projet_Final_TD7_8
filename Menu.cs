@@ -40,15 +40,21 @@ namespace TD7_8
         public static void MenuTris()
         {
             sousMenu menuChoisi = InteractionUtilisateur.DemanderChoixObjet<sousMenu>("Menu Tri :",
-                 new sousMenu[] { () => InteractionUtilisateur.ListerObjets<Don>("Liste des dons refusés triés par date",Tri.TriRefuseParDate()),
-                     () => InteractionUtilisateur.ListerObjets<Don>("Liste des dons acceptés ou stockés triés par Nom de donateur",Tri.TriAccepteStocke( x => x.NomDonateur)),
-                     () => InteractionUtilisateur.ListerObjets<Don>("Liste des dons acceptés ou stockés triés par identifiant",Tri.TriAccepteStocke( x => x.Identifiant)),
-                     () => InteractionUtilisateur.ListerObjets<DonLegue>("Liste des dons donnés/vendus par numéro de bénéficiaire", Tri.TriVenduDonne( x => x.BeneficiaireObjet.Identifiant)),
+                 new sousMenu[] { () => InteractionUtilisateur.ListerObjets("Liste des dons refusés triés par date",Tri.TriRefuseParDate()),
+                     () => InteractionUtilisateur.ListerObjets("Liste des dons acceptés ou stockés triés par nom de donateur",Tri.TriAccepteStocke( don => don.NomDonateur)),
+                     () => InteractionUtilisateur.ListerObjets("Liste des dons acceptés ou stockés triés par identifiant",Tri.TriAccepteStocke( don => don.Identifiant)),
+                     () => InteractionUtilisateur.ListerObjets("Liste des dons donnés/vendus par numéro de bénéficiaire", Tri.TriVenduDonne( donLegue => donLegue.BeneficiaireObjet.Identifiant)),
+                     () => Tri.sousMenuTriLieuStockage<Materiel,string>("Liste des dons stockés par entrepôt et par catégorie",don=>don.TypeObjet.Name),
+                     () => Tri.sousMenuTriLieuStockage<Materiel,string>("Liste des dons stockés par entrepôt et par description",don=>don.DescriptionComplementaire),
+                     () => Tri.sousMenuTriLieuStockage<ObjetVolumineux,double>("Liste des dons stockés par entrepôt et par volume",don=>((ObjetVolumineux)don.Objet).Volume),
+                     //Vu qu'un objet d'un don n'est pas forcément volumineux en temps normal, il est nécéssaire de caster l'objet du don en objet volumineux pour accéder à son volume.
+                     //Il n'y a ici pas de risque d'erreur à l'execution car on a spécifié à la méthode générique TriLieuStockage de ne récupérer que les objets volumineux stockés.
                      Rien },
                  new string[] { "Liste des dons refusés triés par date",
                      "Liste des dons acceptés ou stockés triés par Nom de donateur",
                      "Liste des dons acceptés ou stockés triés par identifiant",
                      "Liste des dons donnés/vendus par numéro de bénéficiaire",
+                     "Liste des dons stockés par entrepôt et par catégorie/description",
                      "Retour" });
             menuChoisi();
         }
@@ -186,7 +192,7 @@ namespace TD7_8
             //on obtient la fonction de recherche correspondant au choix utilisateur
 
             //On lance une recherche avec cette fonction de recherche choisie.
-            return InteractionUtilisateur.RechercherUnElement<T>(modeDeRechercheChoisi,demanderChoix);
+            return InteractionUtilisateur.RechercherUnElement<T>(modeDeRechercheChoisi, demanderChoix);
         }
 
         public static void MenuDons()

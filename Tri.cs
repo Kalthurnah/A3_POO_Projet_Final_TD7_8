@@ -51,6 +51,22 @@ namespace TD7_8
             return donsVendusDonnes;
         }
 
+        static public List<Don> TriLieuStockage<M, T>(LieuStockage lieuStockage, FonctionObtentionProprieteDon<T> fonctionObtentionPropriete) where T : IComparable where M : Materiel
+        {
+            List<Don> donsStockes = lieuStockage.TrouverDon<M>(don => don.LieuStockageDon == lieuStockage);
+            donsStockes.Sort((x, y) => fonctionObtentionPropriete(x).CompareTo(fonctionObtentionPropriete(y)));
+
+            return donsStockes;
+        }
+
+        //TODO COM
+        static public void sousMenuTriLieuStockage<M, T>(string message, FonctionObtentionProprieteDon<T> fonctionObtentionPropriete) where T : IComparable where M : Materiel
+        {
+
+            LieuStockage lieuStockageDon = InteractionUtilisateur.RechercherUnElement(Recherche.RechercheParNomLieuStockageType<LieuStockage>, true, "nom (Ne rien entrer les affichera tous.)");
+            InteractionUtilisateur.ListerObjets<Don>(message, TriLieuStockage<M, T>(lieuStockageDon, fonctionObtentionPropriete));
+
+        }
         public static void AfficherPrincipalesCategoriesEnStock()
         {
 
