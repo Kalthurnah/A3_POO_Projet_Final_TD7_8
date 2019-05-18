@@ -163,9 +163,10 @@ namespace TD7_8
             //Puis on trie cette liste par valeur  comme l'exemple sort per value d'ici https://www.dotnetperls.com/sort-dictionary
             //ou var ordered = dict.OrderByDescending(x => x.Value); : nouvelle collection + des delegate = prof content. 
             //Après on loop sur la boucle pour les afficher ds l'ordre
-            //foreach (KeyValuePair<string,int> item in dict.OrderByDescending(x=> x.Value))
+            //foreach (KeyValuePair<Type,int> element in dict.OrderByDescending(x=> x.Value))
             //{
-                // do something with item.Key and item.Value
+                // element.Key.Name : nom du matériel, element.Value : nombre de stockés.
+                //Plus qu'a writeline
             //}
 
             //On lance la fonction d'affichage de statistique choisie (vive les delegate parce qu'on a pas a faire un gros switch tout moche c'est formidable)
