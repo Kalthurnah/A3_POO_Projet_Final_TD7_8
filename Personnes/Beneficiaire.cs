@@ -55,5 +55,9 @@ namespace TD7_8
             return new Beneficiaire(dateNaissance,parametres["nom"],parametres["prénom"], parametres["adresse"], parametres["numéro de téléphone"]);
         }
 
+        public override string ToString()
+        {
+            return base.ToString()+$", agé de {Age} ans";
+        }
     }
 }
