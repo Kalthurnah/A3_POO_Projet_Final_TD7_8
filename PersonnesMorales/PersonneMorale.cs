@@ -38,5 +38,11 @@ namespace TD7_8
             this.numeroTel = numeroTel;
         }
 
+        public override string ToString()
+        {
+            string res = $"Personne Morale : {identifiant}, {nom}, {adresse}, {numeroTel}.";
+            return res;
+        }
+
     }
 }
