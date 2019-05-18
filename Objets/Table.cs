@@ -36,7 +36,6 @@ namespace TD7_8
             this.type = type;
             this.forme = forme;
         }
-        //TODO Createur table
 
 
         static public new Materiel InterfaceCreation()

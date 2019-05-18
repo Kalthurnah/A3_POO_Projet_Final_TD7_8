@@ -210,5 +210,13 @@ namespace TD7_8
                      new string[] { "Des bénéficiaires", "Des adhérents", "Retour" });
             menuChoisi();
         }
+
+        public static void MenuTri()
+        {
+            sousMenu menuChoisi = InteractionUtilisateur.DemanderChoixObjet<sousMenu>("Menu Tri :",
+                 new sousMenu[] { () => Recherche.RechercheDonParStatutType<Materiel>("refusé").Sort((x, y) => x.DateReception.CompareTo(y.DateReception)), Rien },
+                 new string[] { "Liste des dons refusés triés par date", "Retour" });
+            menuChoisi();
+        }
     }
 }
