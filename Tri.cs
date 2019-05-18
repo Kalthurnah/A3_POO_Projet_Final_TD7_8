@@ -8,14 +8,14 @@ namespace TD7_8
 {
     class Tri
     {
-        //Todo : faire des delegate de comparison, ou les créer dans leurs classes respectives
-        //https://docs.microsoft.com/en-us/dotnet/api/system.comparison-1?view=netframework-4.8
-        //Ex : Comparer don par identifiant, comparer don par nom, etc... J'pense que dans leurs classes elle meme ce serait mieux qu'ici 🤔
-
-        //TODO Com : en gros une fonction qui depuis un don retourne une propriété d'un don
-
-        public delegate T FonctionObtentionProprieteDon<T>(Don don) where T : IComparable;
-        public delegate T FonctionObtentionProprieteDonLegue<T>(DonLegue donLegue) where T : IComparable;
+        /// <summary>
+        /// Fonction retournant pour un Don don une propriété de ce don sur laquelle on peut effectuer une comparaison.
+        /// </summary>
+        /// <typeparam name="T">Type de la propriété du don. Doit être comparable.</typeparam>
+        /// <param name="don">don dont on veut obtenir une propriété</param>
+        /// <returns>Propriété d'un don</returns>
+        public delegate T FonctionObtentionProprieteDon<T>(Don don) where T : IComparable<T>;
+        public delegate T FonctionObtentionProprieteDonLegue<T>(DonLegue donLegue) where T : IComparable<T>;
 
         static public List<Don> TriRefuseParDate()
         {
@@ -26,7 +26,7 @@ namespace TD7_8
         }
 
         /// <summary>
-        /// TODO COM
+        /// Fonction retournant une liste triée de don
         /// </summary>
         /// <example>
         /// <code>
@@ -36,14 +36,14 @@ namespace TD7_8
         /// <typeparam name="T"></typeparam>
         /// <param name="fonctionObtentionPropriete"></param>
         /// <returns></returns>
-        static public List<Don> TriAccepteStocke<T>(FonctionObtentionProprieteDon<T> fonctionObtentionPropriete) where T : IComparable
+        static public List<Don> TriAccepteStocke<T>(FonctionObtentionProprieteDon<T> fonctionObtentionPropriete) where T : IComparable<T>
         {
             List<Don> donsAccepteStocke = Don.TrouverDon(don => don.Statut == Don.StatutDon.Accepte || don.Statut == Don.StatutDon.Stocke);
             donsAccepteStocke.Sort((x, y) => fonctionObtentionPropriete(x).CompareTo(fonctionObtentionPropriete(y)));
             return donsAccepteStocke;
         }
 
-        static public List<DonLegue> TriVenduDonne<T>(FonctionObtentionProprieteDonLegue<T> fonctionObtentionPropriete) where T : IComparable
+        static public List<DonLegue> TriVenduDonne<T>(FonctionObtentionProprieteDonLegue<T> fonctionObtentionPropriete) where T : IComparable<T>
         {
             List<DonLegue> donsVendusDonnes = new List<DonLegue>();
             donsVendusDonnes = DonLegue.DonsLegues;
@@ -51,7 +51,7 @@ namespace TD7_8
             return donsVendusDonnes;
         }
 
-        static public List<Don> TriLieuStockage<M, T>(LieuStockage lieuStockage, FonctionObtentionProprieteDon<T> fonctionObtentionPropriete) where T : IComparable where M : Materiel
+        static public List<Don> TriLieuStockage<M, T>(LieuStockage lieuStockage, FonctionObtentionProprieteDon<T> fonctionObtentionPropriete) where T : IComparable<T> where M : Materiel
         {
             List<Don> donsStockes = lieuStockage.TrouverDon<M>(don => don.LieuStockageDon == lieuStockage);
             donsStockes.Sort((x, y) => fonctionObtentionPropriete(x).CompareTo(fonctionObtentionPropriete(y)));
@@ -60,7 +60,7 @@ namespace TD7_8
         }
 
         //TODO COM
-        static public void sousMenuTriLieuStockage<M, T>(string message, FonctionObtentionProprieteDon<T> fonctionObtentionPropriete) where T : IComparable where M : Materiel
+        static public void sousMenuTriLieuStockage<M, T>(string message, FonctionObtentionProprieteDon<T> fonctionObtentionPropriete) where T : IComparable<T> where M : Materiel
         {
 
             LieuStockage lieuStockageDon = InteractionUtilisateur.RechercherUnElement(Recherche.RechercheParNomLieuStockageType<LieuStockage>, true, "nom (Ne rien entrer les affichera tous.)");
@@ -72,7 +72,7 @@ namespace TD7_8
 
             foreach (KeyValuePair<string, int> element in Don.ObtenirTypesStockesParFrequence())
             {
-                Console.WriteLine($"{element.Key} : {element.Value} stockés");
+                Console.WriteLine($"{element.Key} : {element.Value} en stock");
             }
 
         }
