@@ -21,36 +21,9 @@ namespace TD7_8
         static List<Don> donsArchives = new List<Don>();
         static Queue<Don> donsEnAttenteTraitement = new Queue<Don>();
 
-        //TOdo com et mentionner que par defaut liste tous les statuts
-        public static int CountTraites<T>(bool InclureArchive = false, StatutDon[] statutsACompter = null) where T : Materiel
-        {
-            int compteur = 0;
-            if (statutsACompter == null)
-            {
-                statutsACompter = new StatutDon[] { StatutDon.EnAttente, StatutDon.Refuse, StatutDon.Stocke, StatutDon.Accepte };
-            }
-            foreach (Don don in donsDisponibles)
-            {
-                if (don.typeObjet is T && (statutsACompter == null || statutsACompter.Contains(don.Statut)))
-                {
-                    compteur++;
-                }
-            }
-            if (InclureArchive)
-            {
-                foreach (Don don in donsArchives)
-                {
-                    if (don.typeObjet is T && (statutsACompter == null || statutsACompter.Contains(don.Statut)))
-                    {
-                        compteur++;
-                    }
-                }
-            }
-            return compteur;
-        }
+
         private static int dernierIdDonne = 0;
 
-        //TODO constructeur, LIST DONS / OBJETS LEGUES DS OBJETS LEUGES , ETC PR TRACABILITE
         private int idDon;
         private string descriptionComplementaire;
         private DateTime dateReception;
@@ -65,22 +38,6 @@ namespace TD7_8
 
 
         public int Identifiant { get => idDon; }
-
-        public static List<Don> TrouverDon(Predicate<Don> predicate)
-        {
-            List<Don> listeTrouverDon = donsDisponibles.FindAll(predicate);
-            listeTrouverDon.AddRange(donsArchives.FindAll(predicate));
-            return listeTrouverDon;
-        }
-        //Todo coms
-        public static List<Don> TrouverDon<T>(Predicate<Don> predicate) where T : Materiel
-        {
-            List<Don> listeTrouverDon = new List<Don>(donsDisponibles);
-            listeTrouverDon.AddRange(donsArchives);
-            listeTrouverDon.FindAll(don =>(predicate(don) && don.objet is T));
-            return listeTrouverDon;
-        }
-
         public string DescriptionComplementaire { get => descriptionComplementaire; }
         public DateTime DateReception { get => dateReception; }
         public Type TypeObjet { get => typeObjet; }
@@ -115,8 +72,47 @@ namespace TD7_8
         }
 
 
-        //TODO ARCHIVER DONS SI LEGUES
-
+        public static List<Don> TrouverDon(Predicate<Don> predicate)
+        {
+            List<Don> listeTrouverDon = donsDisponibles.FindAll(predicate);
+            listeTrouverDon.AddRange(donsArchives.FindAll(predicate));
+            return listeTrouverDon;
+        }
+        //Todo coms
+        public static List<Don> TrouverDon<T>(Predicate<Don> predicate) where T : Materiel
+        {
+            List<Don> listeTrouverDon = new List<Don>(donsDisponibles);
+            listeTrouverDon.AddRange(donsArchives);
+            listeTrouverDon.FindAll(don => (predicate(don) && don.objet is T));
+            return listeTrouverDon;
+        }
+        //TOdo com et mentionner que par defaut liste tous les statuts
+        public static int CountTraites<T>(bool InclureArchive = false, StatutDon[] statutsACompter = null) where T : Materiel
+        {
+            int compteur = 0;
+            if (statutsACompter == null)
+            {
+                statutsACompter = new StatutDon[] { StatutDon.EnAttente, StatutDon.Refuse, StatutDon.Stocke, StatutDon.Accepte };
+            }
+            foreach (Don don in donsDisponibles)
+            {
+                if (don.typeObjet is T && (statutsACompter == null || statutsACompter.Contains(don.Statut)))
+                {
+                    compteur++;
+                }
+            }
+            if (InclureArchive)
+            {
+                foreach (Don don in donsArchives)
+                {
+                    if (don.typeObjet is T && (statutsACompter == null || statutsACompter.Contains(don.Statut)))
+                    {
+                        compteur++;
+                    }
+                }
+            }
+            return compteur;
+        }
         /// <summary>
         /// Traite le premier don dans la file d'attente, l'en retire et l'ajoute dans la liste adaptée (dons disponibles ou archivés en cas de refus..
         /// </summary>
@@ -205,8 +201,7 @@ namespace TD7_8
             Donateur donateur = Menu.MenuRecherchePersonneMode<Donateur>(demanderChoix: true);
             DateTime dateReception = InteractionUtilisateur.DemanderDateTime("Entrez la date de reception.");
 
-            Console.WriteLine("Entrez une description. (Ou laissez la vide)");
-            string description = Console.ReadLine();
+            string description = InteractionUtilisateur.DemanderString("Entrez une description. (Ou laissez la vide)")
             Don don = new Don(materiel, donateur, dateReception, description);
             return don;
         }
