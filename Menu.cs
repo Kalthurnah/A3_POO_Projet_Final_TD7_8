@@ -40,8 +40,10 @@ namespace TD7_8
         public static void MenuTri()
         {
             sousMenu menuChoisi = InteractionUtilisateur.DemanderChoixObjet<sousMenu>("Menu Tri :",
-                 new sousMenu[] { () => Recherche.RechercheDonParStatutType<Materiel>("refusé").Sort((x, y) => x.DateReception.CompareTo(y.DateReception)), Rien },
-                 new string[] { "Liste des dons refusés triés par date", "Retour" });
+                 new sousMenu[] { () => Recherche.RechercheDonParStatutType<Materiel>("refusé").Sort((x, y) => x.DateReception.CompareTo(y.DateReception)),
+                     () => (Recherche.RechercheDonParStatutType<Materiel>("accepté").AddRange(Recherche.RechercheDonParStatutType<Materiel>("stocké"))).Sort((x,y) => x.NomDonateur.CompareTo(y.NomDonateur)),
+                     Rien },
+                 new string[] { "Liste des dons refusés triés par date", "Liste des dons acceptés ou stockés triés par Nom de donateur", "Retour" });
             menuChoisi();
         }
 
