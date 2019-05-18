@@ -61,7 +61,7 @@ namespace TD7_8
         }
 
 
-        public void ExporterDonnee( string nomFichier)
+        public void ExporterBeneficiaires()
         {
             string[] lignes = new string[Beneficiaire.Count];
             string ligne = "";
@@ -74,7 +74,7 @@ namespace TD7_8
                 lignes[i] = ligne;
                 i++;
             }
-            File.WriteAllLines(@"C: \Users\Public\" + nomFichier, lignes);
+            File.WriteAllLines(@"C: \Users\Public\export_beneficiaires.txt", lignes);
         }
     }
 }
