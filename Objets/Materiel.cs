@@ -21,14 +21,14 @@ namespace TD7_8
         /// Constructeur "automatique" de la classe. A chaque objet instancié, on lui donne un id correspondant à son "numéro" d'objets, prix =0
         /// <param name="prix">prix de l'objet</param>
         /// </summary>
-        protected Materiel(double prix = 0)
+        protected Materiel(double prix)
         {
             dernierIdDonne++;
             this.idObjet = dernierIdDonne;
             this.prix = prix;
         }
 
-        //delegate qui retourne 
+        //delegate qui retourne TODOOO COM
         public delegate Materiel CreateurMateriel();
         public static Materiel InterfaceCreation()
         {
@@ -42,11 +42,12 @@ namespace TD7_8
                     Couvert.InterfaceCreation,
                     Assiette.InterfaceCreation,
                     Cuisiniere.InterfaceCreation,
-                Table.InterfaceCreation},
+                    Table.InterfaceCreation},
+             //TODO On a tout mis ca y est j'crois bien?
              new string[] { "Réfrigérateur",
                  "Lave-Linge",
-                 "Table de chevet",
                  "Chaise",
+                 "Chevet",
                  "Armoire",
                  "Matelas",
                  "Couvert",
@@ -54,7 +55,6 @@ namespace TD7_8
                  "Cuisinière",
                  "Table"}
              );
-            //TODO AJOUTER & creer LES CREATEURS
             Materiel materielCree = createurChoisi();//Lance l'interface de création pour l'objet choisi.
             return materielCree;
         }
