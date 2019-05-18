@@ -23,7 +23,7 @@ namespace TD7_8
 
         public override string ToString()
         {
-            string res = $"Table de chevet de dimensions {base.Dimensions} à {base.Prix}€.";
+            string res = $"Table de chevet de dimensions {Dimensions.longueur}x{Dimensions.largeur}x{Dimensions.hauteur} à {Prix}€.";
             return base.ToString();
         }
     }

@@ -59,7 +59,7 @@ namespace TD7_8
 
         public override string ToString()
         {
-            string res = $"Table {forme} de {type} de dimensions {base.Dimensions} à {base.Prix}€.";
+            string res = $"Table {forme} de {type} de dimensions {Dimensions.longueur}x{Dimensions.largeur}x{Dimensions.hauteur} à {Prix}€.";
             return base.ToString();
         }
     }
