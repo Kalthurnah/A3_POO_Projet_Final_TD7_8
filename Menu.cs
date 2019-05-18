@@ -212,7 +212,6 @@ namespace TD7_8
                          "Léguer un don à un créateur.",
                          "Retour" });
             menuChoisi();
-            //TODO : Le menu de recherche de don ce serait pas un joli p'tit bonus ca ;P ? C'etait pas demandé uwu.
         }
 
 
