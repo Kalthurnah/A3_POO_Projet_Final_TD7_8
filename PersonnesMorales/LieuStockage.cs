@@ -14,7 +14,7 @@ namespace TD7_8
         public SortedList<int, Don> DonsStockes { get => donsStockes; }
         public SortedList<int, DonLegue> DonsLegues { get => donsLegues; }
 
-        public LieuStockage(string nom, string prenom, string adresse, string numeroTel) : base(nom, prenom, adresse, numeroTel)
+        public LieuStockage(string nom,  string adresse, string numeroTel) : base(nom, adresse, numeroTel)
         {
             donsStockes = new SortedList<int, Don>();
             donsLegues = new SortedList<int, DonLegue>();

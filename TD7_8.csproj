@@ -48,7 +48,7 @@
     <Compile Include="Objets\Assiette.cs" />
     <Compile Include="Objets\Couvert.cs" />
     <Compile Include="PersonnesMorales\GardeMeuble.cs" />
-    <Compile Include="DepotVente.cs" />
+    <Compile Include="PersonnesMorales\DepotVente.cs" />
     <Compile Include="IIdentifiable.cs" />
     <Compile Include="Personnes\Adherent.cs" />
     <Compile Include="Objets\Armoire.cs" />

@@ -12,7 +12,7 @@ namespace TD7_8
         /// <summary>
         /// A la création du dépot vente, son solde est de 1000€
         /// </summary>
-        public DepotVente(string nom, string prenom, string adresse, string numeroTel) : base(nom, prenom, adresse, numeroTel)
+        public DepotVente(string nom,  string adresse, string numeroTel) : base(nom, adresse, numeroTel)
         {
             solde = 1000;
         }
