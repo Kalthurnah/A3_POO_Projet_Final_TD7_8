@@ -41,7 +41,8 @@ namespace TD7_8
             new Don(new Matelas(3, 3, 3, 50), new Donateur(Adherent.Fonction.Tresorier, "T", "t", "adresseT", "04424090823"), DateTime.ParseExact("12/12/2012", "dd/MM/yyyy", null));
 
 
-
+            new Don(new Assiette(10, 0), new Donateur(Adherent.Fonction.Membre, "B", "b", "arbeiz", "065214535"), DateTime.ParseExact("17/03/2010", "dd/MM/yyyy", null));
+            new Don(new Refrigerateur(100, 150, 200, 100), new Donateur(Adherent.Fonction.Membre, "d", "b", "grearbeiz", "065277535"), DateTime.ParseExact("15/03/2010", "dd/MM/yyyy", null));
         }
     }
 }
