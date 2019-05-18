@@ -114,9 +114,8 @@ namespace TD7_8
             return compteur;
         }
 
-        public static List<KeyValuePair<Type, int>> ObtenirTypesMaterielsStockesParFrequence()
+        public static List<KeyValuePair<Type, int>> ObtenirTypesStockesParFrequence()
         {
-
             //TODO Principales catégories d’articles en stock
             //Idée : On crée un dictionnaire avec clé = type et valeur = nombre, (recherche sur les dons non archives avec Don.Stocke, puis compte pour chaque)
             //Puis on trie cette liste par valeur  comme l'exemple sort per value d'ici https://www.dotnetperls.com/sort-dictionary
