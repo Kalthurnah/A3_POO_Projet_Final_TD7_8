@@ -37,7 +37,7 @@ namespace TD7_8
             }
         }
 
-        public static void MenuTri()
+        public static void MenuTris()
         {
             sousMenu menuChoisi = InteractionUtilisateur.DemanderChoixObjet<sousMenu>("Menu Tri :",
                  new sousMenu[] { () => InteractionUtilisateur.ListerObjets<Don>("Liste des dons refusés triés par date",Tri.TriRefuseParDate()),
