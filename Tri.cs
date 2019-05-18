@@ -14,6 +14,8 @@ namespace TD7_8
 
             //TODO Com : en gros une fonction qui depuis un don retourne une propriété d'un don
         public delegate T ObtentionPropriete<T>(Don don) where T : IComparable;
+        public delegate T ObtentionProprieteLegue<T>(DonLegue donLegue) where T : IComparable;
+
         static public List<Don> TriRefuseParDate()
         {
             List<Don> donsRefusesParDate = new List<Don>();
@@ -58,6 +60,14 @@ namespace TD7_8
             donsAccepteStocke.AddRange(Recherche.RechercheDonParStatutType<Materiel>("stocké"));
             donsAccepteStocke.Sort((x, y) => fonctionObtentionPropriete(x).CompareTo(fonctionObtentionPropriete(y)));
             return donsAccepteStocke;
+        }
+
+        static public List<DonLegue> TriVenduDonne<T>(ObtentionProprieteLegue<T> fonctionObtentionPropriete) where T : IComparable
+        {
+            List<DonLegue> donsVendusDonnes = new List<DonLegue>();
+            donsVendusDonnes = DonLegue.DonsLegues;
+            donsVendusDonnes.Sort((x, y) => fonctionObtentionPropriete(x).CompareTo(fonctionObtentionPropriete(y)));
+            return donsVendusDonnes;
         }
 
         public static void AfficherPrincipalesCategoriesEnStock()
