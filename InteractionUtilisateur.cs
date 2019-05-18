@@ -61,6 +61,13 @@ namespace TD7_8
             return choix - 1;//-1 pour rapporter le choix à un index entre 0 et length (exclu)
         }
 
+        //TOdo coms
+        public static string DemanderString(string message)
+        {
+            Console.WriteLine(message);
+            return Console.ReadLine();
+        }
+
         /// <summary>
         /// Affiche un message à l'utilisateur, et lui propose des choix parmi lesquels il doit en choisir un. 
         /// </summary>
@@ -90,25 +97,22 @@ namespace TD7_8
         public static Dictionary<string, string> DemanderParametres(string[] parametresADemander)
         {
             Dictionary<string, string> choix = new Dictionary<string, string>();
-            string lecture;
             foreach (string parametre in parametresADemander)
             {
-                Console.WriteLine($"Rentrer le {parametre}");
-                lecture = Console.ReadLine();
-                choix.Add(parametre, lecture);
+                choix.Add(parametre, DemanderString($"Rentrer {parametre}"));
             }
             return choix;
         }
 
-        public static DateTime DemanderDateTime(string message="")
+        public static DateTime DemanderDateTime(string message = "Entrez une date")
         {
-            Console.WriteLine($"Entrer une date au format \"dd/MM/yyyy\".");
             Console.WriteLine($"{message}");
             string lecture;
             DateTime date = DateTime.Now;
             bool valid;
             do
             {
+                Console.WriteLine($"La date doit être au format \"dd/MM/yyyy\".");
                 lecture = Console.ReadLine();
                 try
                 {
@@ -122,6 +126,28 @@ namespace TD7_8
                 }
             } while (!valid);
             return date;
+        }
+        public static double DemanderDouble(string message = "Entrez une nombre")
+        {
+            Console.WriteLine($"{message}");
+            string lecture;
+            double nombre = 0;
+            bool valid;
+            do
+            {
+                lecture = Console.ReadLine();
+                try
+                {
+                    nombre = Convert.ToDouble(lecture);
+                    valid = true;
+                }
+                catch
+                {
+                    valid = false;
+                    Console.WriteLine("Nombre invalide. Réessayer");
+                }
+            } while (!valid);
+            return nombre;
         }
 
         /// <summary>
@@ -141,15 +167,12 @@ namespace TD7_8
             List<T> resultats;
             do
             {
-                Console.WriteLine($"Recherche d'une instance de {typeof(T).Name}");
+                Console.Write($"Recherche d'une instance de {typeof(T).Name} ");
                 if (nomArgumentRecherche != null)
                 {
-                    Console.WriteLine($"Entrer un {nomArgumentRecherche} >");
+                    Console.WriteLine($"par {nomArgumentRecherche}");
                 }
-                else
-                {
-                    Console.WriteLine($"Entrer une recherche");
-                }
+                Console.Write(">");
                 do
                 {
                     valid = true;
@@ -157,7 +180,7 @@ namespace TD7_8
                     resultats = fonctionDeRecherche(lecture);
                     if (resultats.Count < 1)
                     {
-                        Console.WriteLine($"Aucun résultat trouvé. Veuillez entrer un autre {nomArgumentRecherche}");
+                        Console.WriteLine($"Aucun résultat trouvé. Veuillez changer de {nomArgumentRecherche}");
                         valid = false;
                     }
                 } while (!valid);
@@ -168,11 +191,10 @@ namespace TD7_8
                 }
                 else
                 {//Si on n'exige pas que l'utilisateur fasse un choix, on affiche juste la liste
-                    ListerChoixObjets<T>("Voici les résultats", resultats.ToArray());
+                    ListerChoixObjets<T>($"Voici les {resultats.Count}résultats", resultats.ToArray());
                 }
 
             } while (!ObtenirConfirmation("Continuer et quitter la recherche ? (Si vous choissisez non, vous pourrez relancer une recherche.)"));//On relance une recherche si l'utilisateur n'a pas reconfirmé son choix
-
 
             return instanceChoisie;
         }

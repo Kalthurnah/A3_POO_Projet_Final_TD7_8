@@ -157,7 +157,7 @@ namespace TD7_8
 
         public static void MenuImportation()
         {
-            string nomFichier = InteractionUtilisateur.DemanderChoixString("Chemin/Nom du fichier à importer ? (n'oubliez pas l'extension .txt)");
+            string nomFichier = InteractionUtilisateur.DemanderString("Chemin/Nom du fichier à importer ? (n'oubliez pas l'extension .txt)");
             sousMenu menuChoisi = InteractionUtilisateur.DemanderChoixObjet<sousMenu>("Qu'allez-vous importer ?",
                  new sousMenu[] { () => Personne.ImporterCSV<Beneficiaire>(nomFichier), () => Personne.ImporterCSV<Adherent>(nomFichier), Rien },
                      new string[] { "Des bénéficiaires", "Des adhérents", "Retour" });
