@@ -76,6 +76,7 @@
     <Compile Include="Objets\Vaisselle.cs" />
     <Compile Include="PersonnesMorales\StockageAssociation.cs" />
     <Compile Include="Recherche.cs" />
+    <Compile Include="Tri.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
