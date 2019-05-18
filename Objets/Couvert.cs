@@ -34,7 +34,7 @@ namespace TD7_8
 
         public override string ToString()
         {
-            string res = $"Couvert : {base.NombreDePieces} pièces, {base.Prix} euros.";
+            string res = $"Ensemble de {base.NombreDePieces} couverts à {base.Prix}€.";
             return res;
         }
     }
