@@ -116,6 +116,18 @@ namespace TD7_8
         /// <summary>
         /// Traite le premier don dans la file d'attente, l'en retire et l'ajoute dans la liste adaptée (dons disponibles ou archivés en cas de refus..
         /// </summary>
+
+        public DonLegue Leguer(Beneficiaire beneficiaire, DateTime dateLeguee)
+        {
+            DonLegue donLegue = new DonLegue(this, beneficiaire, dateLeguee);
+            donsDisponibles.Remove(this);
+            donsArchives.Add(this);
+            if (lieuStockageDon != null)
+            {
+                lieuStockageDon.LeguerDon(donLegue);//Le retire des dons stockés dans ce lieu de stockage
+            }
+            return donLegue;
+        }
         public static void TraiterDonEnAttente(Adherent adherentTraitantDossier, StatutDon nouveauStatut, LieuStockage lieuStockageDon = null)
         {
 
@@ -141,6 +153,8 @@ namespace TD7_8
             }
 
         }
+
+
         /// <summary>
         /// Interface de traitement de dons, qui affiche le dernier traitement en attente dans la file,
         /// demande les informations à l'utilisateur, puis traite le don en l'enlevant de la file d'attente des dons en attente
@@ -181,18 +195,6 @@ namespace TD7_8
             Console.ReadKey();
         }
 
-
-        public DonLegue Leguer(Beneficiaire beneficiaire, DateTime dateLeguee)
-        {
-            DonLegue donLegue = new DonLegue(this, beneficiaire, dateLeguee);
-            donsDisponibles.Remove(this);
-            donsArchives.Add(this);
-            if (lieuStockageDon != null)
-            {
-                lieuStockageDon.LeguerDon(donLegue);//Le retire des dons stockés dans ce lieu de stockage
-            }
-            return donLegue;
-        }
 
         //Todo com
         public static Don InterfaceCreation()
