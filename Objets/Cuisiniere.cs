@@ -46,5 +46,11 @@ namespace TD7_8
 
             return new Cuisiniere(puissance, nombrePlaques, longueur, largeur, hauteur, prix);
         }
+
+        public override string ToString()
+        {
+            string res = $"Cuisinière à {nombrePlaques} plaques, de dimensions {Dimensions.longueur}x{Dimensions.largeur}x{Dimensions.hauteur}, de puissance {puissance}W à {Prix}€.";
+            return base.ToString();
+        }
     }
 }

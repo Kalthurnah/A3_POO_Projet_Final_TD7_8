@@ -19,5 +19,11 @@ namespace TD7_8
             double prix = InteractionUtilisateur.DemanderDouble("Entrer le prix");
             return new Refrigerateur(longueur, largeur, hauteur, prix);
         }
+
+        public override string ToString()
+        {
+            string res = $"Réfrigérateur de dimensions {Dimensions.longueur}x{Dimensions.largeur}x{Dimensions.hauteur} à {Prix}€.";
+            return base.ToString();
+        }
     }
 }
