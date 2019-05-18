@@ -33,59 +33,60 @@ namespace TD7_8
                     break;
             }
         }
-        public static Don MenuRechercheDon()
+        public static Don MenuRechercheDon(bool demanderChoix)
         {
             int typeChoisi = InteractionUtilisateur.DemanderChoixInt("Choisir le type d'objet du don à chercher :",
-                new string[] { "Matériel (Recherche globale)", "Objet volumineux", "Vaisselle", "Assiette", "Couvert" });
+                new string[] { "Matériel (Recherche globale)", "Armoire", "Assiette", "Chaise", "Chevet" });
+            //Todo ajouter les autres types ci dessus
 
-            //Todo ajouter les autres types
             switch (typeChoisi)
             {
                 case 0:
-                    return MenuRechercheDonMode<Materiel>();
-                    break;
-                case 1:
-                    return MenuRechercheDonMode<ObjetVolumineux>();
-                    break;
-                case 2:
-                    return MenuRechercheDonMode<Vaisselle>();
-                    break;
-                case 3:
-                    return MenuRechercheDonMode<Assiette>();
-                    break;
-                case 4:
-                    return MenuRechercheDonMode<Couvert>();
-                    break;
-                case 5:
-                    return MenuRechercheDonMode<>();
-                    break;
-                case 6:
-                    return MenuRechercheDonMode<>();
-                    break;
-                case 7:
-                    return MenuRechercheDonMode<>();
-                    break;
-                case 8:
-                    return MenuRechercheDonMode<>();
-                    break;
                 default:
-                    return MenuRechercheDonMode<Materiel>();
+                    return MenuRechercheDonMode<Materiel>(demanderChoix);
+                case 1:
+                    return MenuRechercheDonMode<Armoire>(demanderChoix);
+                case 2:
+                    return MenuRechercheDonMode<Assiette>(demanderChoix);
+                case 3:
+                    return MenuRechercheDonMode<Chaise>(demanderChoix);
+                case 4:
+                    return MenuRechercheDonMode<Chevet>(demanderChoix);
+                case 5:
+                    return MenuRechercheDonMode<Couvert>(demanderChoix);
+                case 6:
+                    return MenuRechercheDonMode<Cuisiniere>(demanderChoix);
+                case 7:
+                    return MenuRechercheDonMode<ElectroMenager>(demanderChoix);
+                case 8:
+                    return MenuRechercheDonMode<LaveLinge>(demanderChoix);
+                case 9:
+                    return MenuRechercheDonMode<Matelas>(demanderChoix);
+                case 10:
+                    return MenuRechercheDonMode<MobilierChambre>(demanderChoix);
+                case 11:
+                    return MenuRechercheDonMode<MobilierSalleCuisine>(demanderChoix);
+                case 12:
+                    return MenuRechercheDonMode<Refrigerateur>(demanderChoix);
+                case 13:
+                    return MenuRechercheDonMode<Table>(demanderChoix);
+                case 14:
+                    return MenuRechercheDonMode<Vaisselle>(demanderChoix);
             }
         }
-        public static Don MenuRechercheDonMode<T>() where T : Materiel
+        public static Don MenuRechercheDonMode<T>(bool demanderChoix) where T : Materiel
         {
-            //Todo fonction qui fait une recherge par ype/mois d'un type donné.
             Recherche.FonctionRecherche<Don> modeDeRechercheChoisi = InteractionUtilisateur.DemanderChoixObjet<Recherche.FonctionRecherche<Don>>("Choisir le mode de recherche :",
                 new Recherche.FonctionRecherche<Don>[] {
-                    Recherche.RechercheParStatutType<T>,
-                    Recherche.RechercheParMoisDon,
+                    Recherche.RechercheDonParStatutType<T>,
+                    Recherche.RechercheDonParMoisType<T>,
                 },
-                new string[] { "Recherche par  ", "Recherche par " }
+                new string[] { $"Recherche par statut des dons de {typeof(T).Name}", $"Recherche par mois des dons de {typeof(T).Name}" }
                 );
             //on obtient la fonction de recherche correspondant au choix utilisateur
 
 
-            return InteractionUtilisateur.RechercherUnElement<Don>(modeDeRechercheChoisi);
+            return InteractionUtilisateur.RechercherUnElement<Don>(modeDeRechercheChoisi,demanderChoix);
         }
 
         public static void MenuStatistiques()

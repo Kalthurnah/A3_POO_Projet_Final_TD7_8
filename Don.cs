@@ -72,11 +72,12 @@ namespace TD7_8
             listeTrouverDon.AddRange(donsArchives.FindAll(predicate));
             return listeTrouverDon;
         }
+        //Todo coms
         public static List<Don> TrouverDon<T>(Predicate<Don> predicate) where T : Materiel
         {
             List<Don> listeTrouverDon = new List<Don>(donsDisponibles);
             listeTrouverDon.AddRange(donsArchives);
-            listeTrouverDon.OfType<T>().ToList().FindAll(predicate);
+            listeTrouverDon.FindAll(don =>(predicate(don) && don.objet is T));
             return listeTrouverDon;
         }
 
