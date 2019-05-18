@@ -168,7 +168,7 @@ namespace TD7_8
         public static T RechercherUnElement<T>(Recherche.FonctionRecherche<T> fonctionDeRecherche, bool demanderChoix = true, string nomArgumentRecherche = null)
         {
 
-            T instanceChoisie = default;
+            T instanceChoisie = default(T);
             bool valid;
             string lecture;
             List<T> resultats;
