@@ -185,7 +185,7 @@ namespace TD7_8
                     resultats = fonctionDeRecherche(lecture);
                     if (resultats.Count < 1)
                     {
-                        Console.WriteLine($"Aucun résultat trouvé. Veuillez changer de {nomArgumentRecherche}");
+                        Console.WriteLine($"Aucun résultat trouvé. Veuillez réessayer avec une autre entrée");
                         valid = false;
                     }
                 } while (!valid);
