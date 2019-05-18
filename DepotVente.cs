@@ -23,6 +23,10 @@ namespace TD7_8
 
         public static int Count { get => lieuxStockage.OfType<DepotVente>().Count<DepotVente>(); }
 
+        /// <summary>
+        /// Permet de calculer la moyenne du prix des objets stockés dans tous les dépots-ventes.
+        /// </summary>
+        /// <returns></returns>
         public static double MoyennePrixGenerale()
         {
             double moyenne = 0;
@@ -37,7 +41,10 @@ namespace TD7_8
             return moyenne;
         }
 
-        //On retourne la moyenne du prix des objets présents dans le DepotVente
+        /// <summary>
+        /// Permet de calculer la moyenne du prix des objets stockés dans un dépot-vente.
+        /// </summary>
+        /// <returns></returns>
         public double MoyennePrix()
         {
 
