@@ -7,7 +7,7 @@ namespace TD7_8
 {
     public class Couvert : Vaisselle
     {
-        public Couvert(int nombreDePieces,double prix=0) : base(nombreDePieces,prix)
+        public Couvert(int nombreDePieces, double prix = 0) : base(nombreDePieces, prix)
         {
         }
 
@@ -18,12 +18,9 @@ namespace TD7_8
             double prix = 0;
             do
             {
-                Dictionary<string, string> parametres = InteractionUtilisateur.DemanderParametres(new string[] { "nombre de pieces", "prix" });
-
                 try
                 {
-                    nombreDePieces = Convert.ToInt32(parametres["nombre de pieces"]);
-                    prix = Convert.ToDouble(parametres["largeur"]);
+                    nombreDePieces = Convert.ToInt32(InteractionUtilisateur.DemanderDouble("Entrer le nombre de pieces"));
                     valide = true;
                 }
                 catch
@@ -31,6 +28,7 @@ namespace TD7_8
                     valide = false;
                 }
             } while (!valide);
+            prix = InteractionUtilisateur.DemanderDouble("Entrer le prix");
             return new Couvert(nombreDePieces, prix);
         }
     }

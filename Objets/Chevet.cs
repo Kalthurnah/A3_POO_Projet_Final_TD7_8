@@ -14,27 +14,10 @@ namespace TD7_8
         static public new Materiel InterfaceCreation()
         {
             bool valid = false;
-            double longueur = 0;
-            double largeur = 0;
-            double hauteur = 0;
-            double prix = 0;
-            do
-            {
-                Dictionary<string, string> parametres = InteractionUtilisateur.DemanderParametres(new string[] { "longueur", "largeur", "hauteur", "prix" });
-
-                try
-                {
-                    longueur = Convert.ToDouble(parametres["longueur"]);
-                    largeur = Convert.ToDouble(parametres["largeur"]);
-                    hauteur = Convert.ToDouble(parametres["largeur"]);
-                    prix = Convert.ToDouble(parametres["largeur"]);
-                    valid = true;
-                }
-                catch
-                {
-                    valid = false;
-                }
-            } while (!valid);
+            double longueur = InteractionUtilisateur.DemanderDouble("Entrer la longueur");
+            double largeur = InteractionUtilisateur.DemanderDouble("Entrer la largeur");
+            double hauteur = InteractionUtilisateur.DemanderDouble("Entrer la hauteur");
+            double prix = InteractionUtilisateur.DemanderDouble("Entrer le prix");
 
             return new Chevet(longueur, largeur, hauteur, prix);
         }

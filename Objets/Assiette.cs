@@ -18,12 +18,10 @@ namespace TD7_8
             double prix = 0;
             do
             {
-                Dictionary<string, string> parametres = InteractionUtilisateur.DemanderParametres(new string[] { "nombre de pieces", "prix" });
-
                 try
                 {
-                    nombreDePieces = Convert.ToInt32(parametres["nombre de pieces"]);
-                    prix = Convert.ToDouble(parametres["largeur"]);
+                    nombreDePieces = Convert.ToInt32(InteractionUtilisateur.DemanderDouble("Entrer le nombre de pieces"));
+                    prix = InteractionUtilisateur.DemanderDouble("Entrer le prix");
                     valide = true;
                 }
                 catch
