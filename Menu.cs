@@ -44,11 +44,13 @@ namespace TD7_8
                      () => InteractionUtilisateur.ListerObjets<Don>("Liste des dons acceptés ou stockés triés par Nom de donateur",Tri.TriAccepteStocke( x => x.NomDonateur)),
                      () => InteractionUtilisateur.ListerObjets<Don>("Liste des dons acceptés ou stockés triés par identifiant",Tri.TriAccepteStocke( x => x.Identifiant)),
                      () => InteractionUtilisateur.ListerObjets<DonLegue>("Liste des dons donnés/vendus par numéro de bénéficiaire", Tri.TriVenduDonne( x => x.BeneficiaireObjet.Identifiant)),
+                     () => InteractionUtilisateur.ListerObjets<DonLegue>("Liste des dons donnés/vendus par mois", Tri.TriVenduDonne( x => x.DateLegue.Month)),
                      Rien },
                  new string[] { "Liste des dons refusés triés par date",
                      "Liste des dons acceptés ou stockés triés par Nom de donateur",
                      "Liste des dons acceptés ou stockés triés par identifiant",
                      "Liste des dons donnés/vendus par numéro de bénéficiaire",
+                     "Liste des dons donnés/vendus par mois",
                      "Retour" });
             menuChoisi();
         }
