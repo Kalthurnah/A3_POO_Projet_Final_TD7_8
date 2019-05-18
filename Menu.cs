@@ -37,10 +37,12 @@ namespace TD7_8
             }
         }
 
-        public static void MenuTris()
+        public static void MenuTri()
         {
-            //TODOOOO
-            throw new NotImplementedException();
+            sousMenu menuChoisi = InteractionUtilisateur.DemanderChoixObjet<sousMenu>("Menu Tri :",
+                 new sousMenu[] { () => Recherche.RechercheDonParStatutType<Materiel>("refusé").Sort((x, y) => x.DateReception.CompareTo(y.DateReception)), Rien },
+                 new string[] { "Liste des dons refusés triés par date", "Retour" });
+            menuChoisi();
         }
 
         public static void MenuPersonne()
@@ -208,14 +210,6 @@ namespace TD7_8
             sousMenu menuChoisi = InteractionUtilisateur.DemanderChoixObjet<sousMenu>("Qu'allez-vous importer ?",
                  new sousMenu[] { () => Personne.ImporterCSV<Beneficiaire>(nomFichier), () => Personne.ImporterCSV<Adherent>(nomFichier), Rien },
                      new string[] { "Des bénéficiaires", "Des adhérents", "Retour" });
-            menuChoisi();
-        }
-
-        public static void MenuTri()
-        {
-            sousMenu menuChoisi = InteractionUtilisateur.DemanderChoixObjet<sousMenu>("Menu Tri :",
-                 new sousMenu[] { () => Recherche.RechercheDonParStatutType<Materiel>("refusé").Sort((x, y) => x.DateReception.CompareTo(y.DateReception)), Rien },
-                 new string[] { "Liste des dons refusés triés par date", "Retour" });
             menuChoisi();
         }
     }
