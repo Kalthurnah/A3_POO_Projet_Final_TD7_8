@@ -24,7 +24,7 @@ namespace TD7_8
 
         public override string ToString()
         {
-            string res = $"Chaise de dimensions {base.Dimensions} à {base.Prix}€.";
+            string res = $"Chaise de dimensions {Dimensions.longueur}x{Dimensions.largeur}x{Dimensions.hauteur} à {Prix}€.";
             return base.ToString();
         }
     }
