@@ -14,6 +14,7 @@ namespace TD7_8
         static void Main(string[] args)
         {
             //TODO Ajouter import menu
+            Console.WriteLine("Importation initiale des données de Beneficiaires.txt et Adherents.txt");
             Personne.ImporterCSV<Beneficiaire>("Beneficiaires.txt");
             Console.WriteLine();
             Personne.ImporterCSV<Adherent>("Adherents.txt");
@@ -22,15 +23,17 @@ namespace TD7_8
             Console.ReadKey();
             Console.Clear();
 
-            Menu.sousMenu quitter = delegate () { Environment.Exit(0); };
+            Menu.sousMenu Quitter = delegate () { Environment.Exit(0); };
             do
             {
-                Menu.sousMenu menuChoisi = InteractionUtilisateur.DemanderChoixObjet<Menu.sousMenu>("Menu :",
-                     new Menu.sousMenu[] { Menu.MenuImporter, Menu.MenuRecherchePersonne, Menu.MenuStatistiques, quitter },
-                     new string[] { "Importation d'autres bénéficiaires ou adhérents", "Recherche de personnes", "Statistiques", "Quitter" });
+                Menu.sousMenu menuChoisi = InteractionUtilisateur.DemanderChoixObjet<Menu.sousMenu>("Menu principal :",
+                     new Menu.sousMenu[] { Menu.MenuPersonne, Menu.MenuDons, Menu.MenuStatistiques,Menu.MenuTris, Quitter },
+                     new string[] { "Personnes & Importation", "Dons & Traitement","Statistiques & Comptes", "Listes et Tris", "Quitter" });
+                //TODO : Dans les autres menus, l'intitulé de la fonction "rien" doit etre appelée Retour et non Quitter
                 menuChoisi();
+                Console.WriteLine("Appuyer sur une touche pour continuer");
+                Console.ReadKey();
             } while (true);
-
         }
 
         private void InitialisationValeurs()

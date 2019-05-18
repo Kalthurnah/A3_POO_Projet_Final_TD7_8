@@ -188,12 +188,12 @@ namespace TD7_8
                 if (demanderChoix)
                 {
                     instanceChoisie = DemanderChoixObjet<T>("Quel résultat choisir ?", resultats.ToArray());
+                    Console.WriteLine($"Vous avez choisi {instanceChoisie}");
                 }
                 else
                 {//Si on n'exige pas que l'utilisateur fasse un choix, on affiche juste la liste
                     ListerChoixObjets<T>($"Voici les {resultats.Count}résultats", resultats.ToArray());
                 }
-
             } while (!ObtenirConfirmation("Continuer et quitter la recherche ? (Si vous choissisez non, vous pourrez relancer une recherche.)"));//On relance une recherche si l'utilisateur n'a pas reconfirmé son choix
 
             return instanceChoisie;

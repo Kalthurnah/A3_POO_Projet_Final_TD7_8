@@ -129,7 +129,7 @@ namespace TD7_8
                 );
             //on obtient la fonction de recherche correspondant au choix utilisateur
 
-
+            //On recherche des dons avec.
             return InteractionUtilisateur.RechercherUnElement<Don>(modeDeRechercheChoisi, demanderChoix);
         }
 
@@ -172,7 +172,7 @@ namespace TD7_8
                 );
             //on obtient la fonction de recherche correspondant au choix utilisateur
 
-
+            //On lance une recherche avec cette fonction de recherche choisie.
             return InteractionUtilisateur.RechercherUnElement<T>(modeDeRechercheChoisi);
         }
 
@@ -187,7 +187,7 @@ namespace TD7_8
         }
 
 
-        public static void MenuImportation()
+        private static void MenuImportation()
         {
             string nomFichier = InteractionUtilisateur.DemanderString("Chemin/Nom du fichier à importer ? (n'oubliez pas l'extension .txt)");
             sousMenu menuChoisi = InteractionUtilisateur.DemanderChoixObjet<sousMenu>("Qu'allez-vous importer ?",
