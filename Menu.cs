@@ -40,9 +40,9 @@ namespace TD7_8
         public static void MenuTri()
         {
             sousMenu menuChoisi = InteractionUtilisateur.DemanderChoixObjet<sousMenu>("Menu Tri :",
-                 new sousMenu[] { () => Tri.TriRefuseParDate(),
-                     () => Tri.TriAccepteStockeNom(),
-                     () => Tri.TriAccepteStockeId(),
+                 new sousMenu[] { () => InteractionUtilisateur.ListerObjets<Don>("Liste des dons refusés triés par date",Tri.TriRefuseParDate()),
+                     () => InteractionUtilisateur.ListerObjets<Don>("Liste des dons acceptés ou stockés triés par Nom de donateur",Tri.TriAccepteStockeNom()),
+                     () => InteractionUtilisateur.ListerObjets<Don>("Liste des dons acceptés ou stockés triés par identifiant",Tri.TriAccepteStockeId()),
                      Rien },
                  new string[] { "Liste des dons refusés triés par date",
                      "Liste des dons acceptés ou stockés triés par Nom de donateur",
