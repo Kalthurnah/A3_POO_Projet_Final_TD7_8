@@ -55,13 +55,16 @@ namespace TD7_8
             donsLegues.Add(this);
         }
 
-
+        /// <summary>
+        /// Interface utilisateur pour leguer un don disponible
+        /// </summary>
+        /// <returns>La nouvelle instance de don légué</returns>
         public static DonLegue InterfaceLeguerDon()
         {
-            Don donALeguer = Menu.MenuRechercheDon(demanderChoix:true);
-            Beneficiaire beneficiaire = Menu.MenuRecherchePersonneMode<Beneficiaire>(demanderChoix:true);
+            Don donALeguer = Menu.MenuRechercheDon(demanderChoix: true);
+            Beneficiaire beneficiaire = Menu.MenuRecherchePersonneMode<Beneficiaire>(demanderChoix: true);
             DateTime dateLegue = InteractionUtilisateur.DemanderDateTime("Rentrer la date à laquelle le don a été légué.");
-            return donALeguer.Leguer(beneficiaire,dateLegue);
+            return donALeguer.Leguer(beneficiaire, dateLegue);
         }
 
         public override string ToString()

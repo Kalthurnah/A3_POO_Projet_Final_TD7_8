@@ -8,13 +8,21 @@ namespace TD7_8
 {
     public class InteractionUtilisateur
     {
-        //TODO COMS
+        /// <summary>
+        /// Demande une confirmation à l'utilisateur
+        /// </summary>
+        /// <param name="message">Message à afficher à l'utilisateur</param>
+        /// <returns>true ou false selon la confirmation de l'utilisateur</returns>
         public static bool ObtenirConfirmation(string message = "Vous confirmez ?")
         {
             bool confirmation = DemanderChoixObjet<bool>(message, new bool[] { true, false }, new string[] { "Oui", "Non" });
             return confirmation;
         }
-
+        /// <summary>
+        /// Affiche une array
+        /// </summary>
+        /// <param name="message">Message à afficher à l'utilisateur</param>
+        /// <param name="listeChoix">array à afficher</param>
         public static void ListerObjets<T>(string message, T[] listeChoix)
         {
             Console.WriteLine(message);
@@ -68,7 +76,11 @@ namespace TD7_8
 
             return choix - 1;//-1 pour rapporter le choix à un index entre 0 et length (exclu)
         }
-
+        /// <summary>
+        /// Affiche un message à l'utilisateur, et lui demande une entrée 
+        /// </summary>
+        /// <param name="message">Message à afficher pour expliquer le contexte à l'utilisateur</param>
+        /// <returns>string rentré par l'utilisateur.</returns>
         public static string DemanderString(string message)
         {
             Console.WriteLine(message);
@@ -98,7 +110,11 @@ namespace TD7_8
             objetChoisi = listeChoix[choix];//L'objet choisi est celui de la liste correspondant au numéro choisi par l'utilisateur. 
             return objetChoisi;
         }
-
+        /// <summary>
+        /// Demande un par un plusieurs paramètres à l'utilisateur
+        /// </summary>
+        /// <param name="parametresADemander">array des noms des parametres à demander. Seront utilisés comme clés du dico et affichés à l'utilisateur lors de la demande</param>
+        /// <returns>Dico de clés paramètres et valeurs les valeurs entrées par l'utilisateur</returns>
         public static Dictionary<string, string> DemanderParametres(string[] parametresADemander)
         {
             Dictionary<string, string> choix = new Dictionary<string, string>();
@@ -108,7 +124,11 @@ namespace TD7_8
             }
             return choix;
         }
-
+        /// <summary>
+        /// Demande une date à l'utilisateur
+        /// </summary>
+        /// <param name="message">Message de contexte à afficher</param>
+        /// <returns>Element DateTime correspondant à l'entrée utilisateur</returns>
         public static DateTime DemanderDateTime(string message = "Entrez une date")
         {
             Console.WriteLine($"{message}");
@@ -132,6 +152,11 @@ namespace TD7_8
             } while (!valid);
             return date;
         }
+        /// <summary>
+        /// Demande un double à l'utilisateur
+        /// </summary>
+        /// <param name="message">Message de contexte à afficher</param>
+        /// <returns>double correspondant à l'entrée utilisateur</returns>
         public static double DemanderDouble(string message = "Entrez une nombre")
         {
             Console.WriteLine($"{message}");

@@ -71,6 +71,10 @@ namespace TD7_8
             solde -= donLegue.Objet.Prix;
         }
 
+        /// <summary>
+        /// Permet de stocker un don dans le stockage
+        /// </summary>
+        /// <param name="donAAjouter"></param>
         public override void StockerDon(Don donAAjouter)
         {
             base.StockerDon(donAAjouter);
