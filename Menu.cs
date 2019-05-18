@@ -178,10 +178,13 @@ namespace TD7_8
 
         public static void MenuDons()
         {
-            //TODO
             sousMenu menuChoisi = InteractionUtilisateur.DemanderChoixObjet<sousMenu>("Menu :",
-                 new sousMenu[] { Don.InterfaceValidationDons, () => Don.InterfaceCreation(), ()=>Menu.MenuRechercheDon(false), Menu., Rien },
-                     new string[] { "Valider ou stocker un don en attente","Créer un don (celui-ci sera mis en attente de validation)", "Rechercher un don","Léguer un don à un créateur.","Quitter" });
+                 new sousMenu[] { Don.InterfaceValidationDons, () => Don.InterfaceCreation(), () => MenuRechercheDon(false), () => DonLegue.InterfaceLeguerDon(), Rien },
+                     new string[] { "Valider ou stocker un don en attente",
+                         "Créer un don (celui-ci sera mis en attente de validation)",
+                         "Rechercher un don",
+                         "Léguer un don à un créateur.",
+                         "Retour" });
             menuChoisi();
             //TODO : Le menu de recherche de don ce serait pas un joli p'tit bonus ca ;P ? C'etait pas demandé uwu.
         }
