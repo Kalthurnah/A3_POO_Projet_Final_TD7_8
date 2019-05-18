@@ -33,17 +33,31 @@ namespace TD7_8
             return lieuxStockageTypes.FindAll(predicat);
         }
 
-
+        /// <summary>
+        /// Ajoute un don à la liste des dons stockés.
+        /// </summary>
+        /// <param name="donAAjouter"></param>
         public void StockerDon(Don donAAjouter)
         {
             donsStockes.Add(donAAjouter.Identifiant, donAAjouter);
         }
+
+        /// <summary>
+        /// Permet d'enlever un don des dons stockés et de l'ajouter à la liste des dons légués.
+        /// </summary>
+        /// <param name="donLegue"></param>
         public void LeguerDon(DonLegue donLegue)
         {
             donsStockes.Remove(donLegue.Identifiant);
             donsLegues.Add(donLegue.Identifiant, donLegue);
         }
 
+        /// <summary>
+        /// Permet de trouver les dons d'un certain type correspondants à la condition passée en argument.
+        /// </summary>
+        /// <typeparam name="M"></typeparam>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
         public List<Don> TrouverDon<M>(Predicate<Don> predicate) where M : Materiel
         {
             List<Don> donsTrouves = new List<Don>();
@@ -57,6 +71,10 @@ namespace TD7_8
             return donsTrouves;
         }
 
+        /// <summary>
+        /// Permet de calculer la durée de stockage moyenne de tous les lieux de stockage.
+        /// </summary>
+        /// <returns></returns>
         public static double MoyenneDureeStockageGenerale()
         {
             double moy = 0;
@@ -71,6 +89,10 @@ namespace TD7_8
             return moy;
         }
 
+        /// <summary>
+        /// Permet de calculer la durée de stockage moyenne d'un lieu de stockage.
+        /// </summary>
+        /// <returns></returns>
         public double MoyenneDureeStockage()
         {
             double moy = 0;
@@ -85,6 +107,11 @@ namespace TD7_8
             return moy;
         }
 
+        /// <summary>
+        /// Permet de créer un lieu de stockage selon les saisies en console faites par l'utilisateur.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         public static LieuStockage InterfaceCreationLieuStockage<T>() where T : LieuStockage
         {
             LieuStockage nouveauLieu;
