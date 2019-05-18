@@ -46,8 +46,8 @@ namespace TD7_8
         public static void MenuPersonne()
         {
             sousMenu menuChoisi = InteractionUtilisateur.DemanderChoixObjet<sousMenu>("Menu Personnes :",
-                 new sousMenu[] { MenuImportation, MenuRecherchePersonne, , Rien },
-                 new string[] { "Importation d'autres bénéficiaires ou adhérents", "Ajout manuel de personnes","Recherche de personnes", "Modification de Personnes", "Retour" });
+                 new sousMenu[] { MenuImportation, () => Personne.InterfaceCreation(), MenuRecherchePersonne, MenuModificationPersonne, Rien },
+                 new string[] { "Importation d'autres bénéficiaires ou adhérents", "Ajout manuel de personnes", "Recherche de personnes", "Modification de Personnes", "Retour" });
             menuChoisi();
         }
 
