@@ -40,7 +40,7 @@ namespace TD7_8
         /// <returns>entier entre 0 et le nombre de choix possibles -1, représentant l'index du choix dans la liste de strings.</returns>
         public static int DemanderChoixInt(string message, string[] listeIntitulesChoix)
         {
-            string lecture = "";
+            string lecture;
             bool valid = false;
             int choix = 0;
             ListerObjets<string>(message, listeIntitulesChoix);
@@ -168,7 +168,7 @@ namespace TD7_8
         public static T RechercherUnElement<T>(Recherche.FonctionRecherche<T> fonctionDeRecherche, bool demanderChoix = true, string nomArgumentRecherche = null)
         {
 
-            T instanceChoisie = default(T);
+            T instanceChoisie = default;
             bool valid;
             string lecture;
             List<T> resultats;
