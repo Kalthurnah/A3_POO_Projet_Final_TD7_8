@@ -130,7 +130,15 @@ namespace TD7_8
             return nom.CompareTo(other.Nom);
         }
 
+        /// <summary>
+        /// Permet d'encapsuler la méthode de création d'une personne.
+        /// </summary>
+        /// <returns></returns>
         delegate Personne CreateurPersonne();
+        /// <summary>
+        /// On créé une personne en demandant les informations nécessaire à l'utilisateur, notamment le type de personne à créer.
+        /// </summary>
+        /// <returns></returns>
         public static Personne InterfaceCreation()
         {
             CreateurPersonne createurChoisi = InteractionUtilisateur.DemanderChoixObjet<CreateurPersonne>("Quel est le type de personnes à créer ?",
