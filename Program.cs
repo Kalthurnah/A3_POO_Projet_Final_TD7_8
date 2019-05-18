@@ -18,7 +18,7 @@ namespace TD7_8
             Console.WriteLine();
             Personne.ImporterCSV<Adherent>("Adherents.txt");
             Console.WriteLine("\nAppuyer sur une touche pour continuer;");
-
+            InitialisationValeurs();
             Console.ReadKey();
 
             do
@@ -33,7 +33,7 @@ namespace TD7_8
             } while (true);
         }
 
-        private void InitialisationValeurs()
+        public static void InitialisationValeurs()
         {
             //TODO Ajouter des lieux de stockage, dons, etc
             new Don(new Chaise(1, 1, 1, 5), new Donateur(Adherent.Fonction.Membre, "A", "a", "adresse1", "04090823"), DateTime.ParseExact("12/12/2012", "dd/MM/yyyy", null));
@@ -45,6 +45,9 @@ namespace TD7_8
             don1.Leguer(new Beneficiaire(DateTime.ParseExact("12/10/1960", "dd/MM/yyyy", null), "FFZ", "aaa", "adressedsqfsd", "2643565432"), DateTime.ParseExact("12/10/2010", "dd/MM/yyyy", null));
             don2.Leguer(new Beneficiaire(DateTime.ParseExact("12/10/1950", "dd/MM/yyyy", null), "B", "b", "adresseB", "256643565432"), DateTime.Now);
 
+
+            new Don(new Assiette(10, 0), new Donateur(Adherent.Fonction.Membre, "B", "b", "arbeiz", "065214535"), DateTime.ParseExact("17/03/2010", "dd/MM/yyyy", null));
+            new Don(new Refrigerateur(100, 150, 200, 100), new Donateur(Adherent.Fonction.Membre, "d", "b", "grearbeiz", "065277535"), DateTime.ParseExact("15/03/2010", "dd/MM/yyyy", null));
         }
     }
 }
