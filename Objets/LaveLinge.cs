@@ -20,5 +20,11 @@ namespace TD7_8
 
             return new LaveLinge(longueur, largeur, hauteur, prix);
         }
+
+        public override string ToString()
+        {
+            string res = $"Lave-linge de dimensions {Dimensions.longueur}x{Dimensions.largeur}x{Dimensions.hauteur} à {Prix}€.";
+            return base.ToString();
+        }
     }
 }
