@@ -11,7 +11,7 @@ namespace TD7_8
     public class DonLegue : IIdentifiable
     {
         //Liste des dons légués. Les dons initiaux correspondants à ceux ci sont toujours stockes dans Don.donsArchives
-        static List<DonLegue> donsLegues;
+        static List<DonLegue> donsLegues = new List<DonLegue>();
         private Materiel objet;
         private Type typeObjet;
         private Don DonInitial;
