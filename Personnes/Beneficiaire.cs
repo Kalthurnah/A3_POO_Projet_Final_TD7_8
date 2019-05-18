@@ -51,8 +51,8 @@ namespace TD7_8
         public static new Personne InterfaceCreation()
         {
             DateTime dateNaissance = InteractionUtilisateur.DemanderDateTime("Entrez la date de naissance");
-            Dictionary<string, string> params= InteractionUtilisateur.DemanderParametres(new string[] { "nom", "prénom", "adresse", "numéro de téléphone" });
-            return new Beneficiaire(dateNaissance,params["nom"],params["prénom"], params["adresse"], params["numéro de téléphone"]);
+            Dictionary<string, string> parametres= InteractionUtilisateur.DemanderParametres(new string[] { "nom", "prénom", "adresse", "numéro de téléphone" });
+            return new Beneficiaire(dateNaissance,parametres["nom"],parametres["prénom"], parametres["adresse"], parametres["numéro de téléphone"]);
         }
 
     }
