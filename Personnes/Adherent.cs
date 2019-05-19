@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Threading.Tasks;
+using System.Linq;
 
 namespace TD7_8
 {
@@ -28,7 +25,7 @@ namespace TD7_8
         protected Fonction fonctionAdherent;
 
         public Fonction FonctionAdherent { get => fonctionAdherent; set => fonctionAdherent = value; }
-        public new static int Count { get => personnes.OfType<Adherent>().Count(); }
+        public static new int Count { get => personnes.OfType<Adherent>().Count(); }
 
         /// <summary>
         /// Crée une instance de la classe Adhérent, selon son statut
@@ -58,7 +55,7 @@ namespace TD7_8
 
         public override string ToString()
         {
-            return base.ToString()+$", {fonctionAdherent}";
+            return base.ToString() + $", {fonctionAdherent}";
         }
 
         public void ExporterAdherents()

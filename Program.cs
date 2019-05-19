@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 //Amine AGOUSSAL, Cécile AMSALLEM
 //Groupe TD A, A3
@@ -56,7 +52,7 @@ namespace TD7_8
 
             new Don(new Assiette(10, 0), new Donateur(Adherent.Fonction.Membre, "B", "b", "arbeiz", "065214535"), DateTime.ParseExact("17/03/2010", "dd/MM/yyyy", null));
             new Don(new Refrigerateur(100, 150, 200, 100), new Donateur(Adherent.Fonction.Membre, "d", "b", "grearbeiz", "065277535"), DateTime.ParseExact("15/03/2010", "dd/MM/yyyy", null));
-        
+
             Don.TraiterDonEnAttente(new Adherent(Adherent.Fonction.Membre, "TRSGrfF", "trARGzfeQSDFV", "adzefressetr", "04045é136790823"), Don.StatutDon.Stocke, b);
         }
     }

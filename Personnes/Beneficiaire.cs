@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.IO;
-using System.Text;
+using System.Linq;
 
 namespace TD7_8
 {
@@ -16,7 +15,7 @@ namespace TD7_8
 
         public DateTime DateNaissance { get => dateNaissance; }
 
-        public new static int Count { get => personnes.OfType<Beneficiaire>().Count(); }
+        public static new int Count { get => personnes.OfType<Beneficiaire>().Count(); }
 
         /// <summary>
         /// Accesseur pour obtenir l'age selon l'année actuelle à l'execution. Ne calcule qu'avec les années sans se préoccuper du mois / jour
@@ -51,13 +50,13 @@ namespace TD7_8
         public static new Personne InterfaceCreation()
         {
             DateTime dateNaissance = InteractionUtilisateur.DemanderDateTime("Entrez la date de naissance");
-            Dictionary<string, string> parametres= InteractionUtilisateur.DemanderParametres(new string[] { "nom", "prénom", "adresse", "numéro de téléphone" });
-            return new Beneficiaire(dateNaissance,parametres["nom"],parametres["prénom"], parametres["adresse"], parametres["numéro de téléphone"]);
+            Dictionary<string, string> parametres = InteractionUtilisateur.DemanderParametres(new string[] { "nom", "prénom", "adresse", "numéro de téléphone" });
+            return new Beneficiaire(dateNaissance, parametres["nom"], parametres["prénom"], parametres["adresse"], parametres["numéro de téléphone"]);
         }
 
         public override string ToString()
         {
-            return base.ToString()+$", agé de {Age} ans";
+            return base.ToString() + $", agé de {Age} ans";
         }
 
 

@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace TD7_8
 {
     public class Donateur : Adherent
     {
-        public new static int Count { get => personnes.OfType<Donateur>().Count(); }
+        public static new int Count { get => personnes.OfType<Donateur>().Count(); }
 
         /// <summary>
         /// Crée une instance de la classe Donateur, selon son statut
@@ -36,7 +34,7 @@ namespace TD7_8
 
         public override string ToString()
         {
-            return base.ToString()+" et donateur";
+            return base.ToString() + " et donateur";
         }
     }
 }

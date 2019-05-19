@@ -7,7 +7,7 @@ namespace TD7_8
 {
     public abstract class Personne : IIdentifiable, IComparable<Personne>
     {
-        static protected List<Personne> personnes = new List<Personne>();//Stocke les personne créees de facon statique dans la classe Personne.
+        protected static List<Personne> personnes = new List<Personne>();//Stocke les personne créees de facon statique dans la classe Personne.
         static int dernierIdDonne = 0;// Le dernier id donné n'est pas forcément le nombre de personnes, dans le cas ou on en supprime par exemple.
         public static int Count { get => personnes.Count(); }//Compteur de personne, qu'on remplace dans les classes filles avec new
 
