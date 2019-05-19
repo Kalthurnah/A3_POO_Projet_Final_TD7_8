@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
   <Class Name="TD7_8.Personne">
-    <Position X="5.75" Y="1" Width="1.75" />
+    <Position X="5.75" Y="0.5" Width="2.5" />
     <Compartments>
       <Compartment Name="Properties" Collapsed="true" />
     </Compartments>
@@ -12,14 +12,25 @@
         </TypeIdentifier>
       </Delegate>
     </NestedTypes>
+    <AssociationLine Name="personnes" Type="TD7_8.Personne" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.25" Y="1.188" />
+        <Point X="8.5" Y="1.188" />
+        <Point X="8.5" Y="2.312" />
+        <Point X="8.25" Y="2.312" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAAABAAAAAAAQEAACAIEQAACACIABAAGAgQABAACQ=</HashCode>
       <FileName>Personnes\Personne.cs</FileName>
     </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="personnes" />
+    </ShowAsCollectionAssociation>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="TD7_8.Adherent">
-    <Position X="3" Y="5" Width="1.75" />
+    <Position X="3" Y="5" Width="2.25" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
@@ -36,14 +47,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.Beneficiaire">
-    <Position X="9" Y="5" Width="1.75" />
+    <Position X="9" Y="5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAEAEAAAAQBAAASAAAEEAAAAAAAAAA=</HashCode>
       <FileName>Personnes\Beneficiaire.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.Donateur">
-    <Position X="0.5" Y="8.75" Width="1.75" />
+    <Position X="0.5" Y="8.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAEAAAAAAQAAAACAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Personnes\Donateur.cs</FileName>
@@ -61,9 +72,10 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="TD7_8.ObjetVolumineux">
-    <Position X="31.25" Y="5.75" Width="2.25" />
+    <Position X="31.25" Y="5.5" Width="2.25" />
     <Compartments>
       <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
     <NestedTypes>
       <Struct Name="TD7_8.ObjetVolumineux.Dimension" Collapsed="true">
@@ -118,7 +130,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.Don">
-    <Position X="5" Y="11.5" Width="2.75" />
+    <Position X="4" Y="11.5" Width="4" />
     <Compartments>
       <Compartment Name="Properties" Collapsed="true" />
       <Compartment Name="Nested Types" Collapsed="false" />
@@ -132,27 +144,32 @@
     </NestedTypes>
     <AssociationLine Name="donsArchives" Type="TD7_8.Don" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="5" Y="15.401" />
-        <Point X="4.75" Y="15.401" />
-        <Point X="4.75" Y="16.181" />
-        <Point X="5" Y="16.181" />
+        <Point X="4" Y="15.401" />
+        <Point X="3.75" Y="15.401" />
+        <Point X="3.75" Y="16.181" />
+        <Point X="4" Y="16.181" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="donsEnAttenteTraitement" Type="TD7_8.Don" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="5" Y="11.981" />
-        <Point X="4.75" Y="11.981" />
-        <Point X="4.75" Y="13.06" />
-        <Point X="5" Y="13.06" />
+        <Point X="4" Y="11.981" />
+        <Point X="3.75" Y="11.981" />
+        <Point X="3.75" Y="13.06" />
+        <Point X="4" Y="13.06" />
       </Path>
+    </AssociationLine>
+    <AssociationLine Name="adherentTraitantDossier" Type="TD7_8.Adherent">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.763" Y="0.297" />
+      </MemberNameLabel>
     </AssociationLine>
     <AssociationLine Name="lieuStockageDon" Type="TD7_8.LieuStockage" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="7.75" Y="16.093" />
+        <Point X="8" Y="16.093" />
         <Point X="22.726" Y="16.093" />
         <Point X="22.726" Y="9.029" />
         <Point X="22.75" Y="9.029" />
-        <Point X="22.75" Y="8.165" />
+        <Point X="22.75" Y="7.78" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="-1.355" Y="0.076" />
@@ -195,7 +212,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.Table">
-    <Position X="32.75" Y="11.25" Width="1.75" />
+    <Position X="32.5" Y="11.25" Width="2.25" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
@@ -239,7 +256,7 @@
     <Lollipop Position="1.226" />
   </Class>
   <Class Name="TD7_8.Cuisiniere">
-    <Position X="37.5" Y="11.25" Width="1.5" />
+    <Position X="37.25" Y="11.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AQAAAAAAAAAAAAAEAAAAAAABAAACAQAAAAAAAAEAAAA=</HashCode>
       <FileName>Objets\Cuisiniere.cs</FileName>
@@ -260,16 +277,21 @@
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.DonLegue">
-    <Position X="10.25" Y="11.5" Width="3" />
+    <Position X="10.25" Y="11.5" Width="2.5" />
     <Compartments>
       <Compartment Name="Properties" Collapsed="true" />
     </Compartments>
     <AssociationLine Name="lieuStockage" Type="TD7_8.LieuStockage" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="12.512" Y="11.5" />
-        <Point X="12.512" Y="6.375" />
-        <Point X="19.25" Y="6.375" />
+        <Point X="12.135" Y="11.5" />
+        <Point X="12.135" Y="6.192" />
+        <Point X="19.25" Y="6.192" />
       </Path>
+    </AssociationLine>
+    <AssociationLine Name="donsLegues" Type="TD7_8.DonLegue">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.875" Y="0.053" />
+      </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAAgAUAAIgEABEogACCgJAAAgAQAAAAQAQAABAAAA=</HashCode>
@@ -281,17 +303,34 @@
       <Field Name="beneficiaireObjet" />
       <Field Name="lieuStockage" />
     </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="donsLegues" />
+    </ShowAsCollectionAssociation>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="TD7_8.LieuStockage">
     <Position X="19.25" Y="4.75" Width="3.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="lieuxStockage" Type="TD7_8.LieuStockage" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="22.75" Y="5.748" />
+        <Point X="23" Y="5.748" />
+        <Point X="23" Y="6.636" />
+        <Point X="22.75" Y="6.636" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.374" Y="-0.278" />
+      </MemberNameLabel>
+    </AssociationLine>
     <AssociationLine Name="donsStockes" Type="TD7_8.Don" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="21.875" Y="8.165" />
+        <Point X="21.875" Y="7.78" />
         <Point X="21.875" Y="8.421" />
         <Point X="21.88" Y="8.421" />
         <Point X="21.88" Y="15.281" />
-        <Point X="7.75" Y="15.281" />
+        <Point X="8" Y="15.281" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="0.035" Y="0.11" />
@@ -315,28 +354,28 @@
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.DepotVente">
-    <Position X="15.5" Y="8.5" Width="1.5" />
+    <Position X="14" Y="8.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAIAAAAAAAAEAAAAAAQAACAEAEAgAAAAAAgAAAA=</HashCode>
       <FileName>PersonnesMorales\DepotVente.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.StockageAssociation">
-    <Position X="17.25" Y="8.5" Width="1.5" />
+    <Position X="17" Y="8.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PersonnesMorales\StockageAssociation.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.Assiette">
-    <Position X="41" Y="8.75" Width="1.5" />
+    <Position X="40.5" Y="8.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Objets\Assiette.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.Couvert">
-    <Position X="43.25" Y="8.75" Width="1.5" />
+    <Position X="43.25" Y="8.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Objets\Couvert.cs</FileName>
