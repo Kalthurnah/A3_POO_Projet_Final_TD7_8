@@ -71,8 +71,10 @@ namespace TD7_8
         public static void MenuPersonne()
         {
             sousMenu menuChoisi = InteractionUtilisateur.DemanderChoixObjet<sousMenu>("Menu Personnes :",
-                 new sousMenu[] { MenuImportation, () => Personne.InterfaceCreation(), MenuRecherchePersonne, MenuModificationPersonne, Rien },
-                 new string[] { "Importation d'autres bénéficiaires ou adhérents", "Ajout manuel de personnes", "Recherche de personnes", "Modification de Personnes", "Retour" });
+                 new sousMenu[] { MenuImportation, MenuExportation,
+                     () => Personne.InterfaceCreation(), MenuRecherchePersonne, MenuModificationPersonne, Rien },
+                 new string[] { "Importation d'autres bénéficiaires ou adhérents", "Exporter des bénéficiaires ou des adhérents",
+                     "Ajout manuel de personnes", "Recherche de personnes", "Modification de Personnes", "Retour" });
             menuChoisi();
         }
 
@@ -222,6 +224,14 @@ namespace TD7_8
             string nomFichier = InteractionUtilisateur.DemanderString("Chemin/Nom du fichier à importer ? (n'oubliez pas l'extension .txt)");
             sousMenu menuChoisi = InteractionUtilisateur.DemanderChoixObjet<sousMenu>("Qu'allez-vous importer ?",
                  new sousMenu[] { () => Personne.ImporterCSV<Beneficiaire>(nomFichier), () => Personne.ImporterCSV<Adherent>(nomFichier), Rien },
+                     new string[] { "Des bénéficiaires", "Des adhérents", "Retour" });
+            menuChoisi();
+        }
+
+        private static void MenuExportation()
+        {
+            sousMenu menuChoisi = InteractionUtilisateur.DemanderChoixObjet<sousMenu>("Qu'allez-vous exporter ?",
+                 new sousMenu[] { () => Beneficiaire.ExporterBeneficiaires(), () => Adherent.ExporterAdherents(), Rien },
                      new string[] { "Des bénéficiaires", "Des adhérents", "Retour" });
             menuChoisi();
         }
