@@ -8,8 +8,6 @@ namespace TD7_8
 {
     public class Menu
     {
-        //TODO COMS 
-
         /// <summary>
         /// Delegue sous menu qui ne prend ni argument et ne retourne rien. Utile pour afficher qqchose ou ouvrir un menu.
         /// </summary>
