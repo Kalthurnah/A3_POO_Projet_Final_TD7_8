@@ -73,8 +73,8 @@ namespace TD7_8
                 lignes[i] = ligne;
                 i++;
             }
-            File.WriteAllLines(@"C:\Users\Public\export_beneficiaires.txt", lignes);
-            Console.WriteLine("Vous trouverez vos beneficiaires dans C:/Users/Public/export_beneficiaires.txt.");
+            File.WriteAllLines(@"export_beneficiaires.txt", lignes);
+            Console.WriteLine("Vous trouverez vos beneficiaires dans export_beneficiaires.txt.");
         }
     }
 }
