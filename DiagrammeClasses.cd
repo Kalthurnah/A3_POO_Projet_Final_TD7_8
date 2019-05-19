@@ -377,6 +377,13 @@
       <FileName>Menu.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="TD7_8.InteractionUtilisateur">
+    <Position X="12" Y="22.25" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>DAAAAAAAAAAAAAAkAEAAAAAAAAAAAAAAAAAAAJAQAIA=</HashCode>
+      <FileName>InteractionUtilisateur.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Interface Name="TD7_8.IIdentifiable">
     <Position X="12" Y="21" Width="1.5" />
     <TypeIdentifier>
