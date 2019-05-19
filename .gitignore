@@ -345,3 +345,5 @@ azure-pipelines.yml
 #DEvTime file
 *.dt
 GlobalSuppressions.cs
+/rtf
+Rapport_TD7-8_AGOUSSALAMSALLEM.docx
