@@ -13,7 +13,7 @@
       </Delegate>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAAABAAAAAAAQAAACAIEQAACACIABAAGAgQABAACQ=</HashCode>
+      <HashCode>AAAAAABAAAAAAAQEAACAIEQAACACIABAAGAgQABAACQ=</HashCode>
       <FileName>Personnes\Personne.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -31,21 +31,21 @@
       </Enum>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAGAAAABAAAAAAAAAA=</HashCode>
+      <HashCode>AAIAAAAAAAAAAAAEAAAAAAQAAAAGAAAABAAAAAAAAAA=</HashCode>
       <FileName>Personnes\Adherent.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.Beneficiaire">
     <Position X="14" Y="4.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAEAAAAQAAAASAAAEEAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAEAAAAQBAAASAAAEEAAAAAAAAAA=</HashCode>
       <FileName>Personnes\Beneficiaire.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.Donateur">
     <Position X="5.5" Y="8.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAQAAAACAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Personnes\Donateur.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -147,7 +147,7 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AgQAgAAEIKAgAABAAACBQAhAIAQCwBEEgAQQAIBIAQE=</HashCode>
+      <HashCode>AgQAgAAEIKAgAABEAACBQAhAIAQCwBEEgAQQAIBIAQE=</HashCode>
       <FileName>Don.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -253,7 +253,7 @@
       <Compartment Name="Properties" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAgAUAAIgEABAogACCgJAAAgAQAAAAQAQAABAAAA=</HashCode>
+      <HashCode>AAAAAgAUAAIgEABEogACCgJAAAgAQAAAAQAQAABAAAA=</HashCode>
       <FileName>DonLegue.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -272,7 +272,7 @@
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AIAAAAIAAAAAAAABAAAACUAAAAgAgEAIAAAAEAAAAAA=</HashCode>
+      <HashCode>AIAAAAIAAAAAAAAFAAAACUAAAAgAgEAIAAAAEAAAAAA=</HashCode>
       <FileName>PersonnesMorales\LieuStockage.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -284,21 +284,21 @@
   <Class Name="TD7_8.GardeMeuble">
     <Position X="26" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PersonnesMorales\GardeMeuble.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.DepotVente">
     <Position X="22.25" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAACAEAAAgAAAAAAgAAAA=</HashCode>
-      <FileName>DepotVente.cs</FileName>
+      <HashCode>AAAAAAIAAAAAAAAEAAAAAAQAACAEAEAgAAAAAAgAAAA=</HashCode>
+      <FileName>PersonnesMorales\DepotVente.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TD7_8.StockageAssociation">
     <Position X="24" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PersonnesMorales\StockageAssociation.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -316,8 +316,69 @@
       <FileName>Objets\Couvert.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="TD7_8.Tri">
+    <Position X="5.25" Y="21" Width="3.25" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Delegate Name="TD7_8.Tri.FonctionObtentionProprieteDon&lt;T&gt;" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Tri.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="TD7_8.Tri.FonctionObtentionProprieteDonLegue&lt;T&gt;" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Tri.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAACAQAAAAAAEgAAAAAgCAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tri.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TD7_8.Recherche">
+    <Position X="0.75" Y="21" Width="4" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Delegate Name="TD7_8.Recherche.FonctionRecherche&lt;T&gt;" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Recherche.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAQAAQAAAAAAAAAAAACACAAA=</HashCode>
+      <FileName>Recherche.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TD7_8.Menu">
+    <Position X="8.75" Y="21" Width="3" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Delegate Name="TD7_8.Menu.sousMenu" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Menu.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="TD7_8.Menu.fonctionMoyenne" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Menu.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAYIAAAAAAAAAEAAAAAAAAAAAAEAAAAEAABAEo=</HashCode>
+      <FileName>Menu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Interface Name="TD7_8.IIdentifiable">
-    <Position X="0.75" Y="4.25" Width="1.5" />
+    <Position X="12" Y="21" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
       <FileName>IIdentifiable.cs</FileName>
