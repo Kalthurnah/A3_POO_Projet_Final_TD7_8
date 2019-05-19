@@ -61,7 +61,7 @@ namespace TD7_8
             return base.ToString()+$", {fonctionAdherent}";
         }
 
-        public void ExporterAdherents()
+        public static void ExporterAdherents()
         {
             string[] lignes = new string[Adherent.Count];
             string ligne = "";
@@ -73,7 +73,8 @@ namespace TD7_8
                 lignes[i] = ligne;
                 i++;
             }
-            File.WriteAllLines(@"C: \Users\Public\export_adherents.txt", lignes);
+            File.WriteAllLines(@"C:\Users\Public\export_adherents.txt", lignes);
+            Console.WriteLine("Vous trouverez vos adhérents dans C:/Users/Public/export_adherents.txt");
         }
     }
 }
